@@ -51,7 +51,7 @@
         <docker.image.prefix>dcloud</docker.image.prefix>
 
     </properties>
-    <!--锁定版本-->
+    <!--锁定版本 这里并不会安装依赖-->
     <dependencyManagement>
         <dependencies>
             <!--https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies/2.3.3.RELEASE-->
