@@ -89,7 +89,7 @@ public class MyBatisPlusGenerator {
 
         //6. 执行操作
         ag.execute();
-        System.out.println("======= 小滴课堂 Done 相关代码生成完毕  ========");
+        System.out.println("相关代码生成完毕");
     }
 
 }
