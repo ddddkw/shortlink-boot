@@ -15,6 +15,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.Map;
 
 @Component
 @Slf4j
@@ -58,30 +59,31 @@ public class SmsComponent {
 //        }
 //    }
 public void send(String to, String templateId, String value) {
-    Gson gson = new Gson();
+    // 构建查询参数（与示例代码一致）
+    Map<String, String> queryParams = new HashMap<>();
+    queryParams.put("mobile", to); // 手机号
+    queryParams.put("param", value); // 模板参数（如 "**code**:12345,**minute**:5"）
+    queryParams.put("smsSignId", smsConfig.getSmsSignId()); // 签名 ID
+    queryParams.put("templateId", templateId); // 模板 ID
 
-    // 构建请求体
-    var body = new HashMap<String, Object>();
-    body.put("smsSignId", smsConfig.getSmsSignId());
-    body.put("templateId", templateId);
-    body.put("param", value);
-    body.put("mobile", to);
-    String jsonBody = gson.toJson(body);
-
-    // 设置请求头
+    // 设置请求头（仅需 Authorization）
     HttpHeaders headers = new HttpHeaders();
-    headers.setContentType(MediaType.APPLICATION_JSON);
     headers.set("Authorization", "APPCODE " + smsConfig.getAppCode());
 
-    // 封装请求实体
-    HttpEntity<String> requestEntity = new HttpEntity<>(jsonBody, headers);
+    // 构建带查询参数的 URL
+    StringBuilder urlBuilder = new StringBuilder(urlTemplate);
+    urlBuilder.append("?");
+    queryParams.forEach((key, val) ->
+            urlBuilder.append(key).append("=").append(val).append("&")
+    );
+    String finalUrl = urlBuilder.deleteCharAt(urlBuilder.length() - 1).toString(); // 移除最后一个 &
 
     try {
-        // 发送POST请求
+        // 发送 GET 请求（因为参数在 URL 中）
         ResponseEntity<String> response = restTemplate.exchange(
-                urlTemplate,
-                HttpMethod.POST,
-                requestEntity,
+                finalUrl,
+                HttpMethod.POST, // 或根据 API 要求使用 POST
+                new HttpEntity<>(headers), // 空请求体
                 String.class
         );
 
@@ -90,7 +92,7 @@ public void send(String to, String templateId, String value) {
         } else {
             log.error("短信发送失败，状态码: {}, 响应: {}",
                     response.getStatusCodeValue(), response.getBody());
-            throw new RuntimeException("短信发送失败，状态码: " + response.getStatusCodeValue());
+            throw new RuntimeException("短信发送失败");
         }
     } catch (Exception e) {
         log.error("短信发送异常: {}", e.getMessage(), e);
