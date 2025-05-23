@@ -4,6 +4,7 @@ package org.example.component;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.example.config.SmsConfig;
+import org.example.utils.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
@@ -59,6 +60,7 @@ public class SmsComponent {
 //        }
 //    }
 public void send(String to, String templateId, String value) {
+    long beginTime = CommonUtil.getCurrentTimestamp();
     // 构建查询参数（与示例代码一致）
     Map<String, String> queryParams = new HashMap<>();
     queryParams.put("mobile", to); // 手机号
@@ -86,7 +88,8 @@ public void send(String to, String templateId, String value) {
                 new HttpEntity<>(headers), // 空请求体
                 String.class
         );
-
+        long endTime = CommonUtil.getCurrentTimestamp();
+        log.info("耗时={}",endTime-beginTime);
         if (response.getStatusCode().is2xxSuccessful()) {
             log.info("短信发送成功，响应: {}", response.getBody());
         } else {
