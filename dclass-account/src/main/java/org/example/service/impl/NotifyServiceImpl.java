@@ -3,6 +3,7 @@ package org.example.service.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.example.service.NotifyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -19,7 +20,7 @@ public class NotifyServiceImpl implements NotifyService {
 //    @Autowired
 //    private SmsConfig smsConfig;
     @Autowired
-//    @Async
+    @Async
     public void testSend(){
         System.out.println("1111111");
         try {
