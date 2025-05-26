@@ -14,12 +14,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
-import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 /**
  * @author dkw
  * RestTemplate bean,访问 RESTful 服务的客户端工具
+ * RestTemplate性能低，通过连接池复用连接，减少 TCP 握手和 SSL 开销，提升请求响应速度。
  */
 @Configuration
 public class RestTemplateConfig {
@@ -40,6 +40,7 @@ public class RestTemplateConfig {
 
     @Bean
     public HttpClient httpClient(){
+        // 1. 注册HTTP和HTTPS协议的Socket工厂
         Registry<ConnectionSocketFactory> registry = RegistryBuilder.<ConnectionSocketFactory>create()
                 .register("http", PlainConnectionSocketFactory.getSocketFactory())
                 .register("https", SSLConnectionSocketFactory.getSocketFactory())

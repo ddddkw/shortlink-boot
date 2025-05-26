@@ -21,7 +21,7 @@ public class ThreadPoolTaskConfig {
         // 设置核心线程数，线程池维护线程的最少数量，即使没有任务需要执行，也会一直存在
         threadPoolTaskExecutor.setCorePoolSize(8);
         // 阻塞队列的最大值,核心线程满时，可创建的阻塞线程的最大值
-        threadPoolTaskExecutor.setQueueCapacity(124);
+        threadPoolTaskExecutor.setQueueCapacity(1024);
         // 最大线程池数量，当线程数>=CorePoolSize,且任务队列已满时，线程池会创建出新线程来处理任务
         // 任务队列已满时，且当线程数 = MaxPoolSize，线程池会拒绝处理任务而抛出异常
         threadPoolTaskExecutor.setMaxPoolSize(64);

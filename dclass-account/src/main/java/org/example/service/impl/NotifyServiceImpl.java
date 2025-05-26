@@ -15,14 +15,8 @@ public class NotifyServiceImpl implements NotifyService {
     @Autowired
     private RestTemplate restTemplate;
 
-//    @Autowired
-//    private SmsComponent smsComponent;
-//    @Autowired
-//    private SmsConfig smsConfig;
     @Autowired
-    @Async
-    public void testSend(){
-        System.out.println("1111111");
+    public void sendSms(){
         try {
             System.out.println("两秒开始");
             TimeUnit.MILLISECONDS.sleep(2000);
@@ -30,9 +24,5 @@ public class NotifyServiceImpl implements NotifyService {
         } catch (InterruptedException e){
             e.printStackTrace();
         }
-        //        ResponseEntity<String> entity =  restTemplate.getForEntity("http://120.26.72.241:8089/#/",String.class);
-//        System.out.println(entity.getBody());
-//        smsComponent.send("18480711023",smsConfig.getTemplateId(),"**code**:12345,**minute**:5");
-
     }
 }
