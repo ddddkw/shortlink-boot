@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.AccountApplication;
 import org.example.component.SmsComponent;
 import org.example.config.SmsConfig;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,10 +19,4 @@ public class SmsTest {
     @Autowired
     private SmsConfig smsConfig;
 
-    @Test
-    public void testSendSms(){
-        for (int i = 0; i < 3; i++) {
-            smsComponent.send("18480711023",smsConfig.getTemplateId(),"**code**:12345,**minute**:5");
-        }
-    }
 }

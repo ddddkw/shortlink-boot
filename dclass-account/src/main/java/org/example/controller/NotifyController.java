@@ -3,16 +3,16 @@ package org.example.controller;
 import com.google.code.kaptcha.Producer;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.protocol.HTTP;
+import org.example.enums.BizCodeEnum;
+import org.example.enums.SendCodeEnum;
+import org.example.params.SendCodeRequestParam;
 import org.example.service.NotifyService;
 import org.example.utils.CommonUtil;
 import org.example.utils.JsonData;;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
@@ -68,9 +68,19 @@ public class NotifyController {
         return key;
     }
 
+    /**
+     * 发送短信验证码
+     */
     @PostMapping("/sendSms")
-    JsonData sendSms(){
-        notifyService.sendSms();
-        return JsonData.buildSuccess();
+    JsonData sendSms(@RequestBody SendCodeRequestParam sendCodeRequestParam,HttpServletRequest request){
+        String key = getCaptchaKey(request);
+        String captcha = redisTemplate.opsForValue().get(key);
+        if (captcha!=null && sendCodeRequestParam.getCaptcha()!=null && captcha.equalsIgnoreCase(sendCodeRequestParam.getCaptcha())) {
+            redisTemplate.delete(key);
+            notifyService.sendSms(SendCodeEnum.USER_REGISTER, sendCodeRequestParam.getTo());
+            return JsonData.buildSuccess();
+        } else {
+            return JsonData.buildResult(BizCodeEnum.CODE_CAPTCHA_ERROR);
+        }
     }
 }

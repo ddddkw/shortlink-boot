@@ -55,14 +55,14 @@ public class SmsComponent {
 //    }
     //采用异步的方式，指定使用threadPoolTaskExecutor线程池
     @Async("threadPoolTaskExecutor")
-    public void send(String to, String templateId, String value) {
+    public void send(String to,String code) {
         long beginTime = CommonUtil.getCurrentTimestamp();
         // 构建查询参数（与示例代码一致）
         Map<String, String> queryParams = new HashMap<>();
         queryParams.put("mobile", to); // 手机号
-        queryParams.put("param", value); // 模板参数（如 "**code**:12345,**minute**:5"）
+        queryParams.put("param", "**code**:"+code+",**minute**:5"); // 模板参数（如 "**code**:12345,**minute**:5"）
         queryParams.put("smsSignId", smsConfig.getSmsSignId()); // 签名 ID
-        queryParams.put("templateId", templateId); // 模板 ID
+        queryParams.put("templateId", smsConfig.getTemplateId()); // 模板 ID
 
         // 设置请求头（仅需 Authorization）
         HttpHeaders headers = new HttpHeaders();
