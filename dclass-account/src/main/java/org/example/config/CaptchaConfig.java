@@ -18,7 +18,7 @@ public class CaptchaConfig {
         properties.put("kaptcha.border", "yes");
         properties.put("kaptcha.border.color", "105,179,90");
         // 文本集合
-        properties.put("kaptcha.textproducer.char.string", "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+        properties.put("kaptcha.textproducer.char.string", "0123456789");
         // 验证码长度
         properties.put("kaptcha.textproducer.char.length", "4");
         // 字体颜色

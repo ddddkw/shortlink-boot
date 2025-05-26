@@ -11,6 +11,7 @@ import org.example.utils.CommonUtil;
 import org.example.utils.JsonData;;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/notify")
@@ -33,7 +35,7 @@ public class NotifyController {
     private NotifyService notifyService;
 
     @Autowired
-    private StringRedisTemplate redisTemplate;
+    private StringRedisTemplate  redisTemplate;
 
     /**
      * 验证码过期时间
@@ -47,7 +49,7 @@ public class NotifyController {
         String captchaText = captchaProducer.createText();
         log.info("验证码内容",captchaText);
         // 存储redis，配置过期时间
-        redisTemplate.opsForValue().set(getCaptchaKey(request),captchaText,CAPTCHA_CODE_EXPIRED);
+        redisTemplate.opsForValue().set(getCaptchaKey(request),captchaText,CAPTCHA_CODE_EXPIRED, TimeUnit.SECONDS);
 
         BufferedImage bufferedImage = captchaProducer.createImage(captchaText);
         try(ServletOutputStream outputStream = response.getOutputStream()) {
@@ -62,9 +64,9 @@ public class NotifyController {
     private String getCaptchaKey(HttpServletRequest request){
         String ip = CommonUtil.getIpAddr(request);
         // 浏览器指纹，可做唯一标识
-        String userAgent = request.getHeader("User-Agent");
+        String sessionId = request.getSession().getId();
         // 生成key
-        String key = "account-servie:captcha"+CommonUtil.MD5(ip+userAgent);
+        String key = "account-servie:captcha"+CommonUtil.MD5(ip+sessionId);
         return key;
     }
 
@@ -75,6 +77,7 @@ public class NotifyController {
     JsonData sendSms(@RequestBody SendCodeRequestParam sendCodeRequestParam,HttpServletRequest request){
         String key = getCaptchaKey(request);
         String captcha = redisTemplate.opsForValue().get(key);
+        log.info(captcha,"对应的图片验证码");
         if (captcha!=null && sendCodeRequestParam.getCaptcha()!=null && captcha.equalsIgnoreCase(sendCodeRequestParam.getCaptcha())) {
             redisTemplate.delete(key);
             notifyService.sendSms(SendCodeEnum.USER_REGISTER, sendCodeRequestParam.getTo());
