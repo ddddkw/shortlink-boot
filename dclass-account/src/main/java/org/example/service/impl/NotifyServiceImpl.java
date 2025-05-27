@@ -3,6 +3,7 @@ package org.example.service.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.example.component.SmsComponent;
+
 import org.example.constant.RedisKey;
 import org.example.enums.BizCodeEnum;
 import org.example.enums.SendCodeEnum;
@@ -12,7 +13,6 @@ import org.example.utils.CheckUtil;
 import org.example.utils.CommonUtil;
 import org.example.utils.JsonData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
