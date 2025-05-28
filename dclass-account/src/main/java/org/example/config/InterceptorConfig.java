@@ -10,6 +10,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
 
+    /**
+     * 这里是初步拦截，最终会走到InterceptorConfig那边，如果返回true的话会放行，否则会将接口拦截掉（根据token进行判断拦截）
+     *
+     * @param registry
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())

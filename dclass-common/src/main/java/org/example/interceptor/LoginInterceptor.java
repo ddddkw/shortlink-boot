@@ -52,6 +52,10 @@ public class LoginInterceptor implements HandlerInterceptor {
                     .phone(phone).auth(auth).build();
             // 透传用户信息，两种方式
             // request.setAttribute("user",loginUser);
+            /**
+             * 将用户信息存储到当前线程的ThreadLocal中
+             * 后续的控制器 / 服务可通过threadLocal.get()获取当前用户
+             */
             threadLocal.set(loginUser);
             return true;
         }
