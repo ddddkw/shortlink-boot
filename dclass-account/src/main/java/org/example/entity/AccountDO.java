@@ -44,7 +44,7 @@ public class AccountDO implements Serializable {
     private String pwd;
 
     /**
-     * 盐，用于个人敏感信息处理
+     * 用于个人敏感信息处理
      */
     private String secret;
 

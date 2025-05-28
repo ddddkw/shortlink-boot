@@ -63,4 +63,24 @@ public class NotifyServiceImpl implements NotifyService {
         }
         return JsonData.buildSuccess();
     }
+
+    /**
+     * 校验输入验证码是否正确
+     * @param userRegister
+     * @param code
+     * @param to
+     * @return
+     */
+    public Boolean checkCode(SendCodeEnum userRegister,String code, String to){
+        String cacheKey = String.format(RedisKey.CHECK_CODE_KEY,userRegister.name(), to);
+        String cacheValue = redisTemplate.opsForValue().get(cacheKey);
+        if (StringUtils.isNoneBlank(cacheValue)) {
+            String cacheCode = cacheValue.split("_")[0];
+            if (cacheCode.equalsIgnoreCase(code)) {
+                redisTemplate.delete(cacheKey);
+                return true;
+            }
+        }
+        return false;
+    }
 }
