@@ -16,6 +16,13 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * HandlerInterceptor：Spring MVC 提供的拦截器接口，用于在请求处理的不同阶段（预处理、后处理、完成后）添加自定义逻辑。
+ * LoginInterceptor：自定义登录验证拦截器，自定义实现HandlerInterceptor中的preHandle、postHandle、afterCompletion三个方法
+ * Spring MVC 在处理请求时，会触发 LoginInterceptor 的 preHandle 方法进行验证。
+ * 验证通过后，用户信息存入 ThreadLocal，供后续组件使用。
+ * 请求处理完成后，afterCompletion 清理 ThreadLocal，释放资源。
+ */
 @Slf4j
 public class LoginInterceptor implements HandlerInterceptor {
 
