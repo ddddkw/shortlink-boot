@@ -5,3 +5,4 @@
 *.yml
 /dclass-link/src/main/resources/application.yml
 target
+/target
