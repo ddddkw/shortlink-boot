@@ -1,9 +1,13 @@
 package org.example.config;
 
+import org.apache.shardingsphere.api.config.sharding.KeyGeneratorConfiguration;
 import org.apache.shardingsphere.api.config.sharding.ShardingRuleConfiguration;
 import org.apache.shardingsphere.api.config.sharding.TableRuleConfiguration;
 import org.apache.shardingsphere.api.config.sharding.strategy.InlineShardingStrategyConfiguration;
 import org.apache.shardingsphere.shardingjdbc.api.ShardingDataSourceFactory;
+import org.apache.shardingsphere.spi.algorithm.keygen.ShardingKeyGeneratorServiceLoader;
+import org.apache.shardingsphere.spi.keygen.ShardingKeyGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,21 +30,46 @@ public class DataSourceConfig {
     @Value("${datasourceConfig.password}")
     private String dbPassword;
 
+    private final SnowFlakeWordIdConfig snowFlakeWordIdConfig;
+
+    @Autowired
+    public DataSourceConfig(SnowFlakeWordIdConfig workerIdConfig) {
+        this.snowFlakeWordIdConfig = workerIdConfig;
+    }
 
     @Bean
     public DataSource dataSource() throws SQLException {
         // 1. 配置数据源
         Map<String, DataSource> dataSourceMap = new HashMap<>();
+        // 通过put，可以配置多个数据源
         dataSourceMap.put("ds0", createDataSource());
+        // dataSourceMap.put("ds1", createDataSource());
 
         // 2. 配置分片规则
         ShardingRuleConfiguration shardingRuleConfig = new ShardingRuleConfiguration();
         shardingRuleConfig.getTableRuleConfigs().add(getTrafficTableRuleConfiguration());
+        // 添加多个表的分片规则，可以配置多个方法
+        // shardingRuleConfig.getTableRuleConfigs().add(getTrafficTableRuleConfiguration1());
+        // shardingRuleConfig.getTableRuleConfigs().add(getTrafficTableRuleConfiguration2());
 
         // 关键修复：设置默认分库策略（指向唯一数据源）
         shardingRuleConfig.setDefaultDatabaseShardingStrategyConfig(
                 new InlineShardingStrategyConfiguration("none", "ds0")
         );
+
+        Properties properties = new Properties();
+        // 自定义方法生成workId
+        properties.setProperty("worker.id", snowFlakeWordIdConfig.getWorkerId()); // 设置工作节点ID
+
+        // 配置主键生成规则
+        KeyGeneratorConfiguration keyGeneratorConfiguration = new KeyGeneratorConfiguration(
+                "SNOWFLAKE",  // 内置雪花算法类型
+                "id",         // 主键字段名
+                properties    // 配置属性
+        );
+
+       // 直接设置配置对象，而非生成器实例
+        shardingRuleConfig.setDefaultKeyGeneratorConfig(keyGeneratorConfiguration);
 
         // 3. 创建 ShardingSphere 数据源
         return ShardingDataSourceFactory.createDataSource(

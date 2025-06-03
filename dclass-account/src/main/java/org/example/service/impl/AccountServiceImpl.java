@@ -16,6 +16,7 @@ import org.example.service.AccountService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.example.service.NotifyService;
 import org.example.utils.CommonUtil;
+import org.example.utils.IdUtil;
 import org.example.utils.JWTUtil;
 import org.example.utils.JsonData;
 import org.springframework.beans.BeanUtils;
@@ -52,7 +53,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, AccountDO> im
         accountDO.setAuth(AuthTypeEnum.DEFAULT.name());
 
         // 生成唯一的账号
-        accountDO.setAccountNo(CommonUtil.getCurrentTimestamp());
+        accountDO.setAccountNo(Long.valueOf(IdUtil.generateSnowFlakeKey().toString()));
 
         // 密码加密 密钥
         accountDO.setSecret("$1$"+ CommonUtil.getStringNumRandom(8));
