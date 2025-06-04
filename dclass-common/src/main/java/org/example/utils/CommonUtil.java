@@ -1,5 +1,6 @@
 package org.example.utils;
 
+import com.google.common.hash.Hashing;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.http.HttpServletRequest;
@@ -173,8 +174,11 @@ public class CommonUtil {
         } catch (IOException e) {
             log.warn("响应json数据给前端异常:{}", e);
         }
+    }
 
-
+    public static long murmurHash32(String parma){
+        long murmur3_32= Hashing.murmur3_32().hashUnencodedChars(parma).padToLong();
+        return murmur3_32;
     }
 
 }
