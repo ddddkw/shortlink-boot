@@ -21,8 +21,11 @@ import java.util.Properties;
 @Configuration
 public class DataSourceConfig {
 
-    @Value("${datasourceConfig.url}")
-    private String dbUrl;
+    @Value("${datasourceConfig.url1}")
+    private String dbUrl1;
+
+    @Value("${datasourceConfig.url2}")
+    private String dbUrl2;
 
     @Value("${datasourceConfig.username}")
     private String dbUser;
@@ -42,20 +45,15 @@ public class DataSourceConfig {
         // 1. 配置数据源
         Map<String, DataSource> dataSourceMap = new HashMap<>();
         // 通过put，可以配置多个数据源
-        dataSourceMap.put("ds1", createDataSource());
-        // dataSourceMap.put("ds2", createDataSource());
+        dataSourceMap.put("ds0", createDataSource0());
+        dataSourceMap.put("ds1", createDataSource1());
 
         // 2. 配置分片规则
         ShardingRuleConfiguration shardingRuleConfig = new ShardingRuleConfiguration();
-//        shardingRuleConfig.getTableRuleConfigs().add(getTrafficTableRuleConfiguration());
+         shardingRuleConfig.getTableRuleConfigs().add(getTableRuleConfiguration());
         // 添加多个表的分片规则，可以配置多个方法
-        // shardingRuleConfig.getTableRuleConfigs().add(getTrafficTableRuleConfiguration1());
-        // shardingRuleConfig.getTableRuleConfigs().add(getTrafficTableRuleConfiguration2());
-
-        // 关键修复：设置默认分库策略（指向唯一数据源）
-        shardingRuleConfig.setDefaultDatabaseShardingStrategyConfig(
-                new InlineShardingStrategyConfiguration("none", "ds1")
-        );
+        // shardingRuleConfig.getTableRuleConfigs().add(getTableRuleConfiguration1());
+        // shardingRuleConfig.getTableRuleConfigs().add(getTableRuleConfiguration2());
 
         Properties properties = new Properties();
         // 自定义方法生成workId
@@ -79,18 +77,15 @@ public class DataSourceConfig {
         );
     }
 
-    private TableRuleConfiguration getTrafficTableRuleConfiguration() {
+    private TableRuleConfiguration getTableRuleConfiguration() {
         // 关键修复：使用正确的分表表达式
         TableRuleConfiguration result = new TableRuleConfiguration(
-                "traffic",
-                "ds0.traffic_$->{0..1}"  // 使用 $-> 语法
+                "link_group",
+                "ds$->{0..1}.link_group"
         );
-
-        result.setTableShardingStrategyConfig(
-                new InlineShardingStrategyConfiguration(
-                        "account_no",
-                        "traffic_$->{account_no % 2}"  // 修正表达式
-                )
+        // 设置分库策略，根据account_no字段进行分库
+        result.setDatabaseShardingStrategyConfig(
+                new InlineShardingStrategyConfiguration("account_no", "ds$->{account_no % 2}")
         );
         return result;
     }
@@ -98,10 +93,10 @@ public class DataSourceConfig {
     public PlatformTransactionManager transactionManager(DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
-    private DataSource createDataSource() {
+    private DataSource createDataSource0() {
         com.zaxxer.hikari.HikariDataSource ds = new com.zaxxer.hikari.HikariDataSource();
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        ds.setJdbcUrl(dbUrl);
+        ds.setJdbcUrl(dbUrl1);
         ds.setUsername(dbUser);
         ds.setPassword(dbPassword);
 
@@ -115,5 +110,23 @@ public class DataSourceConfig {
         ds.setConnectionTestQuery("SELECT 1"); // 连接验证查询
         return ds;
     }
+    private DataSource createDataSource1() {
+        com.zaxxer.hikari.HikariDataSource ds = new com.zaxxer.hikari.HikariDataSource();
+        ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        ds.setJdbcUrl(dbUrl2);
+        ds.setUsername(dbUser);
+        ds.setPassword(dbPassword);
+
+        // 添加连接池优化配置 [8](@ref)
+        ds.setMinimumIdle(5);                // 最小空闲连接数
+        ds.setMaximumPoolSize(20);           // 最大连接数
+        ds.setIdleTimeout(30000);            // 空闲连接超时时间（毫秒）
+        ds.setMaxLifetime(1800000);          // 连接最大生命周期（毫秒）
+        ds.setConnectionTimeout(30000);      // 连接获取超时时间（毫秒）
+        ds.setLeakDetectionThreshold(60000); // 连接泄漏检测阈值（毫秒）
+        ds.setConnectionTestQuery("SELECT 1"); // 连接验证查询
+        return ds;
+    }
+
 
 }
