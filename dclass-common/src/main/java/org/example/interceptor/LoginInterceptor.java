@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 public class LoginInterceptor implements HandlerInterceptor {
 
-    public ThreadLocal<LoginUser> threadLocal = new ThreadLocal<>();
+    public static ThreadLocal<LoginUser> threadLocal = new ThreadLocal<>();
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         if (HttpMethod.OPTIONS.toString().equalsIgnoreCase(request.getMethod())) {
@@ -52,7 +52,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             String auth = claims.get("auth").toString();
 
             LoginUser loginUser = LoginUser.builder().
-                    accountNo(accountNo)
+                    accountNo(Long.valueOf(accountNo))
                     .username(username)
                     .headImg(headImg)
                     .mail(mail)
@@ -66,7 +66,8 @@ public class LoginInterceptor implements HandlerInterceptor {
             threadLocal.set(loginUser);
             return true;
         }
-        return HandlerInterceptor.super.preHandle(request, response, handler);
+        CommonUtil.sendJsonMessage(response,JsonData.buildResult(BizCodeEnum.ACCOUNT_UNLOGIN));
+        return false;
     }
 
     @Override

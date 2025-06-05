@@ -54,7 +54,11 @@ public class JWTUtil {
      */
     public static Claims checkJWT(String token){
         try {
-            Claims body = Jwts.parser().setSigningKey(SECRET).parseClaimsJwt(token.replace(TOKEN_PREFIX,"")).getBody();
+            String jwt = token.replace(TOKEN_PREFIX, "").trim();
+            Claims body = Jwts.parser()
+                    .setSigningKey(SECRET) // 确保密钥类型与算法匹配
+                    .parseClaimsJws(jwt) // 使用 parseClaimsJws 解析签名令牌
+                    .getBody();
             return body;
         }catch (Exception e){
             log.error(e.getMessage());

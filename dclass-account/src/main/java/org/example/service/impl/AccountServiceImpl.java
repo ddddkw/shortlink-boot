@@ -53,7 +53,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, AccountDO> im
         accountDO.setAuth(AuthTypeEnum.DEFAULT.name());
 
         // 生成唯一的账号
-        accountDO.setAccountNo(Long.valueOf(IdUtil.generateSnowFlakeKey().toString()));
+        accountDO.setAccountNo(IdUtil.generateSnowFlakeKey().toString());
 
         // 密码加密 密钥
         accountDO.setSecret("$1$"+ CommonUtil.getStringNumRandom(8));

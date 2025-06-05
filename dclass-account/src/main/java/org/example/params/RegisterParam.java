@@ -9,7 +9,7 @@ public class RegisterParam {
     /**
      * 账号
      */
-    private String accountNo;
+    private Long accountNo;
 
     /**
      * 手机号
