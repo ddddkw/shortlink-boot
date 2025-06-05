@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -92,7 +94,10 @@ public class DataSourceConfig {
         );
         return result;
     }
-
+    @Bean
+    public PlatformTransactionManager transactionManager(DataSource dataSource) {
+        return new DataSourceTransactionManager(dataSource);
+    }
     private DataSource createDataSource() {
         com.zaxxer.hikari.HikariDataSource ds = new com.zaxxer.hikari.HikariDataSource();
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -101,9 +106,13 @@ public class DataSourceConfig {
         ds.setPassword(dbPassword);
 
         // 添加连接池优化配置 [8](@ref)
-        ds.setMinimumIdle(10);       // 最小空闲连接
-        ds.setMaximumPoolSize(100);  // 最大连接数
-        ds.setConnectionTimeout(30000); // 连接超时(ms)
+        ds.setMinimumIdle(5);                // 最小空闲连接数
+        ds.setMaximumPoolSize(20);           // 最大连接数
+        ds.setIdleTimeout(30000);            // 空闲连接超时时间（毫秒）
+        ds.setMaxLifetime(1800000);          // 连接最大生命周期（毫秒）
+        ds.setConnectionTimeout(30000);      // 连接获取超时时间（毫秒）
+        ds.setLeakDetectionThreshold(60000); // 连接泄漏检测阈值（毫秒）
+        ds.setConnectionTestQuery("SELECT 1"); // 连接验证查询
         return ds;
     }
 
