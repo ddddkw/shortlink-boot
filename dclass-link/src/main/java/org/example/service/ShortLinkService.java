@@ -13,4 +13,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ShortLinkService extends IService<ShortLinkDO> {
 
+    int addShortLink(ShortLinkDO shortLinkDO);
+
+    ShortLinkDO findByShortLinkCode(String shortLinkCode);
+
+    int delShortLink(String shortLinkCode, Long accountNo);
+
 }

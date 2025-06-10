@@ -11,7 +11,6 @@ public class ShardingDBConfig {
     static {
         DBPrefixList.add("0");
         DBPrefixList.add("1");
-        DBPrefixList.add("a");
     }
 
     private static Random random = new Random();

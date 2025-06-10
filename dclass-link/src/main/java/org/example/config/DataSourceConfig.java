@@ -7,6 +7,7 @@ import org.apache.shardingsphere.api.config.sharding.strategy.InlineShardingStra
 import org.apache.shardingsphere.api.config.sharding.strategy.StandardShardingStrategyConfiguration;
 import org.apache.shardingsphere.shardingjdbc.api.ShardingDataSourceFactory;
 import org.example.strategy.CustomDBPreciseShardingAlgorithm;
+import org.example.strategy.CustomTablePreciseShardingAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -52,9 +53,9 @@ public class DataSourceConfig {
 
         // 2. 配置分片规则
         ShardingRuleConfiguration shardingRuleConfig = new ShardingRuleConfiguration();
-         shardingRuleConfig.getTableRuleConfigs().add(getTableRuleConfiguration());
+         shardingRuleConfig.getTableRuleConfigs().add(getLinkGroupRuleConfiguration());
+         shardingRuleConfig.getTableRuleConfigs().add(getShortLinkRuleConfiguration());
         // 添加多个表的分片规则，可以配置多个方法
-        // shardingRuleConfig.getTableRuleConfigs().add(getTableRuleConfiguration1());
         // shardingRuleConfig.getTableRuleConfigs().add(getTableRuleConfiguration2());
 
         Properties properties = new Properties();
@@ -79,20 +80,42 @@ public class DataSourceConfig {
         );
     }
 
-    private TableRuleConfiguration getTableRuleConfiguration() {
-        // 关键修复：使用正确的分表表达式
+    private TableRuleConfiguration getLinkGroupRuleConfiguration() {
+        // 使用正确的分表表达式
         TableRuleConfiguration result = new TableRuleConfiguration(
                 "link_group",
                 "ds$->{0..1}.link_group"
         );
-        StandardShardingStrategyConfiguration databaseShardingStrategy =
-                new StandardShardingStrategyConfiguration(
-                        "account_no",
-                        new CustomDBPreciseShardingAlgorithm()  // 实例化您的自定义算法
-                );
         // 设置分库策略，根据account_no字段进行分库
         result.setDatabaseShardingStrategyConfig(
+                new InlineShardingStrategyConfiguration("account_no", "ds$->{account_no % 2}")
+        );
+        return result;
+    }
+
+    private TableRuleConfiguration getShortLinkRuleConfiguration() {
+        StandardShardingStrategyConfiguration databaseShardingStrategy =
+                new StandardShardingStrategyConfiguration(
+                        "code",
+                        new CustomDBPreciseShardingAlgorithm()  // 实例化您的自定义分库算法
+                );
+        StandardShardingStrategyConfiguration tableShardingStrategy =
+                new StandardShardingStrategyConfiguration(
+                        "code",
+                        new CustomTablePreciseShardingAlgorithm()  // 实例化您的自定义分库算法
+                );
+        // 关键修复：使用正确的分表表达式
+        TableRuleConfiguration result = new TableRuleConfiguration(
+                "short_link",
+                "ds$->{0..1}.short_link_$->{0..1}"
+        );
+        // 设置分库策略，根据短链码code字段进行分库
+        result.setDatabaseShardingStrategyConfig(
                 databaseShardingStrategy
+        );
+        // 设置分表策略，根据短链码code字段进行分表
+        result.setTableShardingStrategyConfig(
+                tableShardingStrategy
         );
         return result;
     }

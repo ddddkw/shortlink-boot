@@ -6,17 +6,17 @@ import java.util.Random;
 
 public class ShardingTableConfig {
 
-    private static  final List<String> tablePrefixList = new ArrayList<>();
+    private static  final List<String> TablePrefixList = new ArrayList<>();
 
     static {
-        tablePrefixList.add("0");
-        tablePrefixList.add("1");
+        TablePrefixList.add("0");
+        TablePrefixList.add("1");
     }
 
     private static Random random = new Random();
 
     public static String getRandomPrefix(){
-        int index = random.nextInt(tablePrefixList.size());
-        return tablePrefixList.get(index);
+        int index = random.nextInt(TablePrefixList.size());
+        return TablePrefixList.get(index);
     }
 }
