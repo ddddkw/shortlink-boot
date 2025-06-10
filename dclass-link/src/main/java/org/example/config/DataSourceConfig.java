@@ -4,7 +4,9 @@ import org.apache.shardingsphere.api.config.sharding.KeyGeneratorConfiguration;
 import org.apache.shardingsphere.api.config.sharding.ShardingRuleConfiguration;
 import org.apache.shardingsphere.api.config.sharding.TableRuleConfiguration;
 import org.apache.shardingsphere.api.config.sharding.strategy.InlineShardingStrategyConfiguration;
+import org.apache.shardingsphere.api.config.sharding.strategy.StandardShardingStrategyConfiguration;
 import org.apache.shardingsphere.shardingjdbc.api.ShardingDataSourceFactory;
+import org.example.strategy.CustomDBPreciseShardingAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -83,9 +85,14 @@ public class DataSourceConfig {
                 "link_group",
                 "ds$->{0..1}.link_group"
         );
+        StandardShardingStrategyConfiguration databaseShardingStrategy =
+                new StandardShardingStrategyConfiguration(
+                        "account_no",
+                        new CustomDBPreciseShardingAlgorithm()  // 实例化您的自定义算法
+                );
         // 设置分库策略，根据account_no字段进行分库
         result.setDatabaseShardingStrategyConfig(
-                new InlineShardingStrategyConfiguration("account_no", "ds$->{account_no % 2}")
+                databaseShardingStrategy
         );
         return result;
     }
