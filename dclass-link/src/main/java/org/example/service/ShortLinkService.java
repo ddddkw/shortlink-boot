@@ -2,6 +2,7 @@ package org.example.service;
 
 import org.example.entity.ShortLinkDO;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.example.vo.ShortLinkVo;
 
 /**
  * <p>
@@ -18,5 +19,7 @@ public interface ShortLinkService extends IService<ShortLinkDO> {
     ShortLinkDO findByShortLinkCode(String shortLinkCode);
 
     int delShortLink(String shortLinkCode, Long accountNo);
+
+    ShortLinkVo parseShortLinkVo(String shortLinkCode);
 
 }

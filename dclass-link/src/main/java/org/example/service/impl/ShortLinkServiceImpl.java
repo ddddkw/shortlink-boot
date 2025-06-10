@@ -2,10 +2,13 @@ package org.example.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import lombok.extern.slf4j.Slf4j;
 import org.example.entity.ShortLinkDO;
 import org.example.mapper.ShortLinkMapper;
 import org.example.service.ShortLinkService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.example.vo.ShortLinkVo;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +20,7 @@ import org.springframework.stereotype.Service;
  * @since 2025-06-05
  */
 @Service
+@Slf4j
 public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLinkDO> implements ShortLinkService {
 
     public int addShortLink(ShortLinkDO shortLinkDO){
@@ -38,6 +42,15 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         queryWrapper.eq("code",shortLinkCode);
         int rows = this.baseMapper.update(shortLinkDO,queryWrapper);
         return rows;
+    }
+
+    public ShortLinkVo parseShortLinkVo(String shortLinkCode){
+        QueryWrapper queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("code",shortLinkCode);
+        ShortLinkDO shortLinkDO = this.baseMapper.selectOne(queryWrapper);
+        ShortLinkVo shortLinkVo = new ShortLinkVo();
+        BeanUtils.copyProperties(shortLinkDO,shortLinkVo);
+        return shortLinkVo;
     }
 
 }
