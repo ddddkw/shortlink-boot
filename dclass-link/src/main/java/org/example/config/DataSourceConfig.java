@@ -53,8 +53,8 @@ public class DataSourceConfig {
 
         // 2. 配置分片规则
         ShardingRuleConfiguration shardingRuleConfig = new ShardingRuleConfiguration();
-         shardingRuleConfig.getTableRuleConfigs().add(getLinkGroupRuleConfiguration());
-         shardingRuleConfig.getTableRuleConfigs().add(getShortLinkRuleConfiguration());
+        shardingRuleConfig.getTableRuleConfigs().add(getLinkGroupRuleConfiguration());
+        shardingRuleConfig.getTableRuleConfigs().add(getShortLinkRuleConfiguration());
         // 添加多个表的分片规则，可以配置多个方法
         // shardingRuleConfig.getTableRuleConfigs().add(getTableRuleConfiguration2());
 

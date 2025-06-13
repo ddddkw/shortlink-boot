@@ -1,5 +1,6 @@
 package org.example.biz;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.hash.Hashing;
 import lombok.extern.slf4j.Slf4j;
 import org.example.LinkApplication;
@@ -15,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 @RunWith(SpringRunner.class)
@@ -69,4 +72,5 @@ public class ShortLinkTest {
             log.info("shortLinkCode:"+shortLinkCode);
         }
     }
+
 }
