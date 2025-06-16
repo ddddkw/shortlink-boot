@@ -23,27 +23,18 @@ public class ShortLinkAddParam {
     private String originalUrl;
 
     /**
-     * 短链压缩码
+     * 域名id
      */
-    private String code;
+    private Long domainId;
+
+    /**
+     * 短链类型
+     */
+    private String domainType;
 
     /**
      * 过期时间，长久就是-1
      */
     private Date expired;
 
-    /**
-     * 账号唯一编号
-     */
-    private Long accountNo;
-
-    /**
-     * 状态，lock是锁定不可用，active是可用
-     */
-    private String state;
-
-    /**
-     * 链接产品层级：FIRST 免费青铜、SECOND黄金、THIRD钻石
-     */
-    private String linkType;
 }

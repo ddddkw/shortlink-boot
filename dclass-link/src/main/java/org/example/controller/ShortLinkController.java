@@ -2,13 +2,16 @@ package org.example.controller;
 
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import org.example.config.RabbitMQConfig;
 import org.example.entity.ShortLinkDO;
 import org.example.params.ShortLinkAddParam;
 import org.example.service.ShortLinkService;
 import org.example.utils.JsonData;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -29,11 +32,11 @@ public class ShortLinkController {
     private ShortLinkService shortLinkService;
 
     @PostMapping("/add")
-    public JsonData add(ShortLinkAddParam shortLinkAddParam){
+    public JsonData add(@RequestBody ShortLinkAddParam shortLinkAddParam){
         ShortLinkDO shortLinkDO = new ShortLinkDO();
         BeanUtils.copyProperties(shortLinkAddParam,shortLinkDO);
-        shortLinkService.addShortLink(shortLinkDO);
-        return JsonData.buildSuccess();
+        int rows = shortLinkService.addShortLink(shortLinkDO);
+        return rows==1?JsonData.buildSuccess():JsonData.buildError("新增失败");
     }
 }
 
