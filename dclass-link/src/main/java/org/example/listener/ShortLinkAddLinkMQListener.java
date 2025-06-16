@@ -29,7 +29,6 @@ public class ShortLinkAddLinkMQListener {
         log.info("监听到消息ShortLinkAddLinkMQListener message消息内容:{}",message);
         long tag = message.getMessageProperties().getDeliveryTag();
         try{
-
             //TODO 处理业务逻辑
 
         }catch (Exception e){
