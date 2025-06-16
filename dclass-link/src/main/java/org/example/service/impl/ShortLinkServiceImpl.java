@@ -46,7 +46,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
 
     public int addShortLink(ShortLinkDO shortLinkDO){
         long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
-
+        int rows = this.baseMapper.insert(shortLinkDO);
         EventMessage eventMessage= EventMessage.builder().accountNo(accountNo)
                 .content(JsonUtil.obj2Json(shortLinkDO))
                 .messageId(IdUtil.generateSnowFlakeKey().toString())
@@ -58,7 +58,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         shortLinkDO.setSign(CommonUtil.MD5(shortLinkDO.getOriginalUrl()));
         shortLinkDO.setDel(0);
         shortLinkDO.setAccountNo(accountNo);
-        int rows = this.baseMapper.insert(shortLinkDO);
+
         return rows;
     }
 
