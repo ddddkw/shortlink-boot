@@ -55,6 +55,7 @@ public class DataSourceConfig {
         ShardingRuleConfiguration shardingRuleConfig = new ShardingRuleConfiguration();
         shardingRuleConfig.getTableRuleConfigs().add(getLinkGroupRuleConfiguration());
         shardingRuleConfig.getTableRuleConfigs().add(getShortLinkRuleConfiguration());
+        shardingRuleConfig.getTableRuleConfigs().add(getDomainRuleConfiguration());
         // 添加多个表的分片规则，可以配置多个方法
         // shardingRuleConfig.getTableRuleConfigs().add(getTableRuleConfiguration2());
 
@@ -90,6 +91,19 @@ public class DataSourceConfig {
         result.setDatabaseShardingStrategyConfig(
                 new InlineShardingStrategyConfiguration("account_no", "ds$->{account_no % 2}")
         );
+        return result;
+    }
+
+    private TableRuleConfiguration getDomainRuleConfiguration() {
+        // 使用正确的分表表达式
+        TableRuleConfiguration result = new TableRuleConfiguration(
+                "domain",
+                "ds0.domain"
+        );
+        // 设置分库策略，根据account_no字段进行分库
+//        result.setDatabaseShardingStrategyConfig(
+//                new InlineShardingStrategyConfiguration("account_no", "ds$->{account_no % 2}")
+//        );
         return result;
     }
 
