@@ -46,6 +46,10 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
 
     public int addShortLink(ShortLinkDO shortLinkDO){
         long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
+        shortLinkDO.setCode(ShardingDBConfig.getRandomPrefix()+shortLinkComponent.createShortLinkCode(shortLinkDO.getOriginalUrl())+ ShardingTableConfig.getRandomPrefix());
+        shortLinkDO.setSign(CommonUtil.MD5(shortLinkDO.getOriginalUrl()));
+        shortLinkDO.setDel(0);
+        shortLinkDO.setAccountNo(accountNo);
         int rows = this.baseMapper.insert(shortLinkDO);
         EventMessage eventMessage= EventMessage.builder().accountNo(accountNo)
                 .content(JsonUtil.obj2Json(shortLinkDO))
@@ -54,11 +58,6 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                 .build();
         // 发送消息，依据rabbitMQConfig.getShortLinkAddRoutingKey() 通过key模糊匹配配置中的key，然后进行交换机和队列的绑定
         rabbitTemplate.convertAndSend(rabbitMQConfig.getShortLinkEventExchange(),rabbitMQConfig.getShortLinkAddRoutingKey(),eventMessage);
-        shortLinkDO.setCode(ShardingDBConfig.getRandomPrefix()+shortLinkComponent.createShortLinkCode(shortLinkDO.getOriginalUrl())+ ShardingTableConfig.getRandomPrefix());
-        shortLinkDO.setSign(CommonUtil.MD5(shortLinkDO.getOriginalUrl()));
-        shortLinkDO.setDel(0);
-        shortLinkDO.setAccountNo(accountNo);
-
         return rows;
     }
 
