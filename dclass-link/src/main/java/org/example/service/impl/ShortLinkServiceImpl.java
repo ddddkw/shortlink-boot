@@ -32,7 +32,11 @@ import org.example.vo.ShortLinkVo;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
 
 /**
  * <p>
@@ -63,6 +67,9 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
 
     @Autowired
     private GroupCodeMappingService groupCodeMappingService;
+
+    @Autowired
+    private RedisTemplate<Object,Object> redisTemplate;
 
     public int addShortLink(ShortLinkDO shortLinkDO){
         long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
@@ -124,42 +131,53 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         String code = shortLinkComponent.createShortLinkCode(shortLinkAddParam.getOriginalUrl());
 
         //TODO 加锁
+        String script="if redis.call('EXISTS',KEYS[1])==0 then " +
+                "redis.call('set',KEYS[1],ARGV[1]);" +
+                "redis.call('expire',KEYS[1],ARGV[2]);" +
+                "return 1;" +
+                "elseif redis.call('get',KEYS[1]) == ARGV[1] then " +
+                "return 2;" +
+                "else return 0;" +
+                "end;";
+        Long result = (Long) redisTemplate.execute(
+                new DefaultRedisScript<>(script,Long.class), Arrays.asList(code),accountNo,100
+        );
 
-        // 判断短链码是否被占用
-        ShortLinkDO shortLinkDOInDB = findByShortLinkCode(code);
-        if (shortLinkDOInDB == null) {
-            // C端添加短链
-            if (EventMessageType.SHORT_LINK_ADD_LINK.name().equalsIgnoreCase(messageType)) {
-                ShortLinkDO shortLinkDO = ShortLinkDO.builder()
-                        .accountNo(accountNo)
-                        .code(code)
-                        .title(shortLinkAddParam.getTitle())
-                        .originalUrl(shortLinkAddParam.getOriginalUrl())
-                        .domain(domainDO.getValue())
-                        .groupId(linkGroupVo.getId())
-                        .expired(shortLinkAddParam.getExpired())
-                        .sign(originUrlDigest)
-                        .state(ShortLinkEnum.ACTIVE.name())
-                        .del(0)
-                        .build();
-                addShortLink(shortLinkDO);
-                return true;
-            } else if (EventMessageType.SHORT_LINK_ADD_MAPPING.name().equalsIgnoreCase(messageType)){ // B端添加短链
-                GroupCodeMappingDO groupCodeMappingDO = GroupCodeMappingDO.builder()
-                        .accountNo(accountNo)
-                        .code(code)
-                        .title(shortLinkAddParam.getTitle())
-                        .originalUrl(shortLinkAddParam.getOriginalUrl())
-                        .domain(domainDO.getValue())
-                        .groupId(linkGroupVo.getId())
-                        .expired(shortLinkAddParam.getExpired())
-                        .sign(originUrlDigest)
-                        .state(ShortLinkEnum.ACTIVE.name())
-                        .del(0)
-                        .build();
-                groupCodeMappingService.add(groupCodeMappingDO);
-                return true;
-            }
+        // C端添加短链
+        if (EventMessageType.SHORT_LINK_ADD_LINK.name().equalsIgnoreCase(messageType)) {
+            // 判断短链码是否被占用
+            ShortLinkDO shortLinkDOInDB = findByShortLinkCode(code);
+            ShortLinkDO shortLinkDO = ShortLinkDO.builder()
+                    .accountNo(accountNo)
+                    .code(code)
+                    .title(shortLinkAddParam.getTitle())
+                    .originalUrl(shortLinkAddParam.getOriginalUrl())
+                    .domain(domainDO.getValue())
+                    .groupId(linkGroupVo.getId())
+                    .expired(shortLinkAddParam.getExpired())
+                    .sign(originUrlDigest)
+                    .state(ShortLinkEnum.ACTIVE.name())
+                    .del(0)
+                    .build();
+            addShortLink(shortLinkDO);
+            return true;
+        } else if (EventMessageType.SHORT_LINK_ADD_MAPPING.name().equalsIgnoreCase(messageType)){ // B端添加短链
+            // 通过账号、短链码和分组查询对应的短链数据，判断短链码是否被占用
+            GroupCodeMappingDO groupCodeMappingDOInDB = groupCodeMappingService.findByCodeAndGroupId(code,linkGroupVo.getId(),accountNo);
+            GroupCodeMappingDO groupCodeMappingDO = GroupCodeMappingDO.builder()
+                    .accountNo(accountNo)
+                    .code(code)
+                    .title(shortLinkAddParam.getTitle())
+                    .originalUrl(shortLinkAddParam.getOriginalUrl())
+                    .domain(domainDO.getValue())
+                    .groupId(linkGroupVo.getId())
+                    .expired(shortLinkAddParam.getExpired())
+                    .sign(originUrlDigest)
+                    .state(ShortLinkEnum.ACTIVE.name())
+                    .del(0)
+                    .build();
+            groupCodeMappingService.add(groupCodeMappingDO);
+            return true;
         }
         return false;
     }

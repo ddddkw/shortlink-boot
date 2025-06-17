@@ -23,6 +23,6 @@ public class InterceptorConfig implements WebMvcConfigurer {
                 // 添加拦截的路径
                 .addPathPatterns("/linkGroup/**","/shortLink/**","/domain/**")
                 // 排除不拦截的
-                .excludePathPatterns("/account/register","/account/login","/notify/*");
+                .excludePathPatterns("/account/register","/account/login","/notify/*","/domain/test");
     }
 }

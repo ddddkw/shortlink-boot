@@ -18,6 +18,8 @@ public interface GroupCodeMappingService extends IService<GroupCodeMappingDO> {
 
     GroupCodeMappingDO findByGroupIdAndMapperId(Long mapperId,Long accountNo,Long groupId);
 
+    GroupCodeMappingDO findByCodeAndGroupId(String shortLinkCode,Long groupId,Long accountNO);
+
     int add(GroupCodeMappingDO groupCodeMappingDO);
 
     int del(String shortLinkCode,Long accountNo,Long groupId);

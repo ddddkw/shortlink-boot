@@ -5,12 +5,21 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.support.SFunction;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
+import org.example.config.RabbitMQConfig;
 import org.example.entity.GroupCodeMappingDO;
+import org.example.enums.EventMessageType;
+import org.example.interceptor.LoginInterceptor;
 import org.example.mapper.GroupCodeMappingMapper;
+import org.example.model.EventMessage;
 import org.example.service.GroupCodeMappingService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.example.utils.CommonUtil;
+import org.example.utils.IdUtil;
+import org.example.utils.JsonUtil;
 import org.example.vo.GroupCodeMappingVo;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -29,6 +38,13 @@ import java.util.stream.Collectors;
 @Slf4j
 public class GroupCodeMappingServiceImpl extends ServiceImpl<GroupCodeMappingMapper, GroupCodeMappingDO> implements GroupCodeMappingService {
 
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    private RabbitMQConfig rabbitMQConfig;
+
     public GroupCodeMappingDO findByGroupIdAndMapperId(Long mapperId,Long accountNo,Long groupId){
         QueryWrapper queryWrapper = new QueryWrapper<GroupCodeMappingDO>()
                 .eq("id", mapperId)
@@ -38,9 +54,31 @@ public class GroupCodeMappingServiceImpl extends ServiceImpl<GroupCodeMappingMap
         return groupCodeMappingDO;
     }
 
+    public GroupCodeMappingDO findByCodeAndGroupId(String shortLinkCode,Long groupId,Long accountNO){
+        QueryWrapper queryWrapper = new QueryWrapper<>().eq("code",shortLinkCode).eq("group_id",groupId).eq("accountNo",accountNO);
+        GroupCodeMappingDO groupCodeMappingDO = this.baseMapper.selectOne(queryWrapper);
+        return groupCodeMappingDO;
+    }
+
+    /**
+     * B端新增短链
+     * @param groupCodeMappingDO
+     * @return
+     */
     public int add(GroupCodeMappingDO groupCodeMappingDO){
-        int rows = this.baseMapper.insert(groupCodeMappingDO);
-        return rows;
+        long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
+
+        String newOriginUrl = CommonUtil.addUrlPrefix(groupCodeMappingDO.getOriginalUrl());
+        groupCodeMappingDO.setOriginalUrl(newOriginUrl);
+
+        EventMessage eventMessage= EventMessage.builder().accountNo(accountNo)
+                .content(JsonUtil.obj2Json(groupCodeMappingDO))
+                .messageId(IdUtil.generateSnowFlakeKey().toString())
+                .eventMessageType(EventMessageType.SHORT_LINK_ADD_MAPPING.name())
+                .build();
+        // 发送消息，依据rabbitMQConfig.getShortLinkAddRoutingKey() 通过key模糊匹配配置中的key，然后进行交换机和队列的绑定
+        rabbitTemplate.convertAndSend(rabbitMQConfig.getShortLinkEventExchange(),rabbitMQConfig.getShortLinkAddRoutingKey(),eventMessage);
+        return 1;
     }
 
     /**
