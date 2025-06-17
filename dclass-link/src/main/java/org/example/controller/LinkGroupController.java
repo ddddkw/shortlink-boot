@@ -2,6 +2,7 @@ package org.example.controller;
 
 
 import org.example.enums.BizCodeEnum;
+import org.example.interceptor.LoginInterceptor;
 import org.example.params.LinkGroupAddParam;
 import org.example.params.LinkGroupUpdateParam;
 import org.example.service.LinkGroupService;
@@ -41,7 +42,8 @@ public class LinkGroupController {
 
     @GetMapping("/detail/{group_id}")
     public JsonData detail(@PathVariable("group_id") Long groupId){
-        LinkGroupVo linkGroupVo = linkGroupService.detail(groupId);
+        Long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
+        LinkGroupVo linkGroupVo = linkGroupService.detail(groupId,accountNo);
         return JsonData.buildSuccess(linkGroupVo);
     }
 

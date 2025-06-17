@@ -2,6 +2,7 @@ package org.example.service;
 
 import org.example.entity.ShortLinkDO;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.example.model.EventMessage;
 import org.example.vo.ShortLinkVo;
 
 /**
@@ -14,6 +15,11 @@ import org.example.vo.ShortLinkVo;
  */
 public interface ShortLinkService extends IService<ShortLinkDO> {
 
+    /**
+     * 创建短链
+     * @param shortLinkDO
+     * @return
+     */
     int addShortLink(ShortLinkDO shortLinkDO);
 
     ShortLinkDO findByShortLinkCode(String shortLinkCode);
@@ -21,5 +27,11 @@ public interface ShortLinkService extends IService<ShortLinkDO> {
     int delShortLink(String shortLinkCode, Long accountNo);
 
     ShortLinkVo parseShortLinkVo(String shortLinkCode);
+
+    /**
+     * 处理新增短链消息
+     * @return
+     */
+    Boolean handlerAddShortLink(EventMessage eventMessage);
 
 }

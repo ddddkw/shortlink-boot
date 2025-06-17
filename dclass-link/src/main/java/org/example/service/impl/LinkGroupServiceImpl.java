@@ -52,8 +52,7 @@ public class LinkGroupServiceImpl extends ServiceImpl<LinkGroupMapper, LinkGroup
         return 0;
     }
 
-    public LinkGroupVo detail(Long groupId){
-        Long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
+    public LinkGroupVo detail(Long groupId,Long accountNo){
         LinkGroupDO linkGroupDO = this.baseMapper.selectById(groupId);
         LinkGroupVo linkGroupVo = new LinkGroupVo();
         if (accountNo.equals(linkGroupDO.getAccountNo())) {

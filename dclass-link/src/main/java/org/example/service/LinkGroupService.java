@@ -22,7 +22,7 @@ public interface LinkGroupService extends IService<LinkGroupDO> {
 
     int del(Long groupId);
 
-    LinkGroupVo detail(Long groupId);
+    LinkGroupVo detail(Long groupId,Long accountNo);
 
     List<LinkGroupVo> groupList();
 
