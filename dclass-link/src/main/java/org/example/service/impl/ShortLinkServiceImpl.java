@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.component.ShortLinkComponent;
 import org.example.config.RabbitMQConfig;
 import org.example.entity.DomainDO;
+import org.example.entity.GroupCodeMappingDO;
 import org.example.entity.LinkGroupDO;
 import org.example.entity.ShortLinkDO;
 import org.example.enums.DomainTypeEnum;
@@ -17,6 +18,7 @@ import org.example.mapper.ShortLinkMapper;
 import org.example.model.EventMessage;
 import org.example.params.ShortLinkAddParam;
 import org.example.service.DomainService;
+import org.example.service.GroupCodeMappingService;
 import org.example.service.LinkGroupService;
 import org.example.service.ShortLinkService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -34,7 +36,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * <p>
- *  服务实现类
+ *  C端短链实现类
  * </p>
  *
  * @author dkw
@@ -58,6 +60,9 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
 
     @Autowired
     private LinkGroupService linkGroupService;
+
+    @Autowired
+    private GroupCodeMappingService groupCodeMappingService;
 
     public int addShortLink(ShortLinkDO shortLinkDO){
         long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
@@ -96,6 +101,11 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         return shortLinkVo;
     }
 
+    /**
+     * 消费者的处理逻辑
+     * @param eventMessage
+     * @return
+     */
     public Boolean handlerAddShortLink(EventMessage eventMessage){
         Long accountNo = eventMessage.getAccountNo();
         String messageType = eventMessage.getEventMessageType();
@@ -106,21 +116,48 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         LinkGroupVo linkGroupVo = checkLinkGroup(shortLinkAddParam.getGroupId(),accountNo);
         // 长链摘要
         String originUrlDigest =  CommonUtil.MD5(shortLinkAddParam.getOriginalUrl());
-        String code = ShardingDBConfig.getRandomPrefix()+shortLinkComponent.createShortLinkCode(shortLinkAddParam.getOriginalUrl())+ ShardingTableConfig.getRandomPrefix();
-        ShortLinkDO shortLinkDO = ShortLinkDO.builder()
-                .accountNo(accountNo)
-                .code(code)
-                .title(shortLinkAddParam.getTitle())
-                .originalUrl(shortLinkAddParam.getOriginalUrl())
-                .domain(domainDO.getValue())
-                .groupId(linkGroupVo.getId())
-                .expired(shortLinkAddParam.getExpired())
-                .sign(originUrlDigest)
-                .state(ShortLinkEnum.ACTIVE.name())
-                .del(0)
-                .build();
-        addShortLink(shortLinkDO);
-        return true;
+        // 生成短链码
+        String code = shortLinkComponent.createShortLinkCode(shortLinkAddParam.getOriginalUrl());
+
+        //TODO 加锁
+
+        // 判断短链码是否被占用
+        ShortLinkDO shortLinkDOInDB = findByShortLinkCode(code);
+        if (shortLinkDOInDB == null) {
+            // C端添加短链
+            if (EventMessageType.SHORT_LINK_ADD_LINK.name().equalsIgnoreCase(messageType)) {
+                ShortLinkDO shortLinkDO = ShortLinkDO.builder()
+                        .accountNo(accountNo)
+                        .code(code)
+                        .title(shortLinkAddParam.getTitle())
+                        .originalUrl(shortLinkAddParam.getOriginalUrl())
+                        .domain(domainDO.getValue())
+                        .groupId(linkGroupVo.getId())
+                        .expired(shortLinkAddParam.getExpired())
+                        .sign(originUrlDigest)
+                        .state(ShortLinkEnum.ACTIVE.name())
+                        .del(0)
+                        .build();
+                addShortLink(shortLinkDO);
+                return true;
+            } else if (EventMessageType.SHORT_LINK_ADD_MAPPING.name().equalsIgnoreCase(messageType)){ // B端添加短链
+                GroupCodeMappingDO groupCodeMappingDO = GroupCodeMappingDO.builder()
+                        .accountNo(accountNo)
+                        .code(code)
+                        .title(shortLinkAddParam.getTitle())
+                        .originalUrl(shortLinkAddParam.getOriginalUrl())
+                        .domain(domainDO.getValue())
+                        .groupId(linkGroupVo.getId())
+                        .expired(shortLinkAddParam.getExpired())
+                        .sign(originUrlDigest)
+                        .state(ShortLinkEnum.ACTIVE.name())
+                        .del(0)
+                        .build();
+                groupCodeMappingService.add(groupCodeMappingDO);
+                return true;
+            }
+        }
+        return false;
     }
 
     private DomainDO checkDomain(String domainType, Long domainId, Long accountNo){

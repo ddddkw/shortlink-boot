@@ -13,10 +13,9 @@ public class ShardingDBConfig {
         DBPrefixList.add("1");
     }
 
-    private static Random random = new Random();
-
-    public static String getRandomPrefix(){
-        int index = random.nextInt(DBPrefixList.size());
+    public static String getRandomPrefix(String code){
+        int hashCode = code.hashCode();
+        int index = Math.abs(hashCode) % DBPrefixList.size();
         return DBPrefixList.get(index);
     }
 }

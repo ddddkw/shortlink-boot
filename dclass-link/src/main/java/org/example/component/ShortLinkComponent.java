@@ -1,6 +1,8 @@
 package org.example.component;
 
 
+import org.example.strategy.ShardingDBConfig;
+import org.example.strategy.ShardingTableConfig;
 import org.example.utils.CommonUtil;
 import org.springframework.stereotype.Component;
 
@@ -18,8 +20,9 @@ public class ShortLinkComponent {
         }
         // 获取原始url的hash值
         long murmurHash = CommonUtil.murmurHash32(originalUrl);
+        String shortLinkCode = ShardingDBConfig.getRandomPrefix(encodeToBase62(murmurHash))+encodeToBase62(murmurHash)+ ShardingTableConfig.getRandomPrefix(encodeToBase62(murmurHash));
         // 将原始url的hash值转换为64进制，就是转换后的短链
-        return encodeToBase62(murmurHash);
+        return shortLinkCode;
     }
 
     /**

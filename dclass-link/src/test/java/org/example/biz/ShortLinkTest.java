@@ -55,19 +55,9 @@ public class ShortLinkTest {
     private ShortLinkService shortLinkService;
     @Test
     public void testShortLink(){
-        Random random = new Random();
-        for (int i = 0; i < 100; i++) {
-            int num1 = random.nextInt(10);
-            int num2 = random.nextInt(1000000);
-            int num3 = random.nextInt(1000000);
-            String originalUrl = num1 + "ddclass" + num2 + ".net" + num3;
-            String shortLinkCode = ShardingDBConfig.getRandomPrefix()+shortLinkComponent.createShortLinkCode(originalUrl)+ ShardingTableConfig.getRandomPrefix();
-            ShortLinkDO shortLinkDO = new ShortLinkDO();
-            shortLinkDO.setCode(shortLinkCode);
-            shortLinkDO.setAccountNo(Long.valueOf(num3));
-            shortLinkDO.setSign(CommonUtil.MD5(originalUrl));
-            shortLinkDO.setDel(0);
-            shortLinkService.addShortLink(shortLinkDO);
+        for (int i = 0; i < 10; i++) {
+            String originalUrl = "https://xsclass.net";
+            String shortLinkCode = shortLinkComponent.createShortLinkCode(originalUrl);
             log.info("originalUrl:"+originalUrl);
             log.info("shortLinkCode:"+shortLinkCode);
         }

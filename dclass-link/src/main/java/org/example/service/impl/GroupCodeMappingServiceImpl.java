@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 /**
  * <p>
- *  服务实现类
+ *  B端短链实现类
  * </p>
  *
  * @author dkw
