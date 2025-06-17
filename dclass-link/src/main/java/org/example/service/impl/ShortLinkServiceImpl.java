@@ -66,6 +66,10 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
 
     public int addShortLink(ShortLinkDO shortLinkDO){
         long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
+
+        String newOriginUrl = CommonUtil.addUrlPrefix(shortLinkDO.getOriginalUrl());
+        shortLinkDO.setOriginalUrl(newOriginUrl);
+
         EventMessage eventMessage= EventMessage.builder().accountNo(accountNo)
                 .content(JsonUtil.obj2Json(shortLinkDO))
                 .messageId(IdUtil.generateSnowFlakeKey().toString())

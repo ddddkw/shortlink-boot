@@ -181,4 +181,40 @@ public class CommonUtil {
         return murmur3_32;
     }
 
+    /**
+     * 增加前缀
+     * @param url
+     * @return
+     */
+    public static String addUrlPrefix(String url){
+
+        return IdUtil.generateSnowFlakeKey() + "&" + url;
+
+    }
+    /**
+     * 移除前缀
+     * @param url
+     * @return
+     */
+    public static String removeUrlPrefix(String url){
+        String originalUrl = url.substring(url.indexOf("&")+1);
+        return originalUrl;
+
+    }
+
+    /**
+     * 如果短链码重复，则调用搞这个方法
+     * url前缀的编码递增1
+     * 如果还是使用雪花算法，则容易C端和B端不一致，所以采用编号递增1的方式
+     * @param url
+     * @return
+     */
+    public static String addUrlPrefixVersion(String url){
+        String version = url.substring(0,url.indexOf("&"));
+        String originalUrl = url.substring(url.indexOf("&")+1);
+        Long newVersion = Long.parseLong(version)+1;
+
+        return newVersion + "&" + originalUrl;
+
+    }
 }
