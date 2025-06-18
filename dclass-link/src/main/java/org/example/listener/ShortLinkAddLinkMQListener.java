@@ -6,6 +6,7 @@ import org.example.enums.BizCodeEnum;
 import org.example.enums.EventMessageType;
 import org.example.exception.BizException;
 import org.example.model.EventMessage;
+import org.example.service.LinkSeniorService;
 import org.example.service.ShortLinkService;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
@@ -26,7 +27,7 @@ import java.io.IOException;
 public class ShortLinkAddLinkMQListener {
 
     @Autowired
-    private ShortLinkService shortLinkService;
+    private LinkSeniorService linkSeniorService;
 
     @RabbitHandler
     public void shortLinkHandler(EventMessage eventMessage, Message message, Channel channel) throws IOException {
@@ -34,7 +35,7 @@ public class ShortLinkAddLinkMQListener {
         long tag = message.getMessageProperties().getDeliveryTag();
         try{
             eventMessage.setEventMessageType(EventMessageType.SHORT_LINK_ADD_LINK.name());
-            shortLinkService.handlerAddShortLink(eventMessage);
+            linkSeniorService.handlerAddShortLink(eventMessage);
             //TODO 处理业务逻辑
 
         }catch (Exception e){

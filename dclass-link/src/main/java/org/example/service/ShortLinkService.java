@@ -28,10 +28,4 @@ public interface ShortLinkService extends IService<ShortLinkDO> {
 
     ShortLinkVo parseShortLinkVo(String shortLinkCode);
 
-    /**
-     * 处理新增短链消息
-     * @return
-     */
-    Boolean handlerAddShortLink(EventMessage eventMessage);
-
 }
