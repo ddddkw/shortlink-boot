@@ -71,7 +71,7 @@ public class LinkSeniorServiceImpl implements LinkSeniorService {
                 .eventMessageType(EventMessageType.SHORT_LINK_ADD.name())
                 .build();
         // 发送消息，依据rabbitMQConfig.getShortLinkAddRoutingKey() 通过key模糊匹配配置中的key，然后进行交换机和队列的绑定
-        rabbitTemplate.convertAndSend(rabbitMQConfig.getShortLinkEventExchange(),rabbitMQConfig.getShortLinkDelRoutingKey(),eventMessage);
+        rabbitTemplate.convertAndSend(rabbitMQConfig.getShortLinkEventExchange(),rabbitMQConfig.getShortLinkAddRoutingKey(),eventMessage);
         return 1;
     }
 
@@ -84,7 +84,7 @@ public class LinkSeniorServiceImpl implements LinkSeniorService {
                 .eventMessageType(EventMessageType.SHORT_LINK_DELETE.name())
                 .build();
         // 发送消息，依据rabbitMQConfig.getShortLinkAddRoutingKey() 通过key模糊匹配配置中的key，然后进行交换机和队列的绑定
-        rabbitTemplate.convertAndSend(rabbitMQConfig.getShortLinkEventExchange(),rabbitMQConfig.getShortLinkAddRoutingKey(),eventMessage);
+        rabbitTemplate.convertAndSend(rabbitMQConfig.getShortLinkEventExchange(),rabbitMQConfig.getShortLinkDelRoutingKey(),eventMessage);
         return 1;
     }
 
@@ -98,7 +98,7 @@ public class LinkSeniorServiceImpl implements LinkSeniorService {
                 .eventMessageType(EventMessageType.SHORT_LINK_UPDATE.name())
                 .build();
         // 发送消息，依据rabbitMQConfig.getShortLinkAddRoutingKey() 通过key模糊匹配配置中的key，然后进行交换机和队列的绑定
-        rabbitTemplate.convertAndSend(rabbitMQConfig.getShortLinkEventExchange(),rabbitMQConfig.getShortLinkAddRoutingKey(),eventMessage);
+        rabbitTemplate.convertAndSend(rabbitMQConfig.getShortLinkEventExchange(),rabbitMQConfig.getShortLinkUpdateRoutingKey(),eventMessage);
         return 1;
     }
 

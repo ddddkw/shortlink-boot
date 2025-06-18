@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.entity.ShortLinkDO;
 import org.example.params.ShortLinkAddParam;
 import org.example.params.ShortLinkDelParam;
+import org.example.params.ShortLinkUpdateParam;
 import org.example.service.LinkSeniorService;
 import org.example.utils.JsonData;
 import org.springframework.beans.BeanUtils;
@@ -39,12 +40,21 @@ public class LinkSeniorController {
 
     /**
      * 删除短链
-     * @param shortLinkAddParam
      * @return
      */
     @PostMapping("/del")
     public JsonData del(@RequestBody ShortLinkDelParam shortLinkDelParam){
         int rows = linkSeniorService.del(shortLinkDelParam);
+        return rows==1?JsonData.buildSuccess():JsonData.buildError("新增失败");
+    }
+
+    /**
+     * 删除短链
+     * @return
+     */
+    @PostMapping("/update")
+    public JsonData update(@RequestBody ShortLinkUpdateParam shortLinkUpdateParam){
+        int rows = linkSeniorService.update(shortLinkUpdateParam);
         return rows==1?JsonData.buildSuccess():JsonData.buildError("新增失败");
     }
 
