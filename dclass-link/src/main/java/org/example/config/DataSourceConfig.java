@@ -133,6 +133,18 @@ public class DataSourceConfig {
         );
         return result;
     }
+    private TableRuleConfiguration getCodeMappingRuleConfiguration() {
+        // 设置分表策略
+        TableRuleConfiguration result = new TableRuleConfiguration(
+                "group_code_mapping",
+                "ds$->{0..1}.group_code_mapping_$->{group_id % 2}"
+        );
+        // 设置分库策略，根据短链码account_no字段进行分库
+        result.setDatabaseShardingStrategyConfig(
+                new InlineShardingStrategyConfiguration("account_no", "ds$->{account_no % 2}")
+        );
+        return result;
+    }
     @Bean
     public PlatformTransactionManager transactionManager(DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
