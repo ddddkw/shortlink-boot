@@ -55,7 +55,7 @@ public class GroupCodeMappingServiceImpl extends ServiceImpl<GroupCodeMappingMap
     }
 
     public GroupCodeMappingDO findByCodeAndGroupId(String shortLinkCode,Long groupId,Long accountNO){
-        QueryWrapper queryWrapper = new QueryWrapper<>().eq("code",shortLinkCode).eq("group_id",groupId).eq("accountNo",accountNO);
+        QueryWrapper queryWrapper = new QueryWrapper<>().eq("code",shortLinkCode).eq("group_id",groupId).eq("account_no",accountNO);
         GroupCodeMappingDO groupCodeMappingDO = this.baseMapper.selectOne(queryWrapper);
         return groupCodeMappingDO;
     }
@@ -66,6 +66,11 @@ public class GroupCodeMappingServiceImpl extends ServiceImpl<GroupCodeMappingMap
      * @return
      */
     public int add(GroupCodeMappingDO groupCodeMappingDO){
+        int rows = this.baseMapper.insert(groupCodeMappingDO);
+        return rows;
+    }
+
+    public int createGroupCodeMapping(GroupCodeMappingDO groupCodeMappingDO){
         long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
 
         String newOriginUrl = CommonUtil.addUrlPrefix(groupCodeMappingDO.getOriginalUrl());

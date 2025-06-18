@@ -14,6 +14,7 @@ import org.example.enums.DomainTypeEnum;
 import org.example.enums.EventMessageType;
 import org.example.enums.ShortLinkEnum;
 import org.example.interceptor.LoginInterceptor;
+import org.example.mapper.GroupCodeMappingMapper;
 import org.example.mapper.ShortLinkMapper;
 import org.example.model.EventMessage;
 import org.example.params.ShortLinkAddParam;
@@ -73,7 +74,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
     private RedisTemplate<Object,Object> redisTemplate;
 
     public int addShortLink(ShortLinkDO shortLinkDO){
-        long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
+        Long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
 
         String newOriginUrl = CommonUtil.addUrlPrefix(shortLinkDO.getOriginalUrl());
         shortLinkDO.setOriginalUrl(newOriginUrl);
@@ -165,7 +166,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                             .state(ShortLinkEnum.ACTIVE.name())
                             .del(0)
                             .build();
-                    addShortLink(shortLinkDO);
+                    this.baseMapper.insert(shortLinkDO);
                     return true;
                 } else {
                     log.error("C端短链码重复：{}", eventMessage);

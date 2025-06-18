@@ -20,6 +20,8 @@ public interface GroupCodeMappingService extends IService<GroupCodeMappingDO> {
 
     GroupCodeMappingDO findByCodeAndGroupId(String shortLinkCode,Long groupId,Long accountNO);
 
+    int createGroupCodeMapping(GroupCodeMappingDO groupCodeMappingDO);
+
     int add(GroupCodeMappingDO groupCodeMappingDO);
 
     int del(String shortLinkCode,Long accountNo,Long groupId);
