@@ -35,6 +35,8 @@ public class DomainDO implements Serializable {
      */
     private String domainType;
 
+
+
     private String value;
 
     /**

@@ -15,4 +15,8 @@ public interface LinkSeniorService {
 
     Boolean handlerAddShortLink(EventMessage eventMessage);
 
+    Boolean handlerUpdateShortLink(EventMessage eventMessage);
+
+    Boolean handlerDelShortLink(EventMessage eventMessage);
+
 }

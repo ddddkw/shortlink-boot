@@ -34,6 +34,7 @@ public class ShortLinkUpdateMappingMQListener {
         long tag = message.getMessageProperties().getDeliveryTag();
         try{
             eventMessage.setEventMessageType(EventMessageType.SHORT_LINK_UPDATE_MAPPING.name());
+            linkSeniorService.handlerUpdateShortLink(eventMessage);
             //TODO 处理业务逻辑
 
         }catch (Exception e){

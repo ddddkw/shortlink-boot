@@ -34,6 +34,7 @@ public class ShortLinkDelLinkMQListener {
         long tag = message.getMessageProperties().getDeliveryTag();
         try{
             eventMessage.setEventMessageType(EventMessageType.SHORT_LINK_DELETE_LINK.name());
+            linkSeniorService.handlerDelShortLink(eventMessage);
             //TODO 处理业务逻辑
 
         }catch (Exception e){

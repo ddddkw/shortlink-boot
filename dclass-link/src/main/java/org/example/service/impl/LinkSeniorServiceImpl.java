@@ -199,7 +199,80 @@ public class LinkSeniorServiceImpl implements LinkSeniorService {
         return false;
     }
 
+    /**
+     * 消费者的处理逻辑-删除短链
+     * @param eventMessage
+     * @return
+     */
+    public Boolean handlerDelShortLink(EventMessage eventMessage){
+        Long accountNo = eventMessage.getAccountNo();
+        String messageType = eventMessage.getEventMessageType();
+        ShortLinkDelParam shortLinkDelParam = JsonUtil.json2Obj(eventMessage.getContent(), ShortLinkDelParam.class);
 
+        // C端（用户端）删除短链
+        if (EventMessageType.SHORT_LINK_DELETE_LINK.name().equalsIgnoreCase(messageType)) {
+            ShortLinkDO shortLinkDO = ShortLinkDO.builder()
+                    .code(shortLinkDelParam.getCode())
+                    .accountNo(accountNo).build();
+            int rows = shortLinkService.delShortLink(shortLinkDO);
+            log.debug("C端删除短链：{}",rows);
+            return true;
+        } else if (EventMessageType.SHORT_LINK_DELETE_MAPPING.name().equalsIgnoreCase(messageType)){
+            // B端删除短链
+            GroupCodeMappingDO groupCodeMappingDO = GroupCodeMappingDO.builder().id(shortLinkDelParam.getMappingId()).groupId(shortLinkDelParam.getGroupId()).accountNo(accountNo).build();
+            int rows = groupCodeMappingService.del(groupCodeMappingDO);
+            log.debug("B端删除短链：{}",rows);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 消费者的处理逻辑-更新短链
+     * @param eventMessage
+     * @return
+     */
+    public Boolean handlerUpdateShortLink(EventMessage eventMessage){
+        Long accountNo = eventMessage.getAccountNo();
+        String messageType = eventMessage.getEventMessageType();
+        ShortLinkUpdateParam shortLinkUpdateParam = JsonUtil.json2Obj(eventMessage.getContent(), ShortLinkUpdateParam.class);
+
+        // 短链域名校验
+        DomainDO domainDO = checkDomain(shortLinkUpdateParam.getDomainType(),shortLinkUpdateParam.getDomainId(),accountNo);
+
+        if (EventMessageType.SHORT_LINK_UPDATE_LINK.name().equalsIgnoreCase(messageType)) {
+            // C端更新短链，C端是根据code进行分库分表，并且根据code进行数据查询
+            ShortLinkDO shortLinkDO = ShortLinkDO.builder()
+                    .code(shortLinkUpdateParam.getCode())
+                    .accountNo(accountNo)
+                    .title(shortLinkUpdateParam.getTitle())
+                    .domain(domainDO.getValue()).build();
+            int rows = shortLinkService.updateShortLink(shortLinkDO);
+            log.debug("更新B端短链：{}",rows);
+            return true;
+        } else if (EventMessageType.SHORT_LINK_UPDATE_MAPPING.name().equalsIgnoreCase(messageType)){
+            // B端更新短链，B端是根据groupId和accountNo进行分库分表，根据id也就是mappingId进行查询
+            GroupCodeMappingDO groupCodeMappingDO = GroupCodeMappingDO.builder()
+                    .id(shortLinkUpdateParam.getMappingId())
+                    .groupId(shortLinkUpdateParam.getGroupId())
+                    .accountNo(accountNo)
+                    .title(shortLinkUpdateParam.getTitle())
+                    .domain(domainDO.getValue())
+                    .build();
+            int rows = groupCodeMappingService.update(groupCodeMappingDO);
+            log.debug("更新C端短链：{}",rows);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 校验域名
+     * @param domainType
+     * @param domainId
+     * @param accountNo
+     * @return
+     */
     private DomainDO checkDomain(String domainType, Long domainId, Long accountNo){
         DomainDO domainDO = new DomainDO();
         if (DomainTypeEnum.CUSTOM.name().equalsIgnoreCase(domainType)) {

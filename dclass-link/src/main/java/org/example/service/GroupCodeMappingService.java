@@ -23,8 +23,9 @@ public interface GroupCodeMappingService extends IService<GroupCodeMappingDO> {
     int createGroupCodeMapping(GroupCodeMappingDO groupCodeMappingDO);
 
     int add(GroupCodeMappingDO groupCodeMappingDO);
+    int update(GroupCodeMappingDO groupCodeMappingDO);
 
-    int del(String shortLinkCode,Long accountNo,Long groupId);
+    int del(GroupCodeMappingDO groupCodeMappingDO);
 
     Map<String,Object> queryShortLinkByGroupId(Integer page, Integer size, Long accountNo, Long groupId);
 

@@ -35,6 +35,7 @@ public class ShortLinkDelMappingMQListener {
         try{
 
             eventMessage.setEventMessageType(EventMessageType.SHORT_LINK_DELETE_MAPPING.name());
+            linkSeniorService.handlerDelShortLink(eventMessage);
             //TODO 处理业务逻辑
 
         }catch (Exception e){

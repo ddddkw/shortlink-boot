@@ -2,11 +2,13 @@ package org.example.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.support.SFunction;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.example.config.RabbitMQConfig;
 import org.example.entity.GroupCodeMappingDO;
+import org.example.entity.ShortLinkDO;
 import org.example.enums.EventMessageType;
 import org.example.interceptor.LoginInterceptor;
 import org.example.mapper.GroupCodeMappingMapper;
@@ -88,19 +90,28 @@ public class GroupCodeMappingServiceImpl extends ServiceImpl<GroupCodeMappingMap
 
     /**
      * 根据短链码和分组进行删除
-     * @param shortLinkCode
-     * @param accountNo
-     * @param groupId
-     * @return
      */
-    public int del(String shortLinkCode,Long accountNo,Long groupId){
-        QueryWrapper queryWrapper = new QueryWrapper<GroupCodeMappingDO>()
-                .eq("code", shortLinkCode)
-                .eq("account_no",accountNo)
-                .eq("group_id",groupId);
-        int rows = this.baseMapper.delete(queryWrapper);
+    public int del(GroupCodeMappingDO groupCodeMappingDO){
+        int rows = this.baseMapper.update(null,new UpdateWrapper<GroupCodeMappingDO>()
+                .eq("id",groupCodeMappingDO.getId())
+                .eq("account_no",groupCodeMappingDO.getAccountNo())
+                .eq("group_id",groupCodeMappingDO.getGroupId())
+                .set("del",1));
         return rows;
     }
+
+    public int update(GroupCodeMappingDO groupCodeMappingDO){
+        int rows = this.baseMapper.update(null, new UpdateWrapper<GroupCodeMappingDO>()
+                .eq("id",groupCodeMappingDO.getId())
+                .eq("del",0)
+                .eq("account_no",groupCodeMappingDO.getAccountNo()) // 分库分表是依据account_no和group_id进行的，所以这两个字段是必须的
+                .eq("group_id",groupCodeMappingDO.getGroupId())
+                .set("title",groupCodeMappingDO.getTitle())
+                .set("domain",groupCodeMappingDO.getDomain()));
+        return rows;
+    }
+
+
 
     /**
      * 根据分组id分页查询短链

@@ -2,6 +2,7 @@ package org.example.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Assert;
 import lombok.extern.slf4j.Slf4j;
 import org.example.component.ShortLinkComponent;
@@ -64,12 +65,21 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         return shortLinkDO;
     }
 
-    public int delShortLink(String shortLinkCode, Long accountNo){
-        ShortLinkDO shortLinkDO = ShortLinkDO.builder().code(shortLinkCode).build();
-        shortLinkDO.setDel(1);
-        QueryWrapper queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("code",shortLinkCode);
-        int rows = this.baseMapper.update(shortLinkDO,queryWrapper);
+    public int delShortLink(ShortLinkDO shortLinkDO){
+        int rows = this.baseMapper.update(null, new UpdateWrapper<ShortLinkDO>()
+                .eq("code",shortLinkDO.getCode())
+                .eq("account_no",shortLinkDO.getAccountNo())
+                .set("del",1));
+        return rows;
+    }
+
+    public int updateShortLink(ShortLinkDO shortLinkDO){
+
+        int rows = this.baseMapper.update(null, new UpdateWrapper<ShortLinkDO>()
+                .eq("code",shortLinkDO.getCode())
+                .eq("del",0)
+                .set("title",shortLinkDO.getTitle())
+                .set("domain",shortLinkDO.getDomain()));
         return rows;
     }
 

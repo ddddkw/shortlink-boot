@@ -24,7 +24,9 @@ public interface ShortLinkService extends IService<ShortLinkDO> {
 
     ShortLinkDO findByShortLinkCode(String shortLinkCode);
 
-    int delShortLink(String shortLinkCode, Long accountNo);
+    int delShortLink(ShortLinkDO shortLinkDO);
+
+    int updateShortLink(ShortLinkDO shortLinkDO);
 
     ShortLinkVo parseShortLinkVo(String shortLinkCode);
 
