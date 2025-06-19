@@ -49,7 +49,7 @@ public class LinkSeniorController {
     }
 
     /**
-     * 删除短链
+     * 更新短链
      * @return
      */
     @PostMapping("/update")

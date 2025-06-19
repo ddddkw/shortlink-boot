@@ -21,7 +21,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())
                 // 添加拦截的路径
-                .addPathPatterns("/linkGroup/**","/shortLink/**","/domain/**")
+                .addPathPatterns("/linkGroup/**","/shortLink/**","/domain/**","/linkSenior/**")
                 // 排除不拦截的
                 .excludePathPatterns("/account/register","/account/login","/notify/*","/domain/test");
     }
