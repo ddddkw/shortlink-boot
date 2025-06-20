@@ -2,6 +2,9 @@ package org.example.service;
 
 import org.example.entity.ProductDO;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.example.vo.ProductVO;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ProductService extends IService<ProductDO> {
 
+    List<ProductVO> queryList();
+
+    ProductVO findDetailById(Long id);
 }
