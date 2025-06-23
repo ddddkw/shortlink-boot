@@ -38,6 +38,9 @@ public class RepeatSubmitAspect {
 
     }
 
+    /**
+     * 针对repeatSubmit注解执行around方法
+     */
     @Around("pointCutNoRepeatSubmit(repeatSubmit)")
     public Object around(ProceedingJoinPoint joinPoint, RepeatSubmit repeatSubmit) throws Throwable {
         // 获取前端发送过来的请求
@@ -58,12 +61,15 @@ public class RepeatSubmitAspect {
                 throw  new BizException(BizCodeEnum.ORDER_CONFIRM_TOKEN_EQUAL_FAIL);
             }
             String key = String.format(SUBMIT_ORDER_TOKEN_KEY,accountNo,requestToken);
+            // 进行订单生成以后会直接将key删掉，这样后续再使用这个key进行生成订单的话，会进行相应的处理
             res = redisTemplate.delete(key);
         }
         if (!res){
             throw new BizException(BizCodeEnum.ORDER_CONFIRM_REPEAT);
         }
+        // 环绕通知执行前
         Object  obj = joinPoint.proceed();
+        // 环绕通知执行后
         return obj;
     }
 }

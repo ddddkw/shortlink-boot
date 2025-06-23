@@ -3,10 +3,12 @@ package org.example.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.example.annotation.RepeatSubmit;
 import org.example.entity.ProductOrderDO;
 import org.example.enums.ClientTypeEnum;
 import org.example.enums.PayTypeEnum;
 import org.example.interceptor.LoginInterceptor;
+import org.example.params.OrderPageParam;
 import org.example.params.ProductOrderAddParam;
 import org.example.service.ProductOrderService;
 import org.example.utils.CommonUtil;
@@ -68,14 +70,10 @@ public class ProductOrderController {
     }
 
 
-    @GetMapping("/page")
-    public JsonData page(
-            @RequestParam(value = "page", defaultValue = "1") int page,
-            @RequestParam(value = "size", defaultValue = "10") int size,
-            @RequestParam(value = "state") String state
-    ){
+    @PostMapping("/page")
+    public JsonData page(@RequestBody OrderPageParam orderPageParam){
         Long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
-        Map map = productOrderService.page(page,size,accountNo,state);
+        Map map = productOrderService.page(orderPageParam.getPage(),orderPageParam.getSize(),accountNo,orderPageParam.getState());
         return JsonData.buildSuccess(map);
     }
 
