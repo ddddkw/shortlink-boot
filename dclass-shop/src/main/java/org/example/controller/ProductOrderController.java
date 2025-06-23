@@ -13,11 +13,14 @@ import org.example.utils.CommonUtil;
 import org.example.utils.JsonData;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+import static org.example.constant.RedisKey.SUBMIT_ORDER_TOKEN_KEY;
 
 /**
  * <p>
@@ -34,6 +37,25 @@ public class ProductOrderController {
 
     @Autowired
     private ProductOrderService productOrderService;
+
+    @Autowired
+    private StringRedisTemplate redisTemplate;
+
+    /**
+     * 下单前的前置操作，先进行token生成，再根据这个token进行下单
+     * @return
+     */
+    @GetMapping("/token")
+    public JsonData getOrderToken(){
+
+        Long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
+        String token = CommonUtil.getStringNumRandom(32);
+        String key = String.format(SUBMIT_ORDER_TOKEN_KEY,accountNo,token);
+        // 令牌有效时间设置为30分钟
+        redisTemplate.opsForValue().set(key, String.valueOf(Thread.currentThread().getId()),30, TimeUnit.MINUTES);
+        return JsonData.buildSuccess(token);
+    }
+
 
     @PostMapping("/addOrder")
     public JsonData addOrder(@RequestBody ProductOrderAddParam productOrderAddParam){

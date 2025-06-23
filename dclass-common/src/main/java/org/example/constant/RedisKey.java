@@ -7,4 +7,10 @@ public class RedisKey {
      */
     public static final String CHECK_CODE_KEY = "code:%s:%s";
 
+
+    /**
+     * 订单提交时生成的缓存key
+     */
+    public static final String SUBMIT_ORDER_TOKEN_KEY = "order:submit:%s:%s";
+
 }
