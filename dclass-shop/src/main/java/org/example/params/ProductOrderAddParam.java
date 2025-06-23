@@ -10,17 +10,22 @@ public class ProductOrderAddParam {
     /**
      * 商品标题
      */
-    private String productTitle;
-
-    /**
-     * 商品单价
-     */
-    private BigDecimal productAmount;
+    private Long productId;
 
     /**
      * 购买数量
      */
     private Integer buyNum;
+
+    /**
+     * 终端类型
+     */
+    private String clientType;
+
+    /**
+     * 支付类型，微信-银行-支付宝
+     */
+    private String payType;
 
     /**
      * 订单总金额
@@ -33,14 +38,9 @@ public class ProductOrderAddParam {
     private BigDecimal payAmount;
 
     /**
-     * 支付类型，微信-银行-支付宝
+     * 防重令牌
      */
-    private String payType;
-
-    /**
-     * 账号昵称
-     */
-    private String nickname;
+    private String token;
 
     /**
      * 发票类型：0->不开发票；1->电子发票；2->纸质发票

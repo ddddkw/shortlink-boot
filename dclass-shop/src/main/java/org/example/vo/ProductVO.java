@@ -1,6 +1,7 @@
 package org.example.vo;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -50,6 +51,16 @@ public class ProductVO implements Serializable {
      * 现价
      */
     private BigDecimal amount;
+
+    /**
+     * 现价
+     */
+    private Integer buyNum;
+
+    /**
+     * 订单唯一标识
+     */
+    private String outTradeNo;
 
     /**
      * 工具类型 short_link、qrcode
