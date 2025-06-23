@@ -12,6 +12,8 @@ import org.example.enums.BizCodeEnum;
 import org.example.exception.BizException;
 import org.example.interceptor.LoginInterceptor;
 import org.example.utils.CommonUtil;
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
@@ -34,6 +36,8 @@ public class RepeatSubmitAspect {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
+    @Autowired
+    private RedissonClient redissonClient;
     /**
      * 定义Pointcut表达式
      * annotation，当执行上下文上拥有指定的注解时生效
@@ -67,7 +71,10 @@ public class RepeatSubmitAspect {
             String className = method.getDeclaringClass().getName();
             String key = String.format("%s-%s-%s-%s",ipAddr,className,method,accountNo);
             // 加锁,只有第一次为空且设置的时候是true，后面的res结果就是false
-            res = redisTemplate.opsForValue().setIfAbsent(key,"1",lockTime, TimeUnit.SECONDS);
+//            res = redisTemplate.opsForValue().setIfAbsent(key,"1",lockTime, TimeUnit.SECONDS);
+            RLock lock = redissonClient.getLock(key);
+            // 尝试加锁，最多等待0秒，上锁五秒后自动解锁（lockTime默认是5，可以自定义）
+            res = lock.tryLock(0,lockTime,TimeUnit.SECONDS);
         } else if (type.equalsIgnoreCase(RepeatSubmit.Type.TOKEN.name())){
             // 方式二，token形式防重提交
             String requestToken = request.getHeader("request-token");
@@ -79,6 +86,7 @@ public class RepeatSubmitAspect {
             res = redisTemplate.delete(key);
         }
         if (!res){
+            log.error("订单重复提交");
             throw new BizException(BizCodeEnum.ORDER_CONFIRM_REPEAT);
         }
         // 环绕通知执行前

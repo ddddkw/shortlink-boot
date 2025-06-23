@@ -71,6 +71,7 @@ public class ProductOrderController {
 
 
     @PostMapping("/page")
+    @RepeatSubmit(limitType = RepeatSubmit.Type.PARAM)
     public JsonData page(@RequestBody OrderPageParam orderPageParam){
         Long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
         Map map = productOrderService.page(orderPageParam.getPage(),orderPageParam.getSize(),accountNo,orderPageParam.getState());
