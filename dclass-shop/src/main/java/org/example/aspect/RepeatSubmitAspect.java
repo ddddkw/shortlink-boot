@@ -6,16 +6,21 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.example.annotation.RepeatSubmit;
 import org.example.enums.BizCodeEnum;
 import org.example.exception.BizException;
 import org.example.interceptor.LoginInterceptor;
+import org.example.utils.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.Method;
+import java.util.concurrent.TimeUnit;
+
 import static org.example.constant.RedisKey.SUBMIT_ORDER_TOKEN_KEY;
 
 /**
@@ -54,6 +59,15 @@ public class RepeatSubmitAspect {
         String type = repeatSubmit.limitType().name();
         if (type.equalsIgnoreCase(RepeatSubmit.Type.PARAM.name())) {
             // 方式一，参数形式防重提交
+            long lockTime = repeatSubmit.lockTime();
+            String ipAddr = CommonUtil.getIpAddr(request);
+            // 获取方法类名
+            MethodSignature methodSignature = (MethodSignature)joinPoint.getSignature();
+            Method method = methodSignature.getMethod();
+            String className = method.getDeclaringClass().getName();
+            String key = String.format("%s-%s-%s-%s",ipAddr,className,method,accountNo);
+            // 加锁,只有第一次为空且设置的时候是true，后面的res结果就是false
+            res = redisTemplate.opsForValue().setIfAbsent(key,"1",lockTime, TimeUnit.SECONDS);
         } else if (type.equalsIgnoreCase(RepeatSubmit.Type.TOKEN.name())){
             // 方式二，token形式防重提交
             String requestToken = request.getHeader("request-token");
