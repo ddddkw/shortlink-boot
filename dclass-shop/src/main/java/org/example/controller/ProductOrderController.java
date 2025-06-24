@@ -58,18 +58,6 @@ public class ProductOrderController {
         return JsonData.buildSuccess(token);
     }
 
-
-    @PostMapping("/addOrder")
-    public JsonData addOrder(@RequestBody ProductOrderAddParam productOrderAddParam){
-        Long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
-        ProductOrderDO productOrderDO = new ProductOrderDO();
-        BeanUtils.copyProperties(productOrderAddParam,productOrderDO);
-        productOrderDO.setAccountNo(accountNo);
-        int rows = productOrderService.add(productOrderDO);
-        return rows==1?JsonData.buildSuccess():JsonData.buildError("下单失败");
-    }
-
-
     @PostMapping("/page")
     @RepeatSubmit(limitType = RepeatSubmit.Type.PARAM)
     public JsonData page(@RequestBody OrderPageParam orderPageParam){

@@ -38,11 +38,6 @@ public class ProductOrderAddParam {
     private BigDecimal payAmount;
 
     /**
-     * 防重令牌
-     */
-    private String token;
-
-    /**
      * 发票类型：0->不开发票；1->电子发票；2->纸质发票
      */
     private String billType;

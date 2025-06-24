@@ -2,6 +2,7 @@ package org.example.service;
 
 import org.example.entity.ProductOrderDO;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.example.model.EventMessage;
 import org.example.params.ProductOrderAddParam;
 import org.example.utils.JsonData;
 
@@ -31,4 +32,6 @@ public interface ProductOrderService extends IService<ProductOrderDO> {
     String queryState(String OutTradeNo);
 
     JsonData confirmOrder(ProductOrderAddParam productOrderAddParam);
+
+    boolean closeProductOrder(EventMessage eventMessage);
 }
