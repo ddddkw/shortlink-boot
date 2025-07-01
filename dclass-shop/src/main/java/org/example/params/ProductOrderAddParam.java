@@ -8,9 +8,14 @@ import java.math.BigDecimal;
 public class ProductOrderAddParam {
 
     /**
-     * 商品标题
+     * 商品id
      */
     private Long productId;
+
+    /**
+     * 商品标题
+     */
+    private String productTitle;
 
     /**
      * 购买数量

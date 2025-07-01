@@ -6,3 +6,4 @@
 /dclass-link/src/main/resources/application.yml
 target
 /target
+/dclass-shop/src/main/resources/cert/apiclient_cert.pem

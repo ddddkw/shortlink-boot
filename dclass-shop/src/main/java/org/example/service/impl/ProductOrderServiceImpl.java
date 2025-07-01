@@ -193,7 +193,7 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
 
         // 设置订单信息
         productOrderDO.setBuyNum(productVO.getBuyNum());
-        productOrderDO.setOutTradeNo(productVO.getOutTradeNo());
+        productOrderDO.setOutTradeNo(orderOutTradeNo);
         productOrderDO.setCreateTime(new Date());
         productOrderDO.setDel(0);
 
