@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import net.bytebuddy.jar.asm.Opcodes;
 import org.apache.commons.lang3.StringUtils;
+import org.example.component.Payfactory;
 import org.example.config.RabbitMQConfig;
 import org.example.constant.TimeConstants;
 import org.example.entity.ProductDO;
@@ -59,6 +60,9 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
 
     @Autowired
     private RabbitMQConfig rabbitMQConfig;
+
+    @Autowired
+    private Payfactory payfactory;
 
     public int add(ProductOrderDO productOrderDO){
         return this.baseMapper.insert(productOrderDO);
@@ -175,8 +179,14 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
 
         rabbitTemplate.convertAndSend(rabbitMQConfig.getOrderEventExchange(),rabbitMQConfig.getOrderCloseDelayRoutingKey(),eventMessage);
         // 调用支付信息
-
-        return null;
+        String codeUrl = payfactory.pay(payInfoVO);
+        if (StringUtils.isNotBlank(codeUrl)) {
+            Map resultMap = new HashMap<>(2);
+            resultMap.put("code_url",codeUrl);
+            resultMap.put("out_trade_no", payInfoVO.getOutTradeNo());
+            return JsonData.buildSuccess(codeUrl);
+        }
+        return JsonData.buildResult(BizCodeEnum.PAY_ORDER_FAIL);
     }
 
     public ProductOrderDO setProductOrder(ProductOrderAddParam productOrderAddParam,LoginUser loginUser,String orderOutTradeNo,ProductVO productVO){

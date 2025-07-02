@@ -1,6 +1,7 @@
 package org.example.component;
 
 import org.example.vo.PayInfoVO;
+import org.json.JSONException;
 
 public interface PayStrategy {
 
@@ -16,12 +17,12 @@ public interface PayStrategy {
     default String refund(PayInfoVO payInfoVO){return "";}
 
     /**
-     *
+     * 查询订单支付状态接口
      */
     default String queryPayStatus(PayInfoVO payInfoVO){return "";}
 
     /**
-     *
+     * 关闭订单接口
      */
     default String closeOrder(PayInfoVO payInfoVO){return "";}
 }
