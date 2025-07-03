@@ -145,6 +145,11 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
         return rows;
     }
 
+    /**
+     * 确认支付订单
+     * @param productOrderAddParam
+     * @return
+     */
     public JsonData confirmOrder(ProductOrderAddParam productOrderAddParam){
         LoginUser loginUser = LoginInterceptor.threadLocal.get();
 
@@ -177,8 +182,9 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
                 .bizId(orderOutTradeNo)
                 .build();
 
+        // 商家和客户订单信息分别落库
         rabbitTemplate.convertAndSend(rabbitMQConfig.getOrderEventExchange(),rabbitMQConfig.getOrderCloseDelayRoutingKey(),eventMessage);
-        // 调用支付信息
+        // 调用支付信息，返回支付二维码和订单号，根据订单号轮询查支付结果
         String codeUrl = payfactory.pay(payInfoVO);
         if (StringUtils.isNotBlank(codeUrl)) {
             Map resultMap = new HashMap<>(2);

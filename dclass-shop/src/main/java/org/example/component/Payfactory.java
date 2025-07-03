@@ -26,10 +26,10 @@ public class Payfactory {
 
         String payType = payInfoVO.getPayType();
         if (PayTypeEnum.ALI_PAY.name().equals(payType)) {
-            PayStrategyContext payStrategyContext = new PayStrategyContext((PayStrategy) aliPayStrategy);
+            PayStrategyContext payStrategyContext = new PayStrategyContext(aliPayStrategy);
             return payStrategyContext.executeUnifiedOrder(payInfoVO);
         } else if(PayTypeEnum.WECHAT_PAY.name().equals(payType)){
-            PayStrategyContext payStrategyContext = new PayStrategyContext((PayStrategy) wechatPayStrategy);
+            PayStrategyContext payStrategyContext = new PayStrategyContext(wechatPayStrategy);
             return payStrategyContext.executeUnifiedOrder(payInfoVO);
         }
 
@@ -46,10 +46,10 @@ public class Payfactory {
 
         String payType = payInfoVO.getPayType();
         if (PayTypeEnum.ALI_PAY.name().equals(payType)) {
-            PayStrategyContext payStrategyContext = new PayStrategyContext((PayStrategy) aliPayStrategy);
+            PayStrategyContext payStrategyContext = new PayStrategyContext(aliPayStrategy);
             return payStrategyContext.executeRefund(payInfoVO);
         } else if(PayTypeEnum.WECHAT_PAY.name().equals(payType)){
-            PayStrategyContext payStrategyContext = new PayStrategyContext((PayStrategy) wechatPayStrategy);
+            PayStrategyContext payStrategyContext = new PayStrategyContext(wechatPayStrategy);
             return payStrategyContext.executeRefund(payInfoVO);
         }
 
@@ -66,10 +66,10 @@ public class Payfactory {
 
         String payType = payInfoVO.getPayType();
         if (PayTypeEnum.ALI_PAY.name().equals(payType)) {
-            PayStrategyContext payStrategyContext = new PayStrategyContext((PayStrategy) aliPayStrategy);
+            PayStrategyContext payStrategyContext = new PayStrategyContext(aliPayStrategy);
             return payStrategyContext.closeOrder(payInfoVO);
         } else if(PayTypeEnum.WECHAT_PAY.name().equals(payType)){
-            PayStrategyContext payStrategyContext = new PayStrategyContext((PayStrategy) wechatPayStrategy);
+            PayStrategyContext payStrategyContext = new PayStrategyContext(wechatPayStrategy);
             return payStrategyContext.closeOrder(payInfoVO);
         }
 
@@ -86,10 +86,10 @@ public class Payfactory {
 
         String payType = payInfoVO.getPayType();
         if (PayTypeEnum.ALI_PAY.name().equals(payType)) {
-            PayStrategyContext payStrategyContext = new PayStrategyContext((PayStrategy) aliPayStrategy);
+            PayStrategyContext payStrategyContext = new PayStrategyContext(aliPayStrategy);
             return payStrategyContext.queryPayStatus(payInfoVO);
         } else if(PayTypeEnum.WECHAT_PAY.name().equals(payType)){
-            PayStrategyContext payStrategyContext = new PayStrategyContext((PayStrategy) wechatPayStrategy);
+            PayStrategyContext payStrategyContext = new PayStrategyContext(wechatPayStrategy);
             return payStrategyContext.queryPayStatus(payInfoVO);
         }
 
