@@ -98,4 +98,77 @@ public class RabbitMQConfig {
         return new Binding(orderCloseQueue,Binding.DestinationType.QUEUE, orderEventExchange,orderCloseRoutingKey,null);
     }
 
+    //=======================订单支付成功配置================================
+    /**
+     * 更新订单队列名称
+     */
+    private String orderUpdateQueue = "order.update.queue";
+
+    /**
+     * 订单发放流量包队列名称
+     */
+    private String orderTrafficQueue = "order.traffic.queue";
+
+    /**
+     * 进入到更新订单队列的routingkey
+     */
+    private String orderUpdateRoutingKey = "order.update.routing.key";
+
+    /**
+     * 进入到发放流量包队列的routingkey
+     */
+    private String orderTrafficRoutingKey = "order.traffic.routing.key";
+
+    /**
+     * 微信回调发送通知的routingkey
+     */
+    private String orderUpdateTrafficRoutingKey = "order.update.traffic.routing.key";
+
+    /**
+     * 用于绑定订单队列和交换机的key
+     */
+    private String orderUpdateBindingKey = "order.update.*.routing.key";
+
+    /**
+     * 用于绑定订单队列和交换机的key
+     */
+    private String orderTrafficBindingKey = "order.*.traffic.routing.key";
+
+    /**
+     * 将交换机和订单更新队列和key进行绑定
+     * @return
+     */
+    @Bean
+    public Binding orderUpdateBinding(){
+        return new Binding(orderUpdateQueue,Binding.DestinationType.QUEUE, orderEventExchange,orderUpdateRoutingKey,null);
+    }
+
+    /**
+     * 将交换机和发放流量包队列和key进行绑定
+     * @return
+     */
+    @Bean
+    public Binding orderTrafficBinding(){
+        return new Binding(orderTrafficQueue,Binding.DestinationType.QUEUE, orderEventExchange,orderTrafficRoutingKey,null);
+    }
+
+    /**
+     * 更新订单队列
+     */
+    @Bean
+    public Queue orderUpdateQueue(){
+
+        return new Queue(orderUpdateQueue,true,false,false);
+
+    }
+
+    /**
+     * 发放流量包队列
+     */
+    @Bean
+    public Queue orderTrafficQueue(){
+
+        return new Queue(orderTrafficQueue,true,false,false);
+
+    }
 }

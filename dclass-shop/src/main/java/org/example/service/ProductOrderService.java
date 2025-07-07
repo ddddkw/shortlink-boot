@@ -2,6 +2,7 @@ package org.example.service;
 
 import org.example.entity.ProductOrderDO;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.example.enums.PayTypeEnum;
 import org.example.model.EventMessage;
 import org.example.params.ProductOrderAddParam;
 import org.example.utils.JsonData;
@@ -34,4 +35,6 @@ public interface ProductOrderService extends IService<ProductOrderDO> {
     JsonData confirmOrder(ProductOrderAddParam productOrderAddParam);
 
     boolean closeProductOrder(EventMessage eventMessage);
+
+    void processOrderCallbackMsg(String payTypeEnum, Map paramsMap);
 }

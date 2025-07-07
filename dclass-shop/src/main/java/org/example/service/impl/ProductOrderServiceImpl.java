@@ -32,6 +32,8 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -285,6 +287,39 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
         }
         return true;
 
+    }
+
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
+    public void processOrderCallbackMsg(String payType, Map paramsMap){
+        // 获取订单号
+        String outTradeNo = (String) paramsMap.get("out_trade_no");
+        // 获取订单状态
+        String tradeState = (String) paramsMap.get("trade_state");
+        // 获取账号
+        Long accountNo = (Long) paramsMap.get("account_no");
+        // 获取订单详情
+        ProductOrderDO productOrderDO = findByOutTradeNoAndAccountNo(outTradeNo, accountNo);
+        Map content = new HashMap<>();
+        content.put("outTradeNo", outTradeNo);
+        content.put("buyNum", productOrderDO.getBuyNum());
+        content.put("accountNo", accountNo);
+        content.put("product", productOrderDO.getProductSnapshot());
+        //构建消息
+        EventMessage eventMessage = EventMessage.builder()
+                .bizId(outTradeNo)
+                .accountNo(accountNo)
+                .messageId(outTradeNo)
+                .content(JsonUtil.obj2Json(content))
+                .eventMessageType(EventMessageType.ORDER_PAY.name())
+                .build();
+        if (payType.equalsIgnoreCase(PayTypeEnum.WECHAT_PAY.name())) {
+            // 如果微信支付成功,，发送消息
+            if ("SUCCESS".equalsIgnoreCase(tradeState)) {
+                rabbitTemplate.convertAndSend(rabbitMQConfig.getOrderEventExchange(),rabbitMQConfig.getOrderUpdateTrafficRoutingKey(),eventMessage);
+            }
+        } else if(payType.equalsIgnoreCase(PayTypeEnum.ALI_PAY.name())) {
+
+        }
     }
 
 }
