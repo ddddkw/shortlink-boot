@@ -37,4 +37,7 @@ public interface ProductOrderService extends IService<ProductOrderDO> {
     boolean closeProductOrder(EventMessage eventMessage);
 
     void processOrderCallbackMsg(String payTypeEnum, Map paramsMap);
+
+    // 处理队列中的订单相关消息
+    void handleProductOrderMessage(EventMessage eventMessage);
 }

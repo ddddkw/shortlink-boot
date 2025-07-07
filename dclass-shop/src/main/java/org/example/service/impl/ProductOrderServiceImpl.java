@@ -5,12 +5,10 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
-import net.bytebuddy.jar.asm.Opcodes;
 import org.apache.commons.lang3.StringUtils;
 import org.example.component.Payfactory;
 import org.example.config.RabbitMQConfig;
 import org.example.constant.TimeConstants;
-import org.example.entity.ProductDO;
 import org.example.entity.ProductOrderDO;
 import org.example.enums.*;
 import org.example.exception.BizException;
@@ -31,6 +29,7 @@ import org.example.vo.ProductVO;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,6 +39,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 /**
@@ -65,6 +65,9 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
 
     @Autowired
     private Payfactory payfactory;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     public int add(ProductOrderDO productOrderDO){
         return this.baseMapper.insert(productOrderDO);
@@ -310,15 +313,38 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
                 .accountNo(accountNo)
                 .messageId(outTradeNo)
                 .content(JsonUtil.obj2Json(content))
-                .eventMessageType(EventMessageType.ORDER_PAY.name())
+                .eventMessageType(EventMessageType.PRODUCT_ORDER_PAY.name())
                 .build();
         if (payType.equalsIgnoreCase(PayTypeEnum.WECHAT_PAY.name())) {
             // 如果微信支付成功,，发送消息
             if ("SUCCESS".equalsIgnoreCase(tradeState)) {
-                rabbitTemplate.convertAndSend(rabbitMQConfig.getOrderEventExchange(),rabbitMQConfig.getOrderUpdateTrafficRoutingKey(),eventMessage);
+                // 使用redis做分布式锁，防止重复进行支付成功的回调
+                Boolean absent = redisTemplate.opsForValue().setIfAbsent(outTradeNo,"ok",3, TimeUnit.DAYS);
+                if (absent) {
+                    rabbitTemplate.convertAndSend(rabbitMQConfig.getOrderEventExchange(),rabbitMQConfig.getOrderUpdateTrafficRoutingKey(),eventMessage);
+                }
             }
         } else if(payType.equalsIgnoreCase(PayTypeEnum.ALI_PAY.name())) {
 
+        }
+    }
+
+    /**
+     * 处理订单相关消息
+     * @param eventMessage
+     */
+    public void handleProductOrderMessage(EventMessage eventMessage){
+        String messageType = eventMessage.getEventMessageType();
+        try {
+            // 关闭订单的逻辑
+            if (EventMessageType.PRODUCT_ORDER_NEW.name().equalsIgnoreCase(messageType)) {
+                this.closeProductOrder(eventMessage);
+            } else if (EventMessageType.PRODUCT_ORDER_PAY.name().equalsIgnoreCase(messageType)) {
+                int rows = updateOrderPayState(eventMessage.getBizId(),eventMessage.getAccountNo(),ProductOrderStateEnum.PAY.name(),ProductOrderStateEnum.NEW.name());
+                log.info("订单更新成功：rows={}，eventMessage={}",rows,eventMessage);
+            }
+        }catch (Exception e){
+            log.error("消息消费失败：{}", eventMessage);
         }
     }
 

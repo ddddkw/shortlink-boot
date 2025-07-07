@@ -47,6 +47,7 @@ public class RabbitMQConfig {
      */
     private Integer ttl = 1000 * 60;
 
+    @Bean
     public MessageConverter messageConverter(){
         return new Jackson2JsonMessageConverter();
     }
