@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2025-05-20
  */
 @RestController
-@RequestMapping("/trafficTaskDO")
+@RequestMapping("/trafficTask")
 public class TrafficTaskController {
 
 }

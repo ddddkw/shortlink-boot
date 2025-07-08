@@ -7,3 +7,4 @@
 target
 /target
 /dclass-shop/src/main/resources/cert/apiclient_cert.pem
+/dclass-shop/src/main/resources/cert/apiclient_key.pem

@@ -16,7 +16,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RabbitListener(queuesToDeclare = {
-        @Queue("order.traffic.queue")
+        @Queue("order.traffic.queue"),
+        @Queue("traffic.free_init.queue")
 })
 @Slf4j
 public class TrafficMQListener {
@@ -28,6 +29,7 @@ public class TrafficMQListener {
     public void trafficHandler(EventMessage eventMessage, Message message, Channel channel) {
         log.info("监听到消息trafficHandler:{}",eventMessage);
         try {
+            // 发放流量包逻辑
             trafficService.handlerTrafficMessage(eventMessage);
         } catch (Exception e){
             log.error("消息消费失败：{}", eventMessage);

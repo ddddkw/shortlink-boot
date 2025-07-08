@@ -47,9 +47,12 @@ public class PayBeanConfig {
                 .lines().collect(Collectors.joining(System.lineSeparator()));
 
         try {
-            String privateKey = content.replace("-----BEGIN PRIVATE KEY-----", "")
+            // 移除标记行和所有非Base64字符
+            String privateKey = content
+                    .replace("-----BEGIN PRIVATE KEY-----", "")
                     .replace("-----END PRIVATE KEY-----", "")
-                    .replaceAll("\\s+", "");
+                    .replaceAll("[^A-Za-z0-9+/=]", ""); // 仅保留Base64合法字符
+
             KeyFactory kf = KeyFactory.getInstance("RSA");
 
             PrivateKey finalPrivateKey = kf.generatePrivate(
@@ -60,7 +63,7 @@ public class PayBeanConfig {
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("当前Java环境不支持RSA", e);
         } catch (InvalidKeySpecException e) {
-            throw new RuntimeException("无效的密钥格式");
+            throw new RuntimeException("无效的密钥格式", e);
         }
     }
 

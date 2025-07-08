@@ -14,4 +14,6 @@ public enum EventMessageType {
     //新建商品订单
     PRODUCT_ORDER_NEW,
     PRODUCT_ORDER_PAY,
+
+    TRAFFIC_FREE_INIT,
 }

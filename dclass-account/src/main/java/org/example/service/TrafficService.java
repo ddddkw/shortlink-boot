@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.example.entity.TrafficDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.example.model.EventMessage;
+import org.example.params.TrafficPageParam;
 
 /**
  * <p>
@@ -24,20 +25,16 @@ public interface TrafficService extends IService<TrafficDO> {
 
     /**
      * 分页查询可用的流量包
-     * @param page
-     * @param size
-     * @param accountNo
      * @return
      */
-    IPage<TrafficDO> pageAvailable(int page, int size, long accountNo);
+    IPage<TrafficDO> pageAvailable(TrafficPageParam pageParam);
 
     /**
      * 查找详情
      * @param trafficId
-     * @param accountNo
      * @return
      */
-    TrafficDO findByIdAndAccountNo(Long trafficId, long accountNo);
+    TrafficDO findByIdAndAccountNo(Long trafficId);
 
     /**
      * 增加谋个流量包天使用次数
