@@ -126,12 +126,12 @@ public class RabbitMQConfig {
     private String orderUpdateTrafficRoutingKey = "order.update.traffic.routing.key";
 
     /**
-     * 用于绑定订单队列和交换机的key
+     * 用于绑定更新订单队列和交换机的key
      */
     private String orderUpdateBindingKey = "order.update.*.routing.key";
 
     /**
-     * 用于绑定订单队列和交换机的key
+     * 用于绑定流量包发放订单队列和交换机的key
      */
     private String orderTrafficBindingKey = "order.*.traffic.routing.key";
 

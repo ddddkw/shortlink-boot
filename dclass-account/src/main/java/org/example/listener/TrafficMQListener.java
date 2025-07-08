@@ -6,10 +6,14 @@ import org.example.model.EventMessage;
 import org.example.service.TrafficService;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.Queue;
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * 由于流量包是与账号绑定的，所以需要在账号服务这边监听消息进行流量包发放操作
+ */
 @Component
 @RabbitListener(queuesToDeclare = {
         @Queue("order.traffic.queue")
@@ -20,6 +24,7 @@ public class TrafficMQListener {
     @Autowired
     private TrafficService trafficService;
 
+    @RabbitHandler
     public void trafficHandler(EventMessage eventMessage, Message message, Channel channel) {
         log.info("监听到消息trafficHandler:{}",eventMessage);
         try {

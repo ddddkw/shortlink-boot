@@ -292,6 +292,7 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
 
     }
 
+    // 微信回调后，执行对应的逻辑
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
     public void processOrderCallbackMsg(String payType, Map paramsMap){
         // 获取订单号
@@ -330,7 +331,7 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
     }
 
     /**
-     * 处理订单相关消息
+     * 处理订单相关消息-主要是执行订单更新操作
      * @param eventMessage
      */
     public void handleProductOrderMessage(EventMessage eventMessage){

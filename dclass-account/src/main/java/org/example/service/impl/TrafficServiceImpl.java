@@ -89,6 +89,10 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
                 .set("day_used",dayUsedTimes));
     }
 
+    /**
+     * 主要是执行流量包发放操作
+     * @param eventMessage
+     */
     @Transactional(rollbackFor = Exception.class,propagation = Propagation.REQUIRED)
     public void handlerTrafficMessage(EventMessage eventMessage){
         String messageType = eventMessage.getEventMessageType();
@@ -103,7 +107,7 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
             int buyNum = (int) orderInfoMap.get("buyNum");
             String productStr = (String) orderInfoMap.get("product");
             ProductVO productVO = JsonUtil.json2Obj(productStr, ProductVO.class);
-            log.info("商品信息",productVO);
+            log.info("商品信息：{}",productVO);
 
             // 流量表有效期
             LocalDateTime expiredDateTime = LocalDateTime.now().plusDays(productVO.getValidDay());
@@ -120,7 +124,7 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
                     .expiredDate(date)
                     .build();
             int rows = this.add(trafficDO);
-            log.info("消费消息新增流量包",rows);
+            log.info("消费消息新增流量包：{}",rows);
         }
     }
 

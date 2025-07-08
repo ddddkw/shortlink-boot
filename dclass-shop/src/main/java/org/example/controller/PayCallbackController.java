@@ -31,7 +31,7 @@ import java.util.stream.Stream;
  **/
 
 @Controller
-@RequestMapping("/api/callback/order/v1/")
+@RequestMapping("/callback/order")
 @Slf4j
 public class PayCallbackController {
 
@@ -63,7 +63,7 @@ public class PayCallbackController {
      * @param response
      * @return
      */
-    @RequestMapping("wechat")
+    @RequestMapping("/wechat")
     @ResponseBody
     public Map<String, String> wehcatPayCallback(HttpServletRequest request, HttpServletResponse response) {
 
