@@ -1102,3 +1102,171 @@ tables:
 2025-07-10 15:30:42,820 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
 2025-07-10 15:30:44,339 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
 2025-07-10 15:30:44,353 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-10 16:56:57,601 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 42840 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-10 16:56:57,612 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-10 16:57:02,320 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-10 16:57:02,330 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-10 16:57:02,443 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 68 ms. Found 0 Redis repository interfaces.
+2025-07-10 16:57:03,440 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=a2633488-2974-30e6-8841-f7102cda8c14
+2025-07-10 16:57:04,361 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 16:57:04,367 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 16:57:05,125 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-10 16:57:05,148 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-10 16:57:05,149 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-10 16:57:05,149 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-10 16:57:05,622 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-10 16:57:05,623 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 7145 ms
+2025-07-10 16:57:06,508 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 60
+2025-07-10 16:57:08,214 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-10 16:57:08,884 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-10 16:57:09,103 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '60'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-10 16:57:09,107 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-10 16:57:09,214 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-10 16:57:09,450 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-10 16:57:09,896 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 788 milliseconds.
+2025-07-10 16:57:14,943 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-10 16:57:15,102 WARN [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java : 591] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'trafficController': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'rpc.token' in value "${rpc.token}"
+2025-07-10 16:57:15,110 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-10 16:57:15,132 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-10 16:57:15,142 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Stopping service [Tomcat]
+2025-07-10 16:57:15,180 INFO [main] o.s.b.a.l.ConditionEvaluationReportLoggingListener [ConditionEvaluationReportLoggingListener.java : 136] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-07-10 16:57:15,251 ERROR [main] o.s.boot.SpringApplication [SpringApplication.java : 843] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'trafficController': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'rpc.token' in value "${rpc.token}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at org.example.AccountApplication.main(AccountApplication.java:18)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'rpc.token' in value "${rpc.token}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:936)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1321)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 17 common frames omitted
+2025-07-10 16:59:19,667 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 40440 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-10 16:59:19,677 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-10 16:59:22,120 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-10 16:59:22,127 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-10 16:59:22,253 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 74 ms. Found 0 Redis repository interfaces.
+2025-07-10 16:59:22,840 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=a2633488-2974-30e6-8841-f7102cda8c14
+2025-07-10 16:59:23,391 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 16:59:23,394 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 16:59:23,929 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-10 16:59:23,947 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-10 16:59:23,947 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-10 16:59:23,948 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-10 16:59:24,302 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-10 16:59:24,303 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 4080 ms
+2025-07-10 16:59:24,877 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 60
+2025-07-10 16:59:25,847 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-10 16:59:26,221 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-10 16:59:26,364 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '60'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-10 16:59:26,367 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-10 16:59:26,416 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-10 16:59:26,622 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-10 16:59:27,267 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 899 milliseconds.
+2025-07-10 16:59:30,769 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-10 16:59:30,882 WARN [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java : 591] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'trafficController': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'rpc.token' in value "${rpc.token}"
+2025-07-10 16:59:30,889 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-10 16:59:30,907 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-10 16:59:30,913 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Stopping service [Tomcat]
+2025-07-10 16:59:30,932 INFO [main] o.s.b.a.l.ConditionEvaluationReportLoggingListener [ConditionEvaluationReportLoggingListener.java : 136] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-07-10 16:59:30,969 ERROR [main] o.s.boot.SpringApplication [SpringApplication.java : 843] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'trafficController': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'rpc.token' in value "${rpc.token}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at org.example.AccountApplication.main(AccountApplication.java:18)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'rpc.token' in value "${rpc.token}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:936)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1321)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 17 common frames omitted

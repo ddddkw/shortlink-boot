@@ -4,9 +4,11 @@ import com.baomidou.mybatisplus.core.toolkit.Assert;
 import lombok.extern.slf4j.Slf4j;
 import org.example.component.ShortLinkComponent;
 import org.example.config.RabbitMQConfig;
+import org.example.constant.RedisKey;
 import org.example.entity.DomainDO;
 import org.example.entity.GroupCodeMappingDO;
 import org.example.entity.ShortLinkDO;
+import org.example.enums.BizCodeEnum;
 import org.example.enums.DomainTypeEnum;
 import org.example.enums.EventMessageType;
 import org.example.enums.ShortLinkEnum;
@@ -64,21 +66,30 @@ public class LinkSeniorServiceImpl implements LinkSeniorService {
     @Autowired
     private TrafficFeignService trafficFeignService;
 
-    public int addLink(ShortLinkDO shortLinkDO){
+    public JsonData addLink(ShortLinkAddParam shortLinkAddParam){
 
         Long accountNo = LoginInterceptor.threadLocal.get().getAccountNo();
 
-        String newOriginUrl = CommonUtil.addUrlPrefix(shortLinkDO.getOriginalUrl());
-        shortLinkDO.setOriginalUrl(newOriginUrl);
+        // 预先检查下是否有足够多的次数可以进行创建
+        String cacheKey = String.format(RedisKey.DAY_TOTAL_TRAFFIC,accountNo);
+        String script ="if redis.call('get',KEYS[1]) then return redis.call('decr',KEYS[1]) else return 0 end;";
+        Long leftTimes = redisTemplate.execute(new DefaultRedisScript<>(script,Long.class),Arrays.asList(cacheKey),"");
+        log.info("今日流量包剩余次数:{}",leftTimes);
+        if (leftTimes>=0) {
+            String newOriginUrl = CommonUtil.addUrlPrefix(shortLinkAddParam.getOriginalUrl());
+            shortLinkAddParam.setOriginalUrl(newOriginUrl);
 
-        EventMessage eventMessage= EventMessage.builder().accountNo(accountNo)
-                .content(JsonUtil.obj2Json(shortLinkDO))
-                .messageId(IdUtil.generateSnowFlakeKey().toString())
-                .eventMessageType(EventMessageType.SHORT_LINK_ADD.name())
-                .build();
-        // 发送消息，依据rabbitMQConfig.getShortLinkAddRoutingKey() 通过key模糊匹配配置中的key，然后进行交换机和队列的绑定
-        rabbitTemplate.convertAndSend(rabbitMQConfig.getShortLinkEventExchange(),rabbitMQConfig.getShortLinkAddRoutingKey(),eventMessage);
-        return 1;
+            EventMessage eventMessage= EventMessage.builder().accountNo(accountNo)
+                    .content(JsonUtil.obj2Json(shortLinkAddParam))
+                    .messageId(IdUtil.generateSnowFlakeKey().toString())
+                    .eventMessageType(EventMessageType.SHORT_LINK_ADD.name())
+                    .build();
+            // 发送消息，依据rabbitMQConfig.getShortLinkAddRoutingKey() 通过key模糊匹配配置中的key，然后进行交换机和队列的绑定
+            rabbitTemplate.convertAndSend(rabbitMQConfig.getShortLinkEventExchange(),rabbitMQConfig.getShortLinkAddRoutingKey(),eventMessage);
+            return JsonData.buildSuccess();
+        } else {
+            return JsonData.buildResult(BizCodeEnum.TRAFFIC_REDUCE_FAIL);
+        }
     }
 
     public int del(ShortLinkDelParam shortLinkDelParam){

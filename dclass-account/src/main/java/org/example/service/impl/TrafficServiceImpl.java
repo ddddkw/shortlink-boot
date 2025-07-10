@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.example.constant.RedisKey;
 import org.example.entity.TrafficDO;
 import org.example.enums.BizCodeEnum;
 import org.example.enums.EventMessageType;
@@ -27,6 +28,7 @@ import org.example.utils.TimeUtil;
 import org.example.vo.ProductVO;
 import org.example.vo.UserTrafficVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -52,6 +54,9 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
 
     @Autowired
     private ProductFeignService productFeignService;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     /**
      * 新增流量包
@@ -168,6 +173,10 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
                     .build();
             int rows = this.add(trafficDO);
             log.info("消费消息新增流量包：{}",rows);
+
+            // 新增流量包应该删除redis中的缓存key
+            String totalTrafficTimesKey = String.format(RedisKey.DAY_TOTAL_TRAFFIC,accountNo);
+            redisTemplate.delete(totalTrafficTimesKey);
         } else if (EventMessageType.TRAFFIC_FREE_INIT.name().equalsIgnoreCase(messageType)) {
             // 免费流量包发放
             Long productId = Long.valueOf(eventMessage.getBizId());
@@ -218,6 +227,14 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
         if (rows!=1) {
             throw new BizException(BizCodeEnum.TRAFFIC_REDUCE_FAIL);
         }
+
+        // 向redis中设置总流量包次数，短链服务那边递减即可；如果有新增流量包则删除这个key
+        long leftSeconds = TimeUtil.getRemainSecondsOneDay(new Date());
+        String totalTrafficTimesKey = String.format(RedisKey.DAY_TOTAL_TRAFFIC,accountNo);
+        // 每次扣减流量包时，通过redis缓存今天剩余的可用次数
+        redisTemplate.opsForValue().set(totalTrafficTimesKey,userTrafficVo.getDayTotalLeftTimes()-1,leftSeconds,TimeUnit.SECONDS);
+
+
         return JsonData.buildSuccess();
     }
 

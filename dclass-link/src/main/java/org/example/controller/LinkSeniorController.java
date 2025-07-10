@@ -32,10 +32,7 @@ public class LinkSeniorController {
      */
     @PostMapping("/add")
     public JsonData add(@RequestBody ShortLinkAddParam shortLinkAddParam){
-        ShortLinkDO shortLinkDO = new ShortLinkDO();
-        BeanUtils.copyProperties(shortLinkAddParam,shortLinkDO);
-        int rows = linkSeniorService.addLink(shortLinkDO);
-        return rows==1?JsonData.buildSuccess():JsonData.buildError("新增失败");
+        return linkSeniorService.addLink(shortLinkAddParam);
     }
 
     /**
