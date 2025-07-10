@@ -1,7 +1,9 @@
 package org.example.mapper;
 
+import org.apache.ibatis.annotations.Param;
 import org.example.entity.TrafficDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
 
 /**
  * <p>
@@ -13,4 +15,14 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface TrafficMapper extends BaseMapper<TrafficDO> {
 
+    /**
+     * 给某个流量包增加天使用次数
+     * @param trafficId
+     * @param accountNo
+     * @param usedTimes
+     * @return
+     */
+    int addDayUsedTimes(@Param("trafficId") Long trafficId, @Param("accountNo") Long accountNo, @Param("usedTimes") Integer usedTimes);
+
+    int initUsedTimes(@Param("trafficId") Long trafficId, @Param("accountNo") Long accountNo, @Param("usedTimes") Integer usedTimes);
 }

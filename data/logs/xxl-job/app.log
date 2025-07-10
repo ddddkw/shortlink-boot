@@ -1,0 +1,1086 @@
+2025-07-10 10:47:48,426 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 39228 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-10 10:47:48,450 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-10 10:47:52,800 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-10 10:47:52,812 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-10 10:47:52,926 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 69 ms. Found 0 Redis repository interfaces.
+2025-07-10 10:47:53,976 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=a2633488-2974-30e6-8841-f7102cda8c14
+2025-07-10 10:47:55,876 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 10:47:55,884 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 10:47:57,886 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-10 10:47:57,934 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-10 10:47:57,934 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-10 10:47:57,935 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-10 10:47:58,651 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-10 10:47:58,652 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 9350 ms
+2025-07-10 10:48:05,238 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 60
+2025-07-10 10:48:10,400 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-10 10:48:11,961 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-10 10:48:12,451 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '60'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-10 10:48:12,475 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-10 10:48:12,570 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-10 10:48:12,791 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-10 10:48:13,446 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 970 milliseconds.
+2025-07-10 10:48:19,378 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-10 10:48:19,729 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-10 10:48:20,145 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-10 10:48:26,467 INFO [redisson-netty-1-8] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 10:48:26,472 INFO [redisson-netty-1-4] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 10:48:27,594 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-10 10:48:34,996 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-10 10:48:35,072 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@4c7b4a31[class org.example.job.TrafficjobHandler#execute]
+2025-07-10 10:48:35,242 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-10 10:48:35,363 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-10 10:48:36,194 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-10 10:48:36,225 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-10 10:48:36,275 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.24:8001 register finished
+2025-07-10 10:48:38,827 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-10 10:48:38,978 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#1a345298:0/SimpleConnection@2d6cbbdb [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 50222]
+2025-07-10 10:48:39,375 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 61.462 seconds (JVM running for 65.65)
+2025-07-10 10:50:02,299 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-10 10:50:02,299 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-10 10:50:02,303 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 4 ms
+2025-07-10 10:50:02,926 INFO [http-nio-8001-exec-1] o.e.controller.NotifyController [NotifyController.java : 50] 验证码内容
+2025-07-10 10:50:06,146 WARN [http-nio-8001-exec-1] o.a.c.util.SessionIdGeneratorBase [DirectJDKLog.java : 173] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [3,201] milliseconds.
+2025-07-10 10:50:17,951 INFO [http-nio-8001-exec-2] o.e.controller.NotifyController [NotifyController.java : 80] 4599
+2025-07-10 10:50:19,753 INFO [自定义线程池1] org.example.component.SmsComponent [SmsComponent.java : 88] 耗时=1701
+2025-07-10 10:50:19,753 INFO [自定义线程池1] org.example.component.SmsComponent [SmsComponent.java : 90] 短信发送成功，响应: {"msg":"成功","smsid":"17521158196067990682772052","code":"0","balance":"92"}
+2025-07-10 10:52:07,553 INFO [http-nio-8001-exec-4] o.e.service.impl.AccountServiceImpl [AccountServiceImpl.java : 86] 注册成功:AccountDO(id=1943141143606013954, accountNo=1150020799508250624, headImg=null, phone=18480711023, pwd=$1$0bPBLvxl$/zMlsmrgMUMzD3UwLFsMg0, secret=$1$0bPBLvxl, mail=2200600836@qq.com, username=豆, auth=DEFAULT, gmtCreate=null, gmtModified=null)
+2025-07-10 10:52:07,741 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 30] 监听到消息trafficHandler:EventMessage(messageId=1150020810656710657, eventMessageType=TRAFFIC_FREE_INIT, bizId=1, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-10 10:54:18,449 ERROR [http-nio-8001-exec-7] o.e.exception.CustomExceptionHandler [CustomExceptionHandler.java : 35] 系统异常{}
+java.lang.NullPointerException: null
+	at org.example.interceptor.LoginInterceptor.preHandle(LoginInterceptor.java:48)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1062)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2025-07-10 10:55:02,964 INFO [http-nio-8001-exec-9] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Thu Jul 10 10:52:15 CST 2025)
+2025-07-10 10:55:03,001 INFO [http-nio-8001-exec-9] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 210] 待更新流量包列表：[]
+2025-07-10 10:55:03,051 ERROR [http-nio-8001-exec-9] o.e.exception.CustomExceptionHandler [CustomExceptionHandler.java : 35] 系统异常{}
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'usedTimes' not found. Available parameters are [arg2, arg1, arg0, param3, param1, param2]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy103.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:287)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:65)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy110.addDayUsedTimes(Unknown Source)
+	at org.example.service.impl.TrafficServiceImpl.addDayUsedTimes(TrafficServiceImpl.java:98)
+	at org.example.service.impl.TrafficServiceImpl.reduce(TrafficServiceImpl.java:217)
+	at org.example.service.impl.TrafficServiceImpl$$FastClassBySpringCGLIB$$bcb2911f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692)
+	at org.example.service.impl.TrafficServiceImpl$$EnhancerBySpringCGLIB$$5ade2258.reduce(<generated>)
+	at org.example.controller.TrafficController.useTraffic(TrafficController.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'usedTimes' not found. Available parameters are [arg2, arg1, arg0, param3, param1, param2]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at com.baomidou.mybatisplus.core.MybatisParameterHandler.setParameters(MybatisParameterHandler.java:205)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:94)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy173.parameterize(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:99)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:55)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.update(MybatisCachingExecutor.java:85)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:83)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy172.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 71 common frames omitted
+2025-07-10 10:56:14,737 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-10 10:56:14,738 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-10 10:56:14,743 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-10 10:56:14,744 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-10 10:56:14,781 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-10 10:56:15,076 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-10 10:56:17,703 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-10 10:56:17,731 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-10 10:56:23,466 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-10 10:56:23,588 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-10 10:56:23,603 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.24:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-10 10:56:23,604 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-10 10:56:23,605 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-10 10:56:23,608 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-10 10:56:23,611 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-10 10:56:23,614 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-10 10:56:25,194 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-10 10:56:25,226 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-10 10:57:33,202 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 42464 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-10 10:57:33,208 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-10 10:57:35,379 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-10 10:57:35,384 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-10 10:57:35,443 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 40 ms. Found 0 Redis repository interfaces.
+2025-07-10 10:57:35,987 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=a2633488-2974-30e6-8841-f7102cda8c14
+2025-07-10 10:57:36,621 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 10:57:36,626 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 10:57:37,228 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-10 10:57:37,252 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-10 10:57:37,254 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-10 10:57:37,255 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-10 10:57:37,626 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-10 10:57:37,626 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 3992 ms
+2025-07-10 10:57:38,247 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 60
+2025-07-10 10:57:40,312 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-10 10:57:40,888 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-10 10:57:41,237 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '60'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-10 10:57:41,243 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-10 10:57:41,516 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-10 10:57:41,794 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-10 10:57:42,437 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 1193 milliseconds.
+2025-07-10 10:57:51,177 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-10 10:57:51,528 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-10 10:57:52,009 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-10 10:57:57,256 INFO [redisson-netty-1-3] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 10:57:57,259 INFO [redisson-netty-1-4] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 10:57:58,643 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-10 10:58:06,350 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-10 10:58:06,591 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@48543f11[class org.example.job.TrafficjobHandler#execute]
+2025-07-10 10:58:06,954 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-10 10:58:07,096 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-10 10:58:08,438 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-10 10:58:08,483 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-10 10:58:08,534 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.24:8001 register finished
+2025-07-10 10:58:16,382 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-10 10:58:17,945 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#655621fd:0/SimpleConnection@6b6c882c [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 53109]
+2025-07-10 10:58:18,777 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 49.352 seconds (JVM running for 52.47)
+2025-07-10 10:59:13,287 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-10 10:59:13,288 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-10 10:59:13,292 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 3 ms
+2025-07-10 10:59:17,185 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Thu Jul 10 10:52:15 CST 2025)
+2025-07-10 10:59:17,218 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 210] 待更新流量包列表：[]
+2025-07-10 10:59:17,283 ERROR [http-nio-8001-exec-1] o.e.exception.CustomExceptionHandler [CustomExceptionHandler.java : 35] 系统异常{}
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'usedTimes' not found. Available parameters are [arg2, arg1, arg0, param3, param1, param2]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy103.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:287)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:65)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy110.addDayUsedTimes(Unknown Source)
+	at org.example.service.impl.TrafficServiceImpl.addDayUsedTimes(TrafficServiceImpl.java:98)
+	at org.example.service.impl.TrafficServiceImpl.reduce(TrafficServiceImpl.java:217)
+	at org.example.service.impl.TrafficServiceImpl$$FastClassBySpringCGLIB$$bcb2911f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692)
+	at org.example.service.impl.TrafficServiceImpl$$EnhancerBySpringCGLIB$$5ade2258.reduce(<generated>)
+	at org.example.controller.TrafficController.useTraffic(TrafficController.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'usedTimes' not found. Available parameters are [arg2, arg1, arg0, param3, param1, param2]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at com.baomidou.mybatisplus.core.MybatisParameterHandler.setParameters(MybatisParameterHandler.java:205)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:94)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy174.parameterize(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:99)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:55)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.update(MybatisCachingExecutor.java:85)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:83)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy173.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 71 common frames omitted
+2025-07-10 11:03:51,618 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-10 11:03:51,619 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-10 11:03:51,636 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-10 11:03:51,645 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-10 11:03:51,835 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-10 11:03:52,483 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-10 11:03:54,754 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-10 11:03:54,778 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-10 11:04:01,978 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-10 11:04:02,219 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-10 11:04:02,286 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.24:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-10 11:04:02,288 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-10 11:04:02,288 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-10 11:04:02,292 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-10 11:04:02,293 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-10 11:04:02,296 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-10 11:04:08,486 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-10 11:04:08,504 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-10 11:04:37,227 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 42460 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-10 11:04:37,233 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-10 11:04:39,393 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-10 11:04:39,396 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-10 11:04:39,462 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 37 ms. Found 0 Redis repository interfaces.
+2025-07-10 11:04:39,984 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=a2633488-2974-30e6-8841-f7102cda8c14
+2025-07-10 11:04:40,549 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 11:04:40,554 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 11:04:41,039 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-10 11:04:41,058 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-10 11:04:41,059 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-10 11:04:41,059 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-10 11:04:41,460 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-10 11:04:41,460 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 3769 ms
+2025-07-10 11:04:42,110 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 60
+2025-07-10 11:04:43,389 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-10 11:04:43,796 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-10 11:04:43,936 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '60'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-10 11:04:43,937 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-10 11:04:43,975 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-10 11:04:44,142 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-10 11:04:44,678 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 740 milliseconds.
+2025-07-10 11:04:47,820 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-10 11:04:48,058 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-10 11:04:48,349 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-10 11:04:52,021 INFO [redisson-netty-1-4] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 11:04:52,021 INFO [redisson-netty-1-2] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 11:04:52,578 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-10 11:04:56,657 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-10 11:04:56,704 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@6f9e6a85[class org.example.job.TrafficjobHandler#execute]
+2025-07-10 11:04:56,797 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-10 11:04:56,890 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-10 11:04:57,506 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-10 11:04:57,523 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-10 11:04:57,558 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.24:8001 register finished
+2025-07-10 11:04:59,047 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-10 11:04:59,183 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#3c488b34:0/SimpleConnection@63be4548 [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 55321]
+2025-07-10 11:04:59,577 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 25.933 seconds (JVM running for 29.178)
+2025-07-10 11:06:54,653 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-10 11:06:54,655 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-10 11:06:54,659 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 3 ms
+2025-07-10 11:06:59,040 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Thu Jul 10 10:52:15 CST 2025)
+2025-07-10 11:06:59,110 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 210] 待更新流量包列表：[]
+2025-07-10 11:06:59,184 ERROR [http-nio-8001-exec-1] o.e.exception.CustomExceptionHandler [CustomExceptionHandler.java : 35] 系统异常{}
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'usedTimes' not found. Available parameters are [arg2, arg1, arg0, param3, param1, param2]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy103.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:287)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:65)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy110.addDayUsedTimes(Unknown Source)
+	at org.example.service.impl.TrafficServiceImpl.addDayUsedTimes(TrafficServiceImpl.java:98)
+	at org.example.service.impl.TrafficServiceImpl.reduce(TrafficServiceImpl.java:217)
+	at org.example.service.impl.TrafficServiceImpl$$FastClassBySpringCGLIB$$bcb2911f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692)
+	at org.example.service.impl.TrafficServiceImpl$$EnhancerBySpringCGLIB$$89448ed0.reduce(<generated>)
+	at org.example.controller.TrafficController.useTraffic(TrafficController.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'usedTimes' not found. Available parameters are [arg2, arg1, arg0, param3, param1, param2]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at com.baomidou.mybatisplus.core.MybatisParameterHandler.setParameters(MybatisParameterHandler.java:205)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:94)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy174.parameterize(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:99)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:55)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.update(MybatisCachingExecutor.java:85)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:83)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy173.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 71 common frames omitted
+2025-07-10 11:07:21,469 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-10 11:07:21,470 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-10 11:07:21,472 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-10 11:07:21,474 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-10 11:07:21,525 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-10 11:07:21,782 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-10 11:07:23,290 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-10 11:07:23,313 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-10 11:07:30,290 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-10 11:07:30,377 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-10 11:07:30,395 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.24:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-10 11:07:30,396 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-10 11:07:30,396 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-10 11:07:30,397 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-10 11:07:30,398 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-10 11:07:30,398 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-10 11:07:33,821 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-10 11:07:33,841 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-10 11:08:08,590 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 41036 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-10 11:08:08,604 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-10 11:08:14,324 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-10 11:08:14,335 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-10 11:08:14,529 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 115 ms. Found 0 Redis repository interfaces.
+2025-07-10 11:08:15,858 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=a2633488-2974-30e6-8841-f7102cda8c14
+2025-07-10 11:08:17,050 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 11:08:17,065 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 11:08:18,233 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-10 11:08:18,263 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-10 11:08:18,266 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-10 11:08:18,267 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-10 11:08:18,882 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-10 11:08:18,883 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 9226 ms
+2025-07-10 11:08:20,538 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 60
+2025-07-10 11:08:22,543 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-10 11:08:23,179 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-10 11:08:23,566 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '60'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-10 11:08:23,591 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-10 11:08:23,659 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-10 11:08:23,845 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-10 11:08:24,412 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 821 milliseconds.
+2025-07-10 11:08:30,863 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-10 11:08:31,325 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-10 11:08:31,957 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-10 11:08:38,953 INFO [redisson-netty-1-2] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 11:08:38,953 INFO [redisson-netty-1-4] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 11:08:39,608 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-10 11:08:44,818 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-10 11:08:44,858 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@764d54a0[class org.example.job.TrafficjobHandler#execute]
+2025-07-10 11:08:44,977 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-10 11:08:45,068 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-10 11:08:45,728 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-10 11:08:45,749 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-10 11:08:45,784 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.24:8001 register finished
+2025-07-10 11:08:47,418 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-10 11:08:47,528 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#30c01c37:0/SimpleConnection@44f5259a [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 56583]
+2025-07-10 11:08:47,827 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 45.098 seconds (JVM running for 51.635)
+2025-07-10 11:09:10,297 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-10 11:09:10,299 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-10 11:09:10,305 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 6 ms
+2025-07-10 11:09:14,525 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Thu Jul 10 10:52:15 CST 2025)
+2025-07-10 11:09:14,625 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 210] 待更新流量包列表：[]
+2025-07-10 11:09:57,503 ERROR [http-nio-8001-exec-1] o.e.exception.CustomExceptionHandler [CustomExceptionHandler.java : 35] 系统异常{}
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'usedTimes' not found. Available parameters are [arg2, arg1, arg0, param3, param1, param2]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy103.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:287)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:65)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy110.addDayUsedTimes(Unknown Source)
+	at org.example.service.impl.TrafficServiceImpl.addDayUsedTimes(TrafficServiceImpl.java:98)
+	at org.example.service.impl.TrafficServiceImpl.reduce(TrafficServiceImpl.java:217)
+	at org.example.service.impl.TrafficServiceImpl$$FastClassBySpringCGLIB$$bcb2911f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692)
+	at org.example.service.impl.TrafficServiceImpl$$EnhancerBySpringCGLIB$$acf2c26c.reduce(<generated>)
+	at org.example.controller.TrafficController.useTraffic(TrafficController.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'usedTimes' not found. Available parameters are [arg2, arg1, arg0, param3, param1, param2]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at com.baomidou.mybatisplus.core.MybatisParameterHandler.setParameters(MybatisParameterHandler.java:205)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:94)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy174.parameterize(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:99)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:55)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.update(MybatisCachingExecutor.java:85)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:83)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy173.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 71 common frames omitted
+2025-07-10 11:15:54,287 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-10 11:15:54,287 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-10 11:15:54,288 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-10 11:15:54,289 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-10 11:15:54,330 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-10 11:15:54,663 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-10 11:15:56,033 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-10 11:15:56,054 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-10 11:16:02,878 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-10 11:16:03,380 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-10 11:16:03,432 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.24:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-10 11:16:03,432 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-10 11:16:03,433 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-10 11:16:03,433 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-10 11:16:03,435 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-10 11:16:03,435 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-10 11:16:12,000 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-10 11:16:12,016 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-10 11:16:47,071 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 35940 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-10 11:16:47,086 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-10 11:16:50,630 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-10 11:16:50,634 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-10 11:16:50,806 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 78 ms. Found 0 Redis repository interfaces.
+2025-07-10 11:16:51,668 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=a2633488-2974-30e6-8841-f7102cda8c14
+2025-07-10 11:16:52,371 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 11:16:52,376 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 11:16:53,152 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-10 11:16:53,198 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-10 11:16:53,199 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-10 11:16:53,200 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-10 11:16:53,627 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-10 11:16:53,629 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 5681 ms
+2025-07-10 11:16:54,365 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 60
+2025-07-10 11:16:55,652 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-10 11:16:56,107 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-10 11:16:56,317 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '60'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-10 11:16:56,321 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-10 11:16:56,368 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-10 11:16:56,519 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-10 11:16:57,071 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 749 milliseconds.
+2025-07-10 11:17:00,926 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-10 11:17:01,268 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-10 11:17:01,642 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-10 11:17:06,393 INFO [redisson-netty-1-12] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 11:17:06,416 INFO [redisson-netty-1-4] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 11:17:07,683 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-10 11:17:13,370 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-10 11:17:13,418 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@5de32e00[class org.example.job.TrafficjobHandler#execute]
+2025-07-10 11:17:13,512 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-10 11:17:13,584 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-10 11:17:14,136 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-10 11:17:14,162 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-10 11:17:14,193 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.24:8001 register finished
+2025-07-10 11:17:15,725 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-10 11:17:15,846 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#473847fb:0/SimpleConnection@31b4c003 [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 59092]
+2025-07-10 11:17:16,273 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 34.349 seconds (JVM running for 39.055)
+2025-07-10 11:18:17,550 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-10 11:18:17,551 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-10 11:18:17,555 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 3 ms
+2025-07-10 11:18:20,793 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Thu Jul 10 10:52:15 CST 2025)
+2025-07-10 11:18:20,842 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 210] 待更新流量包列表：[]
+2025-07-10 11:19:17,188 INFO [http-nio-8001-exec-2] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:1,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=1, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Thu Jul 10 11:18:21 CST 2025)
+2025-07-10 11:19:17,189 INFO [http-nio-8001-exec-2] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 210] 待更新流量包列表：[]
+2025-07-10 11:19:17,263 ERROR [http-nio-8001-exec-2] o.e.exception.CustomExceptionHandler [CustomExceptionHandler.java : 32] 业务异常{}
+org.example.exception.BizException: 流量不足，扣减失败
+	at org.example.service.impl.TrafficServiceImpl.reduce(TrafficServiceImpl.java:219)
+	at org.example.service.impl.TrafficServiceImpl$$FastClassBySpringCGLIB$$bcb2911f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692)
+	at org.example.service.impl.TrafficServiceImpl$$EnhancerBySpringCGLIB$$8717ce5e.reduce(<generated>)
+	at org.example.controller.TrafficController.useTraffic(TrafficController.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2025-07-10 11:20:05,713 INFO [http-nio-8001-exec-3] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:1,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=1, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Thu Jul 10 11:18:21 CST 2025)
+2025-07-10 11:20:05,715 INFO [http-nio-8001-exec-3] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 210] 待更新流量包列表：[]
+2025-07-10 11:20:05,773 ERROR [http-nio-8001-exec-3] o.e.exception.CustomExceptionHandler [CustomExceptionHandler.java : 32] 业务异常{}
+org.example.exception.BizException: 流量不足，扣减失败
+	at org.example.service.impl.TrafficServiceImpl.reduce(TrafficServiceImpl.java:219)
+	at org.example.service.impl.TrafficServiceImpl$$FastClassBySpringCGLIB$$bcb2911f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692)
+	at org.example.service.impl.TrafficServiceImpl$$EnhancerBySpringCGLIB$$8717ce5e.reduce(<generated>)
+	at org.example.controller.TrafficController.useTraffic(TrafficController.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2025-07-10 11:21:24,318 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-10 11:21:24,317 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-10 11:21:24,318 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-10 11:21:24,319 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-10 11:21:24,365 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-10 11:21:25,242 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-10 11:21:26,916 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-10 11:21:26,933 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-10 11:21:35,969 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-10 11:21:36,104 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-10 11:21:36,121 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.24:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-10 11:21:36,123 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-10 11:21:36,125 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-10 11:21:36,126 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-10 11:21:36,127 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-10 11:21:36,129 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-10 11:21:37,730 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-10 11:21:37,779 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-10 11:21:58,355 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 44368 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-10 11:21:58,363 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-10 11:22:01,306 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-10 11:22:01,312 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-10 11:22:01,401 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 49 ms. Found 0 Redis repository interfaces.
+2025-07-10 11:22:02,151 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=a2633488-2974-30e6-8841-f7102cda8c14
+2025-07-10 11:22:02,874 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 11:22:02,878 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-10 11:22:03,514 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-10 11:22:03,552 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-10 11:22:03,553 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-10 11:22:03,554 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-10 11:22:04,014 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-10 11:22:04,015 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 4985 ms
+2025-07-10 11:22:04,732 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 60
+2025-07-10 11:22:06,116 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-10 11:22:06,547 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-10 11:22:06,709 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '60'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-10 11:22:06,712 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-10 11:22:06,756 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-10 11:22:06,912 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-10 11:22:07,358 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 645 milliseconds.
+2025-07-10 11:22:11,158 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-10 11:22:11,467 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-10 11:22:11,863 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-10 11:22:16,938 INFO [redisson-netty-1-12] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 11:22:16,955 INFO [redisson-netty-1-4] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-10 11:22:17,849 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-10 11:22:25,008 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-10 11:22:25,057 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@52a3eba3[class org.example.job.TrafficjobHandler#execute]
+2025-07-10 11:22:25,184 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-10 11:22:25,307 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-10 11:22:26,034 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-10 11:22:26,055 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-10 11:22:26,101 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.24:8001 register finished
+2025-07-10 11:22:28,284 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-10 11:22:28,425 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#156cfa20:0/SimpleConnection@515b7335 [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 60839]
+2025-07-10 11:22:28,818 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 34.849 seconds (JVM running for 39.177)
+2025-07-10 11:22:43,677 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-10 11:22:43,679 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-10 11:22:43,683 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 3 ms
+2025-07-10 11:22:47,357 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:1,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=1, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Thu Jul 10 11:18:21 CST 2025)
+2025-07-10 11:22:47,414 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 210] 待更新流量包列表：[]
+2025-07-10 11:23:26,561 INFO [http-nio-8001-exec-2] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:0,当前使用流量包:null
+2025-07-10 11:23:48,441 INFO [http-nio-8001-exec-3] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=2, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 09 11:22:47 CST 2025)
+2025-07-10 11:23:48,441 INFO [http-nio-8001-exec-3] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 210] 待更新流量包列表：[1943141183917469697]

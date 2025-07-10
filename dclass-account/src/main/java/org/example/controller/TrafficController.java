@@ -39,8 +39,9 @@ public class TrafficController {
     public JsonData useTraffic(@RequestBody UseTrafficParam param, HttpServletRequest request){
 
         //具体使用流量包逻辑  TODO
+        JsonData jsonData = trafficService.reduce(param);
 
-        return JsonData.buildSuccess();
+        return jsonData;
     }
 
 
