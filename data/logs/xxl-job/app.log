@@ -1084,3 +1084,21 @@ tables:
 2025-07-10 11:23:26,561 INFO [http-nio-8001-exec-2] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:0,当前使用流量包:null
 2025-07-10 11:23:48,441 INFO [http-nio-8001-exec-3] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 206] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=2, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 09 11:22:47 CST 2025)
 2025-07-10 11:23:48,441 INFO [http-nio-8001-exec-3] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 210] 待更新流量包列表：[1943141183917469697]
+2025-07-10 15:30:30,577 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-10 15:30:30,577 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-10 15:30:30,618 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-10 15:30:30,645 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-10 15:30:31,016 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-10 15:30:31,539 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-10 15:30:33,447 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-10 15:30:33,512 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-10 15:30:42,543 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-10 15:30:42,786 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-10 15:30:42,813 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.24:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-10 15:30:42,815 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-10 15:30:42,816 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-10 15:30:42,819 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-10 15:30:42,820 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-10 15:30:42,820 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-10 15:30:44,339 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-10 15:30:44,353 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.

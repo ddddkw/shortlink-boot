@@ -10,14 +10,17 @@ import org.example.entity.ShortLinkDO;
 import org.example.enums.DomainTypeEnum;
 import org.example.enums.EventMessageType;
 import org.example.enums.ShortLinkEnum;
+import org.example.feign.TrafficFeignService;
 import org.example.interceptor.LoginInterceptor;
 import org.example.model.EventMessage;
 import org.example.params.ShortLinkAddParam;
 import org.example.params.ShortLinkDelParam;
 import org.example.params.ShortLinkUpdateParam;
+import org.example.params.UseTrafficParam;
 import org.example.service.*;
 import org.example.utils.CommonUtil;
 import org.example.utils.IdUtil;
+import org.example.utils.JsonData;
 import org.example.utils.JsonUtil;
 import org.example.vo.LinkGroupVo;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -57,6 +60,9 @@ public class LinkSeniorServiceImpl implements LinkSeniorService {
 
     @Autowired
     private LinkGroupService linkGroupService;
+
+    @Autowired
+    private TrafficFeignService trafficFeignService;
 
     public int addLink(ShortLinkDO shortLinkDO){
 
@@ -142,20 +148,27 @@ public class LinkSeniorServiceImpl implements LinkSeniorService {
                 // 判断短链码是否被占用
                 ShortLinkDO shortLinkDOInDB = shortLinkService.findByShortLinkCode(code);
                 if (shortLinkDOInDB == null) {
-                    ShortLinkDO shortLinkDO = ShortLinkDO.builder()
-                            .accountNo(accountNo)
-                            .code(code)
-                            .title(shortLinkAddParam.getTitle())
-                            .originalUrl(shortLinkAddParam.getOriginalUrl())
-                            .domain(domainDO.getValue())
-                            .groupId(linkGroupVo.getId())
-                            .expired(shortLinkAddParam.getExpired())
-                            .sign(originUrlDigest)
-                            .state(ShortLinkEnum.ACTIVE.name())
-                            .del(0)
-                            .build();
-                    shortLinkService.addShortLink(shortLinkDO);
-                    return true;
+                    UseTrafficParam useTrafficParam=new UseTrafficParam();
+                    useTrafficParam.setAccountNo(accountNo);
+                    useTrafficParam.setBizId(code);
+                    // 如果次数扣减成功了，再生成短链
+                    boolean reduceFlag = reduceTraffic(eventMessage,code);
+                    if (reduceFlag) {
+                        ShortLinkDO shortLinkDO = ShortLinkDO.builder()
+                                .accountNo(accountNo)
+                                .code(code)
+                                .title(shortLinkAddParam.getTitle())
+                                .originalUrl(shortLinkAddParam.getOriginalUrl())
+                                .domain(domainDO.getValue())
+                                .groupId(linkGroupVo.getId())
+                                .expired(shortLinkAddParam.getExpired())
+                                .sign(originUrlDigest)
+                                .state(ShortLinkEnum.ACTIVE.name())
+                                .del(0)
+                                .build();
+                        shortLinkService.addShortLink(shortLinkDO);
+                        return true;
+                    }
                 } else {
                     log.error("C端短链码重复：{}", eventMessage);
                     duplicateCodeFlag=true;
@@ -289,6 +302,22 @@ public class LinkSeniorServiceImpl implements LinkSeniorService {
         LinkGroupVo linkGroupVo = linkGroupService.detail(groupId,accountNo);
         Assert.notNull(linkGroupVo,"组名不合法");
         return linkGroupVo;
+    }
+
+    /**
+     * 生成短链后，减少流量包可用次数
+     * @return
+     */
+    private boolean reduceTraffic(EventMessage eventMessage,String code){
+        UseTrafficParam useTrafficParam =UseTrafficParam.builder()
+                        .accountNo(eventMessage.getAccountNo())
+                        .bizId(code).build();
+        JsonData jsonData = trafficFeignService.useTraffic(useTrafficParam);
+        if (jsonData.getCode()!=0) {
+            log.info("流量包不足，扣减失败：{}",eventMessage);
+            return false;
+        }
+        return true;
     }
 
 }
