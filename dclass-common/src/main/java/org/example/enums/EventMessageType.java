@@ -16,4 +16,9 @@ public enum EventMessageType {
     PRODUCT_ORDER_PAY,
 
     TRAFFIC_FREE_INIT,
+
+    /**
+     * 使用流量包
+     */
+    TRAFFIC_USED,
 }

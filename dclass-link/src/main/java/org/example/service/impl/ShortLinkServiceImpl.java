@@ -83,7 +83,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         return rows;
     }
 
-    public ShortLinkVo parseShortLinkVo(String shortLinkCode){
+    public ShortLinkVo parseShortLinkCode(String shortLinkCode){
         QueryWrapper queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("code",shortLinkCode);
         ShortLinkDO shortLinkDO = this.baseMapper.selectOne(queryWrapper);

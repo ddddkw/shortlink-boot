@@ -28,6 +28,6 @@ public interface ShortLinkService extends IService<ShortLinkDO> {
 
     int updateShortLink(ShortLinkDO shortLinkDO);
 
-    ShortLinkVo parseShortLinkVo(String shortLinkCode);
+    ShortLinkVo parseShortLinkCode(String shortLinkCode);
 
 }

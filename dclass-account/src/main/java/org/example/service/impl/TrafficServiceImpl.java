@@ -7,14 +7,14 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.example.config.RabbitMQConfig;
 import org.example.constant.RedisKey;
 import org.example.entity.TrafficDO;
-import org.example.enums.BizCodeEnum;
-import org.example.enums.EventMessageType;
-import org.example.enums.PayTypeEnum;
-import org.example.enums.PluginTypeEnum;
+import org.example.entity.TrafficTaskDO;
+import org.example.enums.*;
 import org.example.exception.BizException;
 import org.example.feign.ProductFeignService;
+import org.example.feign.ShortLinkFeignService;
 import org.example.interceptor.LoginInterceptor;
 import org.example.mapper.TrafficMapper;
 import org.example.model.EventMessage;
@@ -22,11 +22,13 @@ import org.example.params.TrafficPageParam;
 import org.example.params.UseTrafficParam;
 import org.example.service.TrafficService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.example.service.TrafficTaskService;
 import org.example.utils.JsonData;
 import org.example.utils.JsonUtil;
 import org.example.utils.TimeUtil;
 import org.example.vo.ProductVO;
 import org.example.vo.UserTrafficVo;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -56,7 +58,19 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
     private ProductFeignService productFeignService;
 
     @Autowired
+    private ShortLinkFeignService shortLinkFeignService;
+
+    @Autowired
     private RedisTemplate redisTemplate;
+
+    @Autowired
+    private TrafficTaskService trafficTaskService;
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    private RabbitMQConfig rabbitMQConfig;
 
     /**
      * 新增流量包
@@ -138,7 +152,7 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
 
 
     /**
-     * 主要是执行流量包发放操作
+     * 主要是执行流量包发放操作以及流量包回滚操作
      * @param eventMessage
      */
     @Transactional(rollbackFor = Exception.class,propagation = Propagation.REQUIRED)
@@ -194,6 +208,21 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
                     .expiredDate(new Date())
                     .build();
             int rows = this.add(trafficDO);
+        } else if (EventMessageType.TRAFFIC_USED.name().equalsIgnoreCase(messageType)) {
+            // 检查task是否存在
+            // 检查短链码是否成功生成
+            Long trafficTaskId = Long.valueOf(eventMessage.getBizId());
+            TrafficTaskDO trafficTaskDo = trafficTaskService.findByIdAndAccountNo(trafficTaskId, eventMessage.getAccountNo());
+            // 非空且是锁定
+            if (trafficTaskDo!=null && trafficTaskDo.getLockState().equalsIgnoreCase(TaskStateEnum.LOCK.name())) {
+                JsonData jsonData = shortLinkFeignService.check(eventMessage.getBizId());
+                if (jsonData.getCode()!=0) {
+                    log.error("创建短链失败，流量包回滚");
+                    initUsedTimes(trafficTaskDo.getTrafficId(),accountNo,1);
+                }
+                trafficTaskService.deleteByIdAndAccountNo(trafficTaskDo.getId(),accountNo);
+            }
+
         }
     }
 
@@ -205,6 +234,11 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
         return true;
     }
 
+    /**
+     * 扣减流量包
+     * @param param
+     * @return
+     */
     @Transactional(rollbackFor = Exception.class,propagation = Propagation.REQUIRED)
     public JsonData reduce(UseTrafficParam param){
 
@@ -224,6 +258,15 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
         }
         // 扣减使用次数
         int rows = addDayUsedTimes(userTrafficVo.getCurrentTrafficDO().getId(),accountNo,1);
+        // 生成traffic_task并插入到数据库
+        TrafficTaskDO trafficTaskDO = new TrafficTaskDO().builder().accountNo(accountNo)
+                .bizId(param.getBizId())
+                .useTimes(1)
+                .trafficId(userTrafficVo.getCurrentTrafficDO().getId())
+                .lockState(TaskStateEnum.LOCK.name())
+                .build();
+        //ORM 框架会在插入前自动为 id 字段生成雪花算法 ID，并赋值给 trafficTaskDO，所以下方在eventMessage使用trafficTaskDO.getId()时是可以获取到id字段的值的
+        trafficTaskService.add(trafficTaskDO);
         if (rows!=1) {
             throw new BizException(BizCodeEnum.TRAFFIC_REDUCE_FAIL);
         }
@@ -234,7 +277,10 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
         // 每次扣减流量包时，通过redis缓存今天剩余的可用次数
         redisTemplate.opsForValue().set(totalTrafficTimesKey,userTrafficVo.getDayTotalLeftTimes()-1,leftSeconds,TimeUnit.SECONDS);
 
-
+        EventMessage eventMessage = EventMessage.builder().accountNo(accountNo).bizId(trafficTaskDO.getId() + "")
+                .eventMessageType(EventMessageType.TRAFFIC_USED.name()).build();
+        // 发送延迟消息，用于异常回滚
+        rabbitTemplate.convertAndSend(rabbitMQConfig.getTrafficEventExchange(),rabbitMQConfig.getTrafficReleaseDelayRoutingKey(),eventMessage);
         return JsonData.buildSuccess();
     }
 

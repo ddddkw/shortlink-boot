@@ -29,7 +29,7 @@ public class LinkApiController {
             // 判断短链码是否合规
             if (isLetterDigit(shortLinkCode)) {
                 // 查找短链 TODO
-                ShortLinkVo shortLinkVo = shortLinkService.parseShortLinkVo(shortLinkCode);
+                ShortLinkVo shortLinkVo = shortLinkService.parseShortLinkCode(shortLinkCode);
                 // 判断是否过期和可用
                 if (isVisible(shortLinkVo)) {
                     String originUrl = CommonUtil.removeUrlPrefix(shortLinkVo.getOriginalUrl());
