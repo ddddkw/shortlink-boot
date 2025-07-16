@@ -14,6 +14,8 @@ public interface TrafficTaskService extends IService<TrafficTaskDO> {
 
     TrafficTaskDO findByIdAndAccountNo(Long id, Long accountNo);
 
-    int deleteByIdAndAccountNo(Long id, Long accountNo);
+    TrafficTaskDO findByCodeAndAccountNo(String id, Long accountNo);
+
+    int deleteByIdAndAccountNo(Long code, Long accountNo);
 
 }

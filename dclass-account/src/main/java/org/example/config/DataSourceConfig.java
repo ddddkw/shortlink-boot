@@ -104,7 +104,7 @@ public class DataSourceConfig {
 
         // 添加连接池优化配置 [8](@ref)
         ds.setMinimumIdle(10);       // 最小空闲连接
-        ds.setMaximumPoolSize(100);  // 最大连接数
+        ds.setMaximumPoolSize(30);  // 最大连接数
         ds.setConnectionTimeout(30000); // 连接超时(ms)
         return ds;
     }

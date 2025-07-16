@@ -39,7 +39,7 @@ public class TrafficController {
      * @param request
      * @return
      */
-    @PostMapping("reduce")
+    @PostMapping("/reduce")
     public JsonData useTraffic(@RequestBody UseTrafficParam param, HttpServletRequest request){
         String requestToken = request.getHeader("rpc-token");
         if (requestToken.equalsIgnoreCase(rpcToken)) {
@@ -58,7 +58,7 @@ public class TrafficController {
      * 分页查询流量包列表，查看可用的流量包
      * @return
      */
-    @RequestMapping("page")
+    @RequestMapping("/page")
     public JsonData pageAvailable(@RequestBody TrafficPageParam pageParam){
 
         IPage pageMap = trafficService.pageAvailable(pageParam);

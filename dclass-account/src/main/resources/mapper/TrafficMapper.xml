@@ -26,7 +26,7 @@
        update traffic set day_used = day_used + #{usedTimes} where account_no = #{accountNo} and id = #{trafficId} and (day_limit - day_used) >= #{usedTimes} limit 1
     </update>
     <update id = "initUsedTimes">
-       update traffic set day_used = day_used - #{usedTimes} where account_no = #{accountNo} and id = #{trafficId} and (day_limit - usedTimes) > 0 limit 1
+       update traffic set day_used = day_used - #{usedTimes} where account_no = #{accountNo} and id = #{trafficId} and (day_limit - #{usedTimes}) > 0 and date_format(gmt_modified,'%Y-%m-%d') = #{useDateStr} limit 1
     </update>
 
 

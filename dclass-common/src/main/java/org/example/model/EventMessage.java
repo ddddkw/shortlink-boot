@@ -46,6 +46,7 @@ public class EventMessage implements Serializable {
      */
     private String content;
 
+
     /**
      * 备注
      */

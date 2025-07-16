@@ -1,21 +1,21 @@
-2025-07-15 17:12:21,956 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 37192 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
-2025-07-15 17:12:21,976 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
-2025-07-15 17:12:25,987 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
-2025-07-15 17:12:25,994 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-15 17:12:26,093 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 57 ms. Found 0 Redis repository interfaces.
-2025-07-15 17:12:26,759 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=5e6855cd-e786-34f3-bc0e-d8144873f536
-2025-07-15 17:12:27,541 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2025-07-15 17:12:27,548 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2025-07-15 17:12:28,338 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
-2025-07-15 17:12:28,356 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
-2025-07-15 17:12:28,356 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2025-07-15 17:12:28,357 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
-2025-07-15 17:12:28,724 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2025-07-15 17:12:28,725 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 5923 ms
-2025-07-15 17:12:29,504 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 990
-2025-07-15 17:12:30,845 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
-2025-07-15 17:12:31,554 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
-2025-07-15 17:12:31,891 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+2025-07-16 14:35:33,879 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 61328 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-16 14:35:33,913 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-16 14:35:40,117 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-16 14:35:40,132 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-16 14:35:40,302 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 107 ms. Found 0 Redis repository interfaces.
+2025-07-16 14:35:41,670 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=d031f595-5a51-37f3-98f2-194d920744de
+2025-07-16 14:35:42,591 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 14:35:42,602 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 14:35:43,390 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-16 14:35:43,422 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-16 14:35:43,422 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-16 14:35:43,422 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-16 14:35:43,952 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-16 14:35:43,952 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 8712 ms
+2025-07-16 14:35:45,465 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 150
+2025-07-16 14:35:48,628 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-16 14:35:49,821 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-16 14:35:50,811 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
 defaultDatabaseStrategy:
   inline:
     algorithmExpression: ds0
@@ -23,7 +23,7 @@ defaultDatabaseStrategy:
 defaultKeyGenerator:
   column: id
   props:
-    worker.id: '990'
+    worker.id: '150'
   type: SNOWFLAKE
 tables:
   traffic:
@@ -34,43 +34,1270 @@ tables:
         algorithmExpression: traffic_$->{account_no % 2}
         shardingColumn: account_no
 
-2025-07-15 17:12:31,894 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+2025-07-16 14:35:50,821 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
 {}
 
-2025-07-15 17:12:32,146 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
-2025-07-15 17:12:32,755 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
-2025-07-15 17:12:34,026 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 2131 milliseconds.
-2025-07-15 17:12:38,829 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
-2025-07-15 17:12:39,056 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
-2025-07-15 17:12:39,303 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
-2025-07-15 17:12:44,140 INFO [redisson-netty-1-3] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
-2025-07-15 17:12:44,372 INFO [redisson-netty-1-4] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
-2025-07-15 17:12:44,894 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
-2025-07-15 17:12:49,256 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-07-15 17:12:49,299 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@6f9e6a85[class org.example.job.TrafficjobHandler#execute]
-2025-07-15 17:12:49,411 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
-2025-07-15 17:12:49,537 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
-2025-07-15 17:12:50,557 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
-2025-07-15 17:12:50,573 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
-2025-07-15 17:12:51,116 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 192.168.31.142:8001 register finished
-2025-07-15 17:12:52,832 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
-2025-07-15 17:12:53,346 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#3c488b34:0/SimpleConnection@6557dcea [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 53831]
-2025-07-15 17:12:54,736 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 38.678 seconds (JVM running for 44.955)
-2025-07-15 17:48:30,303 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
-2025-07-15 17:48:30,303 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
-2025-07-15 17:48:30,318 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
-2025-07-15 17:48:30,322 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
-2025-07-15 17:48:30,450 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
-2025-07-15 17:48:30,717 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
-2025-07-15 17:48:31,668 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
-2025-07-15 17:48:31,683 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
-2025-07-15 17:48:38,496 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
-2025-07-15 17:48:38,582 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
-2025-07-15 17:48:38,598 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://192.168.31.142:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
-2025-07-15 17:48:38,599 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
-2025-07-15 17:48:38,599 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
-2025-07-15 17:48:38,600 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
-2025-07-15 17:48:38,601 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
-2025-07-15 17:48:38,602 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
-2025-07-15 17:48:40,040 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
-2025-07-15 17:48:40,046 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-16 14:35:51,120 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-16 14:35:51,654 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-16 14:35:53,020 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 2198 milliseconds.
+2025-07-16 14:36:07,379 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 14:36:07,659 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-link' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 14:36:08,086 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-16 14:36:08,787 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-16 14:36:16,126 INFO [redisson-netty-1-3] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 14:36:16,138 INFO [redisson-netty-1-4] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 14:36:16,955 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-16 14:36:27,857 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-16 14:36:27,939 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@61c42e54[class org.example.job.TrafficjobHandler#execute]
+2025-07-16 14:36:28,096 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-16 14:36:28,287 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-16 14:36:29,364 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-16 14:36:29,409 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-16 14:36:29,460 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.51:8001 register finished
+2025-07-16 14:36:34,318 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-16 14:36:34,583 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#709d86a2:0/SimpleConnection@4af0ae2c [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 53953]
+2025-07-16 14:36:35,116 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 14:36:36,418 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 14:36:38,624 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 14:36:42,926 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 14:36:48,139 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 14:36:48,158 INFO [main] o.s.a.r.l.SimpleMessageListenerContainer [AbstractMessageListenerContainer.java : 1850] Broker not available; cannot force queue declarations during start: java.io.IOException
+2025-07-16 14:36:48,515 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 81.646 seconds (JVM running for 88.145)
+2025-07-16 14:47:38,875 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-16 14:47:38,879 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-16 14:47:38,953 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 74 ms
+2025-07-16 14:47:48,898 WARN [http-nio-8001-exec-1] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@297310a8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 14:47:53,909 WARN [http-nio-8001-exec-1] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3f68aae (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 14:47:58,915 WARN [http-nio-8001-exec-1] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@107c9607 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 14:48:03,924 WARN [http-nio-8001-exec-1] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@21bb32f0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 14:48:08,929 WARN [http-nio-8001-exec-1] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@8b6335d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 14:48:13,952 WARN [http-nio-8001-exec-1] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4b1a0e52 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 14:48:14,427 ERROR [http-nio-8001-exec-1] o.e.exception.CustomExceptionHandler [CustomExceptionHandler.java : 35] 系统异常{}
+org.springframework.dao.TransientDataAccessResourceException: 
+### Error querying database.  Cause: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30098ms.
+### The error may exist in org/example/mapper/AccountMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,account_no,head_img,phone,pwd,secret,mail,username,auth,gmt_create,gmt_modified  FROM account     WHERE (phone = ?)
+### Cause: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30098ms.
+; HikariPool-1 - Connection is not available, request timed out after 30098ms.; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30098ms.
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:70)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:79)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy102.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:90)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy103.selectOne(Unknown Source)
+	at org.example.service.impl.AccountServiceImpl.login(AccountServiceImpl.java:109)
+	at org.example.service.impl.AccountServiceImpl$$FastClassBySpringCGLIB$$bf1f2aef.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.example.service.impl.AccountServiceImpl$$EnhancerBySpringCGLIB$$42cf1461.login(<generated>)
+	at org.example.controller.AccountController.login(AccountController.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30098ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:197)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:162)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.apache.shardingsphere.shardingjdbc.jdbc.core.connection.ShardingConnection.createConnection(ShardingConnection.java:69)
+	at org.apache.shardingsphere.shardingjdbc.jdbc.adapter.AbstractConnectionAdapter.createConnections(AbstractConnectionAdapter.java:121)
+	at org.apache.shardingsphere.shardingjdbc.jdbc.adapter.AbstractConnectionAdapter.getConnections(AbstractConnectionAdapter.java:110)
+	at org.apache.shardingsphere.shardingjdbc.executor.PreparedStatementExecutor$1.getConnections(PreparedStatementExecutor.java:73)
+	at org.apache.shardingsphere.sharding.execute.sql.prepare.SQLExecutePrepareTemplate.getSQLExecuteGroups(SQLExecutePrepareTemplate.java:84)
+	at org.apache.shardingsphere.sharding.execute.sql.prepare.SQLExecutePrepareTemplate.getSynchronizedExecuteUnitGroups(SQLExecutePrepareTemplate.java:62)
+	at org.apache.shardingsphere.sharding.execute.sql.prepare.SQLExecutePrepareTemplate.getExecuteUnitGroups(SQLExecutePrepareTemplate.java:54)
+	at org.apache.shardingsphere.shardingjdbc.executor.PreparedStatementExecutor.obtainExecuteGroups(PreparedStatementExecutor.java:69)
+	at org.apache.shardingsphere.shardingjdbc.executor.PreparedStatementExecutor.init(PreparedStatementExecutor.java:64)
+	at org.apache.shardingsphere.shardingjdbc.jdbc.core.statement.ShardingPreparedStatement.initPreparedStatementExecutor(ShardingPreparedStatement.java:211)
+	at org.apache.shardingsphere.shardingjdbc.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:144)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy177.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy176.query(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:69)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:165)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:65)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy175.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 62 common frames omitted
+Caused by: java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:2480)
+	at com.zaxxer.hikari.pool.PoolBase.setNetworkTimeout(PoolBase.java:566)
+	at com.zaxxer.hikari.pool.PoolBase.isConnectionAlive(PoolBase.java:173)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:186)
+	... 104 common frames omitted
+Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations allowed after connection closed.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.NativeSession.checkClosed(NativeSession.java:758)
+	at com.mysql.cj.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:568)
+	at com.mysql.cj.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:2476)
+	... 107 common frames omitted
+2025-07-16 14:59:44,272 WARN [http-nio-8001-exec-3] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@47fcc004 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 14:59:49,293 WARN [http-nio-8001-exec-3] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3f59df71 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 14:59:54,311 WARN [http-nio-8001-exec-3] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@44591a8d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 14:59:59,334 WARN [http-nio-8001-exec-3] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@245d177c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 15:00:04,356 WARN [http-nio-8001-exec-3] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6d4b70ba (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 15:00:09,388 WARN [http-nio-8001-exec-3] com.zaxxer.hikari.pool.PoolBase [PoolBase.java : 184] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4fa08458 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-07-16 15:00:09,419 ERROR [http-nio-8001-exec-3] o.e.exception.CustomExceptionHandler [CustomExceptionHandler.java : 35] 系统异常{}
+org.springframework.dao.TransientDataAccessResourceException: 
+### Error querying database.  Cause: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30125ms.
+### The error may exist in org/example/mapper/AccountMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,account_no,head_img,phone,pwd,secret,mail,username,auth,gmt_create,gmt_modified  FROM account     WHERE (phone = ?)
+### Cause: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30125ms.
+; HikariPool-1 - Connection is not available, request timed out after 30125ms.; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30125ms.
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:70)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:79)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy102.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:90)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy103.selectOne(Unknown Source)
+	at org.example.service.impl.AccountServiceImpl.login(AccountServiceImpl.java:109)
+	at org.example.service.impl.AccountServiceImpl$$FastClassBySpringCGLIB$$bf1f2aef.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.example.service.impl.AccountServiceImpl$$EnhancerBySpringCGLIB$$42cf1461.login(<generated>)
+	at org.example.controller.AccountController.login(AccountController.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30125ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:197)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:162)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.apache.shardingsphere.shardingjdbc.jdbc.core.connection.ShardingConnection.createConnection(ShardingConnection.java:69)
+	at org.apache.shardingsphere.shardingjdbc.jdbc.adapter.AbstractConnectionAdapter.createConnections(AbstractConnectionAdapter.java:121)
+	at org.apache.shardingsphere.shardingjdbc.jdbc.adapter.AbstractConnectionAdapter.getConnections(AbstractConnectionAdapter.java:110)
+	at org.apache.shardingsphere.shardingjdbc.executor.PreparedStatementExecutor$1.getConnections(PreparedStatementExecutor.java:73)
+	at org.apache.shardingsphere.sharding.execute.sql.prepare.SQLExecutePrepareTemplate.getSQLExecuteGroups(SQLExecutePrepareTemplate.java:84)
+	at org.apache.shardingsphere.sharding.execute.sql.prepare.SQLExecutePrepareTemplate.getSynchronizedExecuteUnitGroups(SQLExecutePrepareTemplate.java:62)
+	at org.apache.shardingsphere.sharding.execute.sql.prepare.SQLExecutePrepareTemplate.getExecuteUnitGroups(SQLExecutePrepareTemplate.java:54)
+	at org.apache.shardingsphere.shardingjdbc.executor.PreparedStatementExecutor.obtainExecuteGroups(PreparedStatementExecutor.java:69)
+	at org.apache.shardingsphere.shardingjdbc.executor.PreparedStatementExecutor.init(PreparedStatementExecutor.java:64)
+	at org.apache.shardingsphere.shardingjdbc.jdbc.core.statement.ShardingPreparedStatement.initPreparedStatementExecutor(ShardingPreparedStatement.java:211)
+	at org.apache.shardingsphere.shardingjdbc.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:144)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy177.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy176.query(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:69)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:165)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:65)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy175.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 62 common frames omitted
+Caused by: java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:2480)
+	at com.zaxxer.hikari.pool.PoolBase.setNetworkTimeout(PoolBase.java:566)
+	at com.zaxxer.hikari.pool.PoolBase.isConnectionAlive(PoolBase.java:173)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:186)
+	... 104 common frames omitted
+Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations allowed after connection closed.
+	at jdk.internal.reflect.GeneratedConstructorAccessor63.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.NativeSession.checkClosed(NativeSession.java:758)
+	at com.mysql.cj.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:568)
+	at com.mysql.cj.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:2476)
+	... 107 common frames omitted
+2025-07-16 15:04:58,707 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-16 15:04:58,713 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-16 15:04:58,714 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-16 15:04:58,749 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-16 15:04:59,110 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-16 15:04:59,729 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-16 15:05:05,621 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-16 15:05:05,650 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-16 15:05:14,796 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-16 15:05:15,117 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-16 15:05:15,190 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.51:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-16 15:05:15,194 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-16 15:05:15,198 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-16 15:05:15,200 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-16 15:05:15,208 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-16 15:05:15,211 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-16 15:05:16,867 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-16 15:05:16,898 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-16 15:06:51,742 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 41996 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-16 15:06:51,748 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-16 15:06:55,182 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-16 15:06:55,188 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-16 15:06:55,289 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 62 ms. Found 0 Redis repository interfaces.
+2025-07-16 15:06:56,147 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=d031f595-5a51-37f3-98f2-194d920744de
+2025-07-16 15:06:57,070 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 15:06:57,076 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 15:06:57,828 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-16 15:06:57,850 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-16 15:06:57,851 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-16 15:06:57,851 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-16 15:06:58,393 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-16 15:06:58,394 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 6164 ms
+2025-07-16 15:06:59,219 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 150
+2025-07-16 15:07:00,351 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-16 15:07:00,734 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-16 15:07:00,856 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '150'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-16 15:07:00,858 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-16 15:07:00,931 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-16 15:07:01,108 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-16 15:07:01,630 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 771 milliseconds.
+2025-07-16 15:07:03,957 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 15:07:04,035 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-link' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 15:07:04,144 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-16 15:07:04,330 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-16 15:07:08,545 INFO [redisson-netty-1-2] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 15:07:08,545 INFO [redisson-netty-1-4] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 15:07:09,085 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-16 15:07:12,733 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-16 15:07:12,757 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@16718e1b[class org.example.job.TrafficjobHandler#execute]
+2025-07-16 15:07:12,809 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-16 15:07:12,860 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-16 15:07:13,285 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-16 15:07:13,298 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-16 15:07:13,332 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.51:8001 register finished
+2025-07-16 15:07:14,490 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-16 15:07:14,600 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#5c9a4f3b:0/SimpleConnection@43e6f05f [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 62862]
+2025-07-16 15:07:14,796 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 15:07:15,940 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 15:07:18,111 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 15:07:22,275 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 15:07:27,421 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 15:07:27,439 INFO [main] o.s.a.r.l.SimpleMessageListenerContainer [AbstractMessageListenerContainer.java : 1850] Broker not available; cannot force queue declarations during start: java.io.IOException
+2025-07-16 15:07:27,650 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 40.674 seconds (JVM running for 47.53)
+2025-07-16 15:08:38,319 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-16 15:08:38,320 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-16 15:08:38,322 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 2 ms
+2025-07-16 15:12:36,903 ERROR [http-nio-8001-exec-3] o.e.exception.CustomExceptionHandler [CustomExceptionHandler.java : 35] 系统异常{}
+java.lang.NullPointerException: null
+	at org.example.controller.TrafficController.useTraffic(TrafficController.java:45)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2025-07-16 15:13:22,901 INFO [http-nio-8001-exec-5] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 253] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 15:11:47 CST 2025)
+2025-07-16 15:13:22,987 INFO [http-nio-8001-exec-5] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 257] 待更新流量包列表：[]
+2025-07-16 15:13:23,648 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=1945381229601071106, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 15:13:24,820 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 220] 创建短链失败，流量包回滚
+2025-07-16 15:13:25,217 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 36] 消息消费失败：EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=1945381229601071106, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 15:16:19,671 INFO [http-nio-8001-exec-7] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 253] 今日可用总次数:1,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=1, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 15:13:23 CST 2025)
+2025-07-16 15:16:19,671 INFO [http-nio-8001-exec-7] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 257] 待更新流量包列表：[]
+2025-07-16 15:16:19,788 ERROR [http-nio-8001-exec-7] o.e.exception.CustomExceptionHandler [CustomExceptionHandler.java : 35] 系统异常{}
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1943141183917469697' for key 'uk_msg_id'
+### The error may exist in org/example/mapper/TrafficTaskMapper.java (best guess)
+### The error may involve org.example.mapper.TrafficTaskMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO traffic_task  ( id, account_no, traffic_id, use_times, lock_state, biz_id )  VALUES  ( ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1943141183917469697' for key 'uk_msg_id'
+; Duplicate entry '1943141183917469697' for key 'uk_msg_id'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1943141183917469697' for key 'uk_msg_id'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy102.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:60)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy128.insert(Unknown Source)
+	at org.example.service.impl.TrafficTaskServiceImpl.add(TrafficTaskServiceImpl.java:22)
+	at org.example.service.impl.TrafficTaskServiceImpl$$FastClassBySpringCGLIB$$79ee695a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.example.service.impl.TrafficTaskServiceImpl$$EnhancerBySpringCGLIB$$1f5219d5.add(<generated>)
+	at org.example.service.impl.TrafficServiceImpl.reduce(TrafficServiceImpl.java:273)
+	at org.example.service.impl.TrafficServiceImpl$$FastClassBySpringCGLIB$$bcb2911f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692)
+	at org.example.service.impl.TrafficServiceImpl$$EnhancerBySpringCGLIB$$8a9f1444.reduce(<generated>)
+	at org.example.controller.TrafficController.useTraffic(TrafficController.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1943141183917469697' for key 'uk_msg_id'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.shardingsphere.shardingjdbc.executor.SQLExecuteCallbackFactory$2.executeSQL(SQLExecuteCallbackFactory.java:62)
+	at org.apache.shardingsphere.shardingjdbc.executor.SQLExecuteCallbackFactory$2.executeSQL(SQLExecuteCallbackFactory.java:58)
+	at org.apache.shardingsphere.sharding.execute.sql.execute.SQLExecuteCallback.execute0(SQLExecuteCallback.java:82)
+	at org.apache.shardingsphere.sharding.execute.sql.execute.SQLExecuteCallback.execute(SQLExecuteCallback.java:58)
+	at org.apache.shardingsphere.underlying.executor.engine.ExecutorEngine.syncExecute(ExecutorEngine.java:97)
+	at org.apache.shardingsphere.underlying.executor.engine.ExecutorEngine.serialExecute(ExecutorEngine.java:82)
+	at org.apache.shardingsphere.underlying.executor.engine.ExecutorEngine.execute(ExecutorEngine.java:76)
+	at org.apache.shardingsphere.sharding.execute.sql.execute.SQLExecuteTemplate.execute(SQLExecuteTemplate.java:68)
+	at org.apache.shardingsphere.sharding.execute.sql.execute.SQLExecuteTemplate.execute(SQLExecuteTemplate.java:51)
+	at org.apache.shardingsphere.shardingjdbc.executor.AbstractStatementExecutor.executeCallback(AbstractStatementExecutor.java:129)
+	at org.apache.shardingsphere.shardingjdbc.executor.PreparedStatementExecutor.execute(PreparedStatementExecutor.java:148)
+	at org.apache.shardingsphere.shardingjdbc.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:145)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy177.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy176.update(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:56)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.update(MybatisCachingExecutor.java:85)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:83)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy175.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 75 common frames omitted
+2025-07-16 15:46:15,844 INFO [http-nio-8001-exec-9] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 253] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 15:19:58 CST 2025)
+2025-07-16 15:46:15,865 INFO [http-nio-8001-exec-9] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 257] 待更新流量包列表：[]
+2025-07-16 15:46:16,013 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=1945389503641657345, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 15:46:16,166 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 220] 创建短链失败，流量包回滚
+2025-07-16 15:46:16,248 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 36] 消息消费失败：EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=1945389503641657345, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 15:52:59,522 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-16 15:52:59,523 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-16 15:52:59,526 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-16 15:52:59,555 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-16 15:52:59,859 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-16 15:53:00,040 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-16 15:53:02,366 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-16 15:53:02,405 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-16 15:53:09,260 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-16 15:53:09,494 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-16 15:53:09,508 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.51:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-16 15:53:09,509 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-16 15:53:09,509 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-16 15:53:09,513 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-16 15:53:09,517 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-16 15:53:09,523 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-16 15:53:11,141 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-16 15:53:11,159 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-16 15:53:48,488 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 58852 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-16 15:53:48,507 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-16 15:53:52,733 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-16 15:53:52,741 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-16 15:53:52,912 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 98 ms. Found 0 Redis repository interfaces.
+2025-07-16 15:53:54,104 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=d031f595-5a51-37f3-98f2-194d920744de
+2025-07-16 15:53:55,253 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 15:53:55,267 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 15:53:56,356 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-16 15:53:56,394 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-16 15:53:56,399 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-16 15:53:56,403 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-16 15:53:57,098 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-16 15:53:57,100 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 7673 ms
+2025-07-16 15:53:58,405 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 150
+2025-07-16 15:54:00,197 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-16 15:54:00,693 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-16 15:54:00,951 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '150'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-16 15:54:00,952 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-16 15:54:01,035 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-16 15:54:01,195 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-16 15:54:01,636 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 682 milliseconds.
+2025-07-16 15:54:08,001 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 15:54:08,157 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-link' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 15:54:08,403 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-16 15:54:08,796 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-16 15:54:14,699 INFO [redisson-netty-1-14] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 15:54:14,705 INFO [redisson-netty-1-4] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 15:54:16,286 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-16 15:54:25,060 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-16 15:54:25,149 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@7fb313e3[class org.example.job.TrafficjobHandler#execute]
+2025-07-16 15:54:25,305 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-16 15:54:25,464 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-16 15:54:26,264 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-16 15:54:26,295 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-16 15:54:26,332 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.51:8001 register finished
+2025-07-16 15:54:28,547 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-16 15:54:28,697 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#300a38e7:0/SimpleConnection@32c114d9 [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 61995]
+2025-07-16 15:54:28,943 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 15:54:30,116 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 15:54:32,274 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 15:54:36,428 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 15:54:41,614 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 15:54:41,633 INFO [main] o.s.a.r.l.SimpleMessageListenerContainer [AbstractMessageListenerContainer.java : 1850] Broker not available; cannot force queue declarations during start: java.io.IOException
+2025-07-16 15:54:41,891 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 59.194 seconds (JVM running for 64.944)
+2025-07-16 16:03:33,879 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-16 16:03:33,880 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-16 16:03:33,880 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-16 16:03:33,882 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-16 16:03:33,940 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-16 16:03:34,080 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-16 16:03:35,183 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-16 16:03:35,221 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-16 16:03:42,033 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-16 16:03:42,100 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-16 16:03:42,114 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.51:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-16 16:03:42,114 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-16 16:03:42,115 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-16 16:03:42,115 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-16 16:03:42,115 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-16 16:03:42,116 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-16 16:03:43,510 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-16 16:03:43,524 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-16 16:03:56,860 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 56704 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-16 16:03:56,863 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-16 16:03:58,359 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-16 16:03:58,363 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-16 16:03:58,403 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+2025-07-16 16:03:58,733 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=d031f595-5a51-37f3-98f2-194d920744de
+2025-07-16 16:03:59,072 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 16:03:59,074 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 16:03:59,408 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-16 16:03:59,419 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-16 16:03:59,420 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-16 16:03:59,420 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-16 16:03:59,637 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-16 16:03:59,637 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 2454 ms
+2025-07-16 16:04:00,031 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 150
+2025-07-16 16:04:01,263 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-16 16:04:01,693 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-16 16:04:01,849 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '150'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-16 16:04:01,850 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-16 16:04:01,896 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-16 16:04:02,055 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-16 16:04:02,473 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 622 milliseconds.
+2025-07-16 16:04:06,084 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 16:04:06,185 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-link' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 16:04:06,327 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-16 16:04:06,480 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-16 16:04:09,167 INFO [redisson-netty-1-14] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 16:04:09,180 INFO [redisson-netty-1-4] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 16:04:09,573 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-16 16:04:13,207 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-16 16:04:13,228 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@2e04c89d[class org.example.job.TrafficjobHandler#execute]
+2025-07-16 16:04:13,281 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-16 16:04:13,364 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-16 16:04:13,800 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-16 16:04:13,811 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-16 16:04:13,837 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.51:8001 register finished
+2025-07-16 16:04:14,844 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-16 16:04:14,917 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#4e4d0a0b:0/SimpleConnection@18487f92 [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 65226]
+2025-07-16 16:04:15,046 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 16:04:16,156 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 16:04:18,268 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 16:04:22,398 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 16:04:27,517 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 16:04:27,529 INFO [main] o.s.a.r.l.SimpleMessageListenerContainer [AbstractMessageListenerContainer.java : 1850] Broker not available; cannot force queue declarations during start: java.io.IOException
+2025-07-16 16:04:27,680 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 33.262 seconds (JVM running for 35.808)
+2025-07-16 16:04:49,190 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-16 16:04:49,197 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-16 16:04:49,217 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 19 ms
+2025-07-16 16:04:51,644 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 253] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 15:52:48 CST 2025)
+2025-07-16 16:04:51,669 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 257] 待更新流量包列表：[]
+2025-07-16 16:04:51,916 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=1945394183784476674, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:04:52,341 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 220] 创建短链失败，流量包回滚
+2025-07-16 16:04:52,462 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 36] 消息消费失败：EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=1945394183784476674, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:17:39,896 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-16 16:17:39,896 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-16 16:17:39,896 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-16 16:17:39,899 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-16 16:17:39,952 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-16 16:17:40,424 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-16 16:17:41,463 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-16 16:17:41,477 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-16 16:17:48,186 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-16 16:17:48,229 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-16 16:17:48,246 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.51:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-16 16:17:48,246 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-16 16:17:48,247 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-16 16:17:48,247 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-16 16:17:48,249 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-16 16:17:48,249 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-16 16:17:49,641 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-16 16:17:49,653 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-16 16:18:08,193 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 47944 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-16 16:18:08,197 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-16 16:18:09,687 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-16 16:18:09,690 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-16 16:18:09,733 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2025-07-16 16:18:10,043 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=d031f595-5a51-37f3-98f2-194d920744de
+2025-07-16 16:18:10,353 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 16:18:10,356 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 16:18:10,662 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-16 16:18:10,673 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-16 16:18:10,673 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-16 16:18:10,674 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-16 16:18:10,911 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-16 16:18:10,911 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 2377 ms
+2025-07-16 16:18:11,248 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 150
+2025-07-16 16:18:11,867 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-16 16:18:12,113 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-16 16:18:12,189 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '150'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-16 16:18:12,190 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-16 16:18:12,227 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-16 16:18:12,368 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-16 16:18:12,831 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 641 milliseconds.
+2025-07-16 16:18:15,439 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 16:18:15,529 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-link' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 16:18:15,658 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-16 16:18:15,821 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-16 16:18:18,980 INFO [redisson-netty-1-5] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 16:18:18,982 INFO [redisson-netty-1-4] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 16:18:19,376 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-16 16:18:24,803 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-16 16:18:24,841 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@77430c79[class org.example.job.TrafficjobHandler#execute]
+2025-07-16 16:18:24,925 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-16 16:18:24,998 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-16 16:18:25,611 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-16 16:18:25,635 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-16 16:18:25,677 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.51:8001 register finished
+2025-07-16 16:18:26,960 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-16 16:18:27,066 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#5408d4b3:0/SimpleConnection@4af0ae2c [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 53580]
+2025-07-16 16:18:27,264 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 16:18:28,415 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 16:18:30,577 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 16:18:34,743 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 16:18:39,913 ERROR [AMQP Connection 106.14.156.6:5672] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 748] Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'x-message-ttl' for queue 'traffic.release.delay.queue' in vhost 'dev': received none but current is the value '60000' of type 'signedint', class-id=50, method-id=10)
+2025-07-16 16:18:39,931 INFO [main] o.s.a.r.l.SimpleMessageListenerContainer [AbstractMessageListenerContainer.java : 1850] Broker not available; cannot force queue declarations during start: java.io.IOException
+2025-07-16 16:18:40,143 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 34.383 seconds (JVM running for 37.494)
+2025-07-16 16:19:11,659 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-16 16:19:11,660 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-16 16:19:11,673 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 11 ms
+2025-07-16 16:19:13,968 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 253] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 16:18:05 CST 2025)
+2025-07-16 16:19:14,014 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 257] 待更新流量包列表：[]
+2025-07-16 16:19:14,346 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=03SBEwJ0, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:19:14,377 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 36] 消息消费失败：EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=03SBEwJ0, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:22:29,150 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-16 16:22:29,150 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-16 16:22:29,151 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-16 16:22:29,153 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-16 16:22:29,219 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-16 16:22:29,671 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-16 16:22:31,646 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-16 16:22:31,666 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-16 16:22:37,858 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-16 16:22:37,905 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-16 16:22:37,917 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.51:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-16 16:22:37,918 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-16 16:22:37,918 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-16 16:22:37,918 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-16 16:22:37,918 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-16 16:22:37,919 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-16 16:22:39,329 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-16 16:22:39,340 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-16 16:23:14,430 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 46444 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-16 16:23:14,451 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-16 16:23:18,562 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-16 16:23:18,568 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-16 16:23:18,694 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 88 ms. Found 0 Redis repository interfaces.
+2025-07-16 16:23:20,043 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=d031f595-5a51-37f3-98f2-194d920744de
+2025-07-16 16:23:21,318 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 16:23:21,329 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 16:23:22,476 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-16 16:23:22,519 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-16 16:23:22,520 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-16 16:23:22,520 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-16 16:23:23,284 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-16 16:23:23,288 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 7501 ms
+2025-07-16 16:23:24,399 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 150
+2025-07-16 16:23:27,871 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-16 16:23:28,450 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-16 16:23:28,739 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '150'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-16 16:23:28,742 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-16 16:23:28,789 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-16 16:23:28,928 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-16 16:23:29,326 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 583 milliseconds.
+2025-07-16 16:23:35,370 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 16:23:35,550 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-link' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 16:23:35,883 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-16 16:23:36,354 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-16 16:23:44,480 INFO [redisson-netty-1-16] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 16:23:44,484 INFO [redisson-netty-1-4] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 16:23:45,437 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-16 16:23:52,664 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-16 16:23:52,734 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@2740585b[class org.example.job.TrafficjobHandler#execute]
+2025-07-16 16:23:52,871 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-16 16:23:53,022 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-16 16:23:53,816 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-16 16:23:53,844 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-16 16:23:53,881 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.51:8001 register finished
+2025-07-16 16:23:56,490 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-16 16:23:56,640 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#7d61468c:0/SimpleConnection@333d5a0c [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 55364]
+2025-07-16 16:23:57,300 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 50.129 seconds (JVM running for 56.982)
+2025-07-16 16:27:19,152 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-16 16:27:19,154 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-16 16:27:19,198 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 41 ms
+2025-07-16 16:27:25,084 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 253] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 16:27:01 CST 2025)
+2025-07-16 16:27:25,173 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 257] 待更新流量包列表：[]
+2025-07-16 16:28:25,702 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=02CtlwV0, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:28:25,740 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 36] 消息消费失败：EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=02CtlwV0, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:34:20,772 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-16 16:34:20,774 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-16 16:34:20,774 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-16 16:34:20,792 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-16 16:34:20,855 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-16 16:34:20,936 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-16 16:34:24,068 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-16 16:34:24,128 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-16 16:34:31,704 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-16 16:34:31,796 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-16 16:34:31,818 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.51:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-16 16:34:31,820 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-16 16:34:31,822 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-16 16:34:31,823 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-16 16:34:31,825 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-16 16:34:31,827 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-16 16:34:33,397 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-16 16:34:33,431 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-16 16:35:43,060 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 26968 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-16 16:35:43,068 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-16 16:35:51,080 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-16 16:35:51,089 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-16 16:35:51,238 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 91 ms. Found 0 Redis repository interfaces.
+2025-07-16 16:35:52,488 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=d031f595-5a51-37f3-98f2-194d920744de
+2025-07-16 16:35:54,309 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 16:35:54,320 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 16:35:55,502 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-16 16:35:55,556 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-16 16:35:55,558 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-16 16:35:55,560 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-16 16:35:56,294 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-16 16:35:56,296 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 11989 ms
+2025-07-16 16:35:57,175 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 150
+2025-07-16 16:36:00,305 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-16 16:36:01,046 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-16 16:36:01,536 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '150'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-16 16:36:01,543 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-16 16:36:01,629 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-16 16:36:01,853 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-16 16:36:02,320 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 776 milliseconds.
+2025-07-16 16:36:10,906 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 16:36:11,124 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-link' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 16:36:11,575 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-16 16:36:12,094 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-16 16:36:18,094 INFO [redisson-netty-1-3] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 16:36:18,094 INFO [redisson-netty-1-2] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 16:36:18,839 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-16 16:36:29,737 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-16 16:36:29,845 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@6f51d1cc[class org.example.job.TrafficjobHandler#execute]
+2025-07-16 16:36:30,051 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-16 16:36:30,195 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-16 16:36:31,543 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-16 16:36:31,621 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-16 16:36:31,702 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.51:8001 register finished
+2025-07-16 16:36:34,540 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-16 16:36:34,704 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#52b30054:0/SimpleConnection@6c54d0dc [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 59189]
+2025-07-16 16:36:35,359 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 58.645 seconds (JVM running for 66.448)
+2025-07-16 16:38:06,604 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-16 16:38:06,605 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-16 16:38:06,609 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 3 ms
+2025-07-16 16:38:09,907 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 253] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 16:34:55 CST 2025)
+2025-07-16 16:38:09,981 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 257] 待更新流量包列表：[]
+2025-07-16 16:39:10,482 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=12YXYyT1, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:39:57,096 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 36] 消息消费失败：EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=12YXYyT1, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:41:53,223 INFO [http-nio-8001-exec-2] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 253] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 16:40:54 CST 2025)
+2025-07-16 16:41:53,224 INFO [http-nio-8001-exec-2] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 257] 待更新流量包列表：[]
+2025-07-16 16:42:53,314 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=10ODvRH1, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:44:30,393 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 36] 消息消费失败：EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=10ODvRH1, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:48:28,561 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-16 16:48:28,561 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-16 16:48:28,562 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-16 16:48:28,563 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-16 16:48:28,624 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-16 16:48:29,266 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-16 16:48:30,300 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-16 16:48:30,316 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-16 16:48:35,900 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-16 16:48:35,940 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-16 16:48:35,952 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.51:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-16 16:48:35,952 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-16 16:48:35,952 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-16 16:48:35,952 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-16 16:48:35,953 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-16 16:48:35,953 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-16 16:48:37,260 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-16 16:48:37,274 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-16 16:48:53,779 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 62340 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-16 16:48:53,782 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-16 16:48:55,453 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-16 16:48:55,459 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-16 16:48:55,513 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
+2025-07-16 16:48:56,035 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=d031f595-5a51-37f3-98f2-194d920744de
+2025-07-16 16:48:56,478 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 16:48:56,481 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 16:48:56,934 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-16 16:48:56,964 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-16 16:48:56,964 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-16 16:48:56,966 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-16 16:48:57,271 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-16 16:48:57,272 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 3161 ms
+2025-07-16 16:48:57,723 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 150
+2025-07-16 16:48:58,562 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-16 16:48:58,901 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-16 16:48:59,023 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '150'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-16 16:48:59,025 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-16 16:48:59,067 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-16 16:48:59,236 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-16 16:48:59,728 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 703 milliseconds.
+2025-07-16 16:49:03,126 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 16:49:03,264 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-link' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 16:49:03,412 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-16 16:49:03,681 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-16 16:49:07,764 INFO [redisson-netty-1-2] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 16:49:07,764 INFO [redisson-netty-1-4] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 16:49:08,153 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-16 16:49:11,127 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-16 16:49:11,162 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@1f39b3ba[class org.example.job.TrafficjobHandler#execute]
+2025-07-16 16:49:11,233 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-16 16:49:11,301 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-16 16:49:11,799 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-16 16:49:11,815 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-16 16:49:11,840 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.51:8001 register finished
+2025-07-16 16:49:12,947 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-16 16:49:13,050 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#697a92af:0/SimpleConnection@1ec96512 [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 63036]
+2025-07-16 16:49:13,375 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 22.073 seconds (JVM running for 24.676)
+2025-07-16 16:50:15,095 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-16 16:50:15,101 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-16 16:50:15,133 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 22 ms
+2025-07-16 16:50:17,814 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 254] 今日可用总次数:2,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=0, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 16:49:34 CST 2025)
+2025-07-16 16:50:17,850 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 258] 待更新流量包列表：[]
+2025-07-16 16:51:18,184 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=02m6smQ0, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:52:34,774 INFO [http-nio-8001-exec-2] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 254] 今日可用总次数:1,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=1, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 16:50:17 CST 2025)
+2025-07-16 16:52:34,776 INFO [http-nio-8001-exec-2] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 258] 待更新流量包列表：[]
+2025-07-16 16:53:34,905 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=12ErdtR1, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:53:52,068 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 221] 创建短链失败，流量包回滚
+2025-07-16 16:53:52,212 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 36] 消息消费失败：EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=12ErdtR1, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:57:26,701 INFO [http-nio-8001-exec-4] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 254] 今日可用总次数:1,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=1, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 16:56:54 CST 2025)
+2025-07-16 16:57:26,702 INFO [http-nio-8001-exec-4] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 258] 待更新流量包列表：[]
+2025-07-16 16:58:26,814 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=13Jqfjm1, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 16:59:58,291 INFO [http-nio-8001-exec-5] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 254] 今日可用总次数:1,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=1, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 16:59:40 CST 2025)
+2025-07-16 16:59:58,293 INFO [http-nio-8001-exec-5] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 258] 待更新流量包列表：[]
+2025-07-16 17:00:58,418 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=11NYV2w1, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 17:01:48,316 WARN [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 788] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m16s345ms648µs100ns).
+2025-07-16 17:02:00,237 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 221] 创建短链失败，流量包回滚
+2025-07-16 17:05:31,012 WARN [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 788] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m11s426ms425µs600ns).
+2025-07-16 17:05:31,016 WARN [AMQP Connection 106.14.156.6:5672] c.r.c.impl.ForgivingExceptionHandler [ForgivingExceptionHandler.java : 115] An unexpected connection driver error occured (Exception message: Connection reset)
+2025-07-16 17:05:31,054 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 36] 消息消费失败：EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=11NYV2w1, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 17:05:31,060 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 1429] Restarting Consumer@392af2e0: tags=[[amq.ctag-2nJ9t8dfxtdRuAAYsuGjsA, amq.ctag-Pdx-k8HoB3Ez81iOH9QVXQ, amq.ctag-Drk1H_hpkeu7DWdu1NbaIQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://admin@106.14.156.6:5672/dev,1), conn: Proxy@1c5f6292 Shared Rabbit Connection: SimpleConnection@1ec96512 [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 63036], acknowledgeMode=AUTO local queue size=0
+2025-07-16 17:05:31,066 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-16 17:05:31,139 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#697a92af:1/SimpleConnection@a134864 [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 51557]
+2025-07-16 17:05:31,341 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-16 17:05:31,342 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-16 17:05:31,342 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-16 17:05:31,345 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-16 17:05:31,350 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-16 17:05:31,351 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-16 17:05:32,476 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-16 17:05:32,500 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-16 17:05:41,523 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-16 17:05:41,610 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-16 17:05:41,629 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.51:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-16 17:05:41,630 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-16 17:05:41,630 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-16 17:05:41,630 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-16 17:05:41,632 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-16 17:05:41,634 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-16 17:05:43,239 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-16 17:05:43,247 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2025-07-16 17:05:56,796 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 55] Starting AccountApplication using Java 11.0.27 on dddd with PID 62932 (C:\Users\豆凯威\Documents\xdProject\dclass\dclass-account\target\classes started by 豆凯威 in C:\Users\豆凯威\Documents\xdProject\dclass)
+2025-07-16 17:05:56,808 INFO [main] org.example.AccountApplication [SpringApplication.java : 659] No active profile set, falling back to default profiles: default
+2025-07-16 17:06:00,627 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-16 17:06:00,631 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-16 17:06:00,745 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 69 ms. Found 0 Redis repository interfaces.
+2025-07-16 17:06:01,583 INFO [main] o.s.cloud.context.scope.GenericScope [GenericScope.java : 283] BeanFactory id=d031f595-5a51-37f3-98f2-194d920744de
+2025-07-16 17:06:02,346 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 17:06:02,351 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-16 17:06:02,890 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8001 (http)
+2025-07-16 17:06:02,911 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-16 17:06:02,912 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2025-07-16 17:06:02,912 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-16 17:06:03,463 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2025-07-16 17:06:03,463 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 5277 ms
+2025-07-16 17:06:04,006 INFO [main] o.e.config.SnowFlakeWordIdConfig [SnowFlakeWordIdConfig.java : 23] 生成的Snowflake workerId: 150
+2025-07-16 17:06:05,451 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2025-07-16 17:06:05,868 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2025-07-16 17:06:06,011 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] ShardingRuleConfiguration:
+defaultDatabaseStrategy:
+  inline:
+    algorithmExpression: ds0
+    shardingColumn: none
+defaultKeyGenerator:
+  column: id
+  props:
+    worker.id: '150'
+  type: SNOWFLAKE
+tables:
+  traffic:
+    actualDataNodes: ds0.traffic_$->{0..1}
+    logicTable: traffic
+    tableStrategy:
+      inline:
+        algorithmExpression: traffic_$->{account_no % 2}
+        shardingColumn: account_no
+
+2025-07-16 17:06:06,012 INFO [main] o.a.s.core.log.ConfigurationLogger [ConfigurationLogger.java : 104] Properties:
+{}
+
+2025-07-16 17:06:06,086 INFO [main] ShardingSphere-metadata [ShardingMetaDataLoader.java : 131] Loading 1 logic tables' meta data.
+2025-07-16 17:06:06,362 INFO [main] ShardingSphere-metadata [SchemaMetaDataLoader.java : 70] Loading 5 tables' meta data.
+2025-07-16 17:06:06,973 INFO [main] ShardingSphere-metadata [MultipleDataSourcesRuntimeContext.java : 59] Meta data load finished, cost 959 milliseconds.
+2025-07-16 17:06:10,997 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-shop' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 17:06:11,108 INFO [main] o.s.c.o.FeignClientFactoryBean [FeignClientFactoryBean.java : 412] For 'dclass-link' URL not provided. Will try picking an instance via load-balancing.
+2025-07-16 17:06:11,285 INFO [main] org.example.config.XxlJobConfig [XxlJobConfig.java : 39] 》》》》》》dclass xxl job 配置初始化
+2025-07-16 17:06:11,605 INFO [main] org.redisson.Version [Version.java : 41] Redisson 3.10.1
+2025-07-16 17:06:14,618 INFO [redisson-netty-1-3] o.r.c.pool.MasterConnectionPool [ConnectionPool.java : 169] 32 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 17:06:14,622 INFO [redisson-netty-1-4] o.r.c.p.MasterPubSubConnectionPool [ConnectionPool.java : 169] 1 connections initialized for 106.14.156.6/106.14.156.6:6480
+2025-07-16 17:06:15,068 INFO [main] c.a.c.s.SentinelWebAutoConfiguration [SentinelWebAutoConfiguration.java : 80] [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-07-16 17:06:20,007 WARN [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger [LoadBalancerCacheAutoConfiguration.java : 82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-16 17:06:20,046 INFO [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 178] >>>>>>>>>>> xxl-job register jobhandler success, name:TrafficExpiredHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@7a0df38e[class org.example.job.TrafficjobHandler#execute]
+2025-07-16 17:06:20,131 WARN [main] c.x.job.core.executor.XxlJobExecutor [XxlJobExecutor.java : 152] >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2025-07-16 17:06:20,200 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 86] >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2025-07-16 17:06:20,781 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8001"]
+2025-07-16 17:06:20,796 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8001 (http) with context path ''
+2025-07-16 17:06:20,839 INFO [main] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 75] nacos registry, DEFAULT_GROUP dclass-account 150.223.232.51:8001 register finished
+2025-07-16 17:06:22,622 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 638] Attempting to connect to: [106.14.156.6:5672]
+2025-07-16 17:06:22,748 INFO [main] o.s.a.r.c.CachingConnectionFactory [AbstractConnectionFactory.java : 589] Created new connection: rabbitConnectionFactory#8bc0696:0/SimpleConnection@56c7e2d1 [delegate=amqp://admin@106.14.156.6:5672/dev, localPort= 52019]
+2025-07-16 17:06:23,234 INFO [main] org.example.AccountApplication [StartupInfoLogger.java : 61] Started AccountApplication in 31.111 seconds (JVM running for 34.535)
+2025-07-16 17:06:23,243 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=11NYV2w1, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 17:08:01,114 INFO [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-16 17:08:01,119 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2025-07-16 17:08:01,143 INFO [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 21 ms
+2025-07-16 17:08:02,452 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 254] 今日可用总次数:1,当前使用流量包:TrafficDO(id=1943141183917469697, dayLimit=2, dayUsed=1, totalLimit=null, accountNo=1150020799508250624, outTradeNo=free_init, level=FIRST, expiredDate=Thu Jul 10 00:00:00 CST 2025, pluginType=SHORT_LINK, productId=1, gmtCreate=Thu Jul 10 10:52:15 CST 2025, gmtModified=Wed Jul 16 17:05:57 CST 2025)
+2025-07-16 17:08:02,503 INFO [http-nio-8001-exec-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 258] 待更新流量包列表：[]
+2025-07-16 17:09:02,855 INFO [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.example.listener.TrafficMQListener [TrafficMQListener.java : 31] 监听到消息trafficHandler:EventMessage(messageId=null, eventMessageType=TRAFFIC_USED, bizId=04z88JR0, accountNo=1150020799508250624, content=null, remark=null)
+2025-07-16 17:09:20,151 ERROR [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.e.service.impl.TrafficServiceImpl [TrafficServiceImpl.java : 221] 创建短链失败，流量包回滚
+2025-07-16 17:11:56,166 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 145] [NotifyCenter] Start destroying Publisher
+2025-07-16 17:11:56,166 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 108] [HttpClientBeanHolder] Start destroying common HttpClient
+2025-07-16 17:11:56,167 WARN [Thread-17] c.a.nacos.common.notify.NotifyCenter [NotifyCenter.java : 162] [NotifyCenter] Destruction of the end
+2025-07-16 17:11:56,169 WARN [Thread-3] c.a.n.c.http.HttpClientBeanHolder [HttpClientBeanHolder.java : 114] [HttpClientBeanHolder] Destruction of the end
+2025-07-16 17:11:56,228 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 634] Waiting for workers to finish.
+2025-07-16 17:11:56,571 INFO [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer [SimpleMessageListenerContainer.java : 637] Successfully waited for workers to finish.
+2025-07-16 17:11:57,700 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 90] De-registering from Nacos Server now...
+2025-07-16 17:11:57,728 INFO [SpringApplicationShutdownHook] c.a.c.n.r.NacosServiceRegistry [NacosServiceRegistry.java : 110] De-registration finished.
+2025-07-16 17:12:06,747 WARN [SpringApplicationShutdownHook] o.s.b.f.s.DisposableBeanAdapter [DisposableBeanAdapter.java : 291] Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException
+2025-07-16 17:12:06,803 INFO [Thread-10] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 96] >>>>>>>>>>> xxl-job remoting server stop.
+2025-07-16 17:12:06,824 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 87] >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='traffic-app-executor', registryValue='http://150.223.232.51:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2025-07-16 17:12:06,824 INFO [xxl-job, executor ExecutorRegistryThread] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 105] >>>>>>>>>>> xxl-job, executor registry thread destory.
+2025-07-16 17:12:06,824 INFO [SpringApplicationShutdownHook] com.xxl.job.core.server.EmbedServer [EmbedServer.java : 125] >>>>>>>>>>> xxl-job remoting server destroy success.
+2025-07-16 17:12:06,824 INFO [xxl-job, executor JobLogFileCleanThread] c.x.j.c.thread.JobLogFileCleanThread [JobLogFileCleanThread.java : 99] >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destory.
+2025-07-16 17:12:06,824 INFO [xxl-job, executor TriggerCallbackThread] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 98] >>>>>>>>>>> xxl-job, executor callback thread destory.
+2025-07-16 17:12:06,825 INFO [Thread-9] c.x.j.c.thread.TriggerCallbackThread [TriggerCallbackThread.java : 128] >>>>>>>>>>> xxl-job, executor retry callback thread destory.
+2025-07-16 17:12:08,457 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2025-07-16 17:12:08,468 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.

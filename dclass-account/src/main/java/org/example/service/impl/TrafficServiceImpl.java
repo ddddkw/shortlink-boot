@@ -133,8 +133,8 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
      * 恢复流量包使用次数，如某个短链创建失败，回滚次数
      * @return
      */
-    public int initUsedTimes(long accountNo,long trafficId, int usedTimes){
-        return this.baseMapper.initUsedTimes(trafficId,accountNo,usedTimes);
+    public int initUsedTimes(long accountNo,long trafficId, int usedTimes, String useDateStr){
+        return this.baseMapper.initUsedTimes(trafficId,accountNo,usedTimes, useDateStr);
     }
 
     /**
@@ -211,14 +211,19 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
         } else if (EventMessageType.TRAFFIC_USED.name().equalsIgnoreCase(messageType)) {
             // 检查task是否存在
             // 检查短链码是否成功生成
-            Long trafficTaskId = Long.valueOf(eventMessage.getBizId());
-            TrafficTaskDO trafficTaskDo = trafficTaskService.findByIdAndAccountNo(trafficTaskId, eventMessage.getAccountNo());
+            String trafficTaskId = eventMessage.getBizId();
+//            TrafficTaskDO trafficTaskDo = trafficTaskService.findByIdAndAccountNo(trafficTaskId, eventMessage.getAccountNo());
+            TrafficTaskDO trafficTaskDo = trafficTaskService.findByCodeAndAccountNo(trafficTaskId, eventMessage.getAccountNo());
             // 非空且是锁定
             if (trafficTaskDo!=null && trafficTaskDo.getLockState().equalsIgnoreCase(TaskStateEnum.LOCK.name())) {
                 JsonData jsonData = shortLinkFeignService.check(eventMessage.getBizId());
                 if (jsonData.getCode()!=0) {
                     log.error("创建短链失败，流量包回滚");
-                    initUsedTimes(trafficTaskDo.getTrafficId(),accountNo,1);
+                    String useDateStr = TimeUtil.format(trafficTaskDo.getGmtCreate(),"yyyy-MM-dd");
+                    initUsedTimes(accountNo, trafficTaskDo.getTrafficId(),1, useDateStr);
+                    // 恢复流量包使用次数时，应该删除redis中的缓存key，为了重新获取并缓存可用的总次数
+                    String totalTrafficTimesKey = String.format(RedisKey.DAY_TOTAL_TRAFFIC,accountNo);
+                    redisTemplate.delete(totalTrafficTimesKey);
                 }
                 trafficTaskService.deleteByIdAndAccountNo(trafficTaskDo.getId(),accountNo);
             }
@@ -277,7 +282,7 @@ public class TrafficServiceImpl extends ServiceImpl<TrafficMapper, TrafficDO> im
         // 每次扣减流量包时，通过redis缓存今天剩余的可用次数
         redisTemplate.opsForValue().set(totalTrafficTimesKey,userTrafficVo.getDayTotalLeftTimes()-1,leftSeconds,TimeUnit.SECONDS);
 
-        EventMessage eventMessage = EventMessage.builder().accountNo(accountNo).bizId(trafficTaskDO.getId() + "")
+        EventMessage eventMessage = EventMessage.builder().accountNo(accountNo).bizId(trafficTaskDO.getBizId() + "")
                 .eventMessageType(EventMessageType.TRAFFIC_USED.name()).build();
         // 发送延迟消息，用于异常回滚
         rabbitTemplate.convertAndSend(rabbitMQConfig.getTrafficEventExchange(),rabbitMQConfig.getTrafficReleaseDelayRoutingKey(),eventMessage);

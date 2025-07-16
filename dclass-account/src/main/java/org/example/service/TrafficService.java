@@ -59,7 +59,7 @@ public interface TrafficService extends IService<TrafficDO> {
      * 回复流量包使用次数
      * @return
      */
-    int initUsedTimes(long accountNo,long trafficId, int useTimes);
+    int initUsedTimes(long accountNo,long trafficId, int useTimes, String useDateStr);
 
     /**
      * 批量更新流量包使用次数为0
