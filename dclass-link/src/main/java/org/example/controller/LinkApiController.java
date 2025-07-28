@@ -2,6 +2,7 @@ package org.example.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.enums.ShortLinkEnum;
+import org.example.service.LogService;
 import org.example.service.ShortLinkService;
 import org.example.utils.CommonUtil;
 import org.example.vo.ShortLinkVo;
@@ -21,15 +22,18 @@ public class LinkApiController {
     @Autowired
     private ShortLinkService shortLinkService;
 
+    @Autowired
+    private LogService logService;
+
     @GetMapping(path = "/{shortLinkCode}")
     public void dispatch(@PathVariable(name = "shortLinkCode")String shortLinkCode,
                          HttpServletRequest request, HttpServletResponse response){
-        log.info("短链码{}", shortLinkCode);
         try{
             // 判断短链码是否合规
             if (isLetterDigit(shortLinkCode)) {
                 // 查找短链 TODO
                 ShortLinkVo shortLinkVo = shortLinkService.parseShortLinkCode(shortLinkCode);
+                logService.recordShortLinkLog(request,shortLinkCode,shortLinkVo.getAccountNo());
                 // 判断是否过期和可用
                 if (isVisible(shortLinkVo)) {
                     String originUrl = CommonUtil.removeUrlPrefix(shortLinkVo.getOriginalUrl());

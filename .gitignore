@@ -9,3 +9,5 @@ target
 /dclass-shop/src/main/resources/cert/apiclient_cert.pem
 /dclass-shop/src/main/resources/cert/apiclient_key.pem
 /data/
+/dclass-link/src/main/resources/logback.xml
+/dclass-app/src/main/resources/kafka.properties
