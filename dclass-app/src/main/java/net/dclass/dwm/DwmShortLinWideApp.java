@@ -2,6 +2,7 @@ package net.dclass.dwm;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import net.dclass.func.AsyncLocationRequestFunction;
 import net.dclass.func.DeviceMapFunction;
 import net.dclass.func.LocationMapFunction;
 import net.dclass.model.DeviceInfoDO;
@@ -9,6 +10,7 @@ import net.dclass.model.ShortLinkWideDO;
 import net.dclass.util.DeviceUtil;
 import net.dclass.util.KafkaUtil;
 import org.apache.flink.api.common.functions.FlatMapFunction;
+import org.apache.flink.streaming.api.datastream.AsyncDataStream;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
@@ -16,6 +18,8 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer;
 import org.apache.flink.util.Collector;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * 对dwd层数据进一步处理
@@ -50,12 +54,13 @@ public class DwmShortLinWideApp {
 
         env.setParallelism(1);
 
-        //DataStream<String> ds =  env.socketTextStream("127.0.0.1",8888);
+        DataStream<String> ds =  env.socketTextStream("127.0.0.1",8888);
 
+        // 创建消费者
         FlinkKafkaConsumer<String> kafkaConsumer = KafkaUtil.getKafkaConsumer(SOURCE_TOPIC, GROUP_ID);
 
         // 配置数据源
-        DataStreamSource<String> ds = env.addSource(kafkaConsumer);
+//        DataStreamSource<String> ds = env.addSource(kafkaConsumer);
 
 
         /**
@@ -66,14 +71,15 @@ public class DwmShortLinWideApp {
         deviceWideDS.print("设备信息宽表补齐");
 
         // 在原本设备信息的基础上补齐地理位置信息
-        SingleOutputStreamOperator<String> shortLinkWideDs = deviceWideDS.map(new LocationMapFunction());
+//        SingleOutputStreamOperator<String> shortLinkWideDs = deviceWideDS.map(new LocationMapFunction());
+        SingleOutputStreamOperator<String> shortLinkWideDS = AsyncDataStream.unorderedWait(deviceWideDS, new AsyncLocationRequestFunction(), 10000, TimeUnit.MILLISECONDS, 200);
 
-        shortLinkWideDs.print("地理位置信息宽表补齐");
+        shortLinkWideDS.print("地理位置信息宽表补齐");
 
         FlinkKafkaProducer<String> kafkaProducer = KafkaUtil.getKafkaProducer(SINK_TOPIC);
 
         // kafka存储地理位置信息
-        shortLinkWideDs.addSink(kafkaProducer);
+        shortLinkWideDS.addSink(kafkaProducer);
 
         env.execute();
     }

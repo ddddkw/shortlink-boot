@@ -29,7 +29,7 @@ import org.apache.http.util.EntityUtils;
 @Slf4j
 public class LocationMapFunction extends RichMapFunction<ShortLinkWideDO,String> {
 
-    private static final String IP_PARSE_URL = "https://restapi.amap.com/v3/ip?ip=%s&output=json&key=4f6e1b4212a5fdec6198720f261892bd";
+    private static final String IP_PARSE_URL = "https://restapi.amap.com/v3/ip?ip=%s&output=json&key=b33e135f674b0c27c67273db13c78177";
 
     private CloseableHttpClient httpClient;
 
