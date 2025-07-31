@@ -10,6 +10,12 @@ import org.apache.flink.api.common.state.ValueStateDescriptor;
 import org.apache.flink.api.common.time.Time;
 import org.apache.flink.configuration.Configuration;
 
+/**
+ * 实现统计访问量的功能，同一天内的多次访问会被过滤
+ * ValueState<String>是 Flink 的状态变量，用于存储每个用户（按udid区分）最后一次访问的日期（字符串形式，如 "2024-07-31"）。
+ * 状态变量的作用：在流处理中，数据是持续到来的，需要通过状态保存历史信息（这里保存用户上次访问日期），才能判断当前访问是否为 "新的独立访问"
+ */
+
 public class UniqueVisitorFilterFunction extends RichFilterFunction<JSONObject> {
 
     private ValueState<String> lastVisitDateState = null;
