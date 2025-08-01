@@ -33,10 +33,13 @@ public class LinkApiController {
             if (isLetterDigit(shortLinkCode)) {
                 // 查找短链 TODO
                 ShortLinkVo shortLinkVo = shortLinkService.parseShortLinkCode(shortLinkCode);
-                logService.recordShortLinkLog(request,shortLinkCode,shortLinkVo.getAccountNo());
+//                logService.recordShortLinkLog(request,shortLinkCode,shortLinkVo.getAccountNo());
                 // 判断是否过期和可用
                 if (isVisible(shortLinkVo)) {
                     String originUrl = CommonUtil.removeUrlPrefix(shortLinkVo.getOriginalUrl());
+                    if (!originUrl.startsWith("http://") && !originUrl.startsWith("https://")) {
+                        originUrl = "https://" + originUrl; // 或根据业务需求使用http
+                    }
                     response.setHeader("Location",originUrl);
                     // 302跳转
                     response.setStatus(HttpStatus.FOUND.value());
@@ -51,7 +54,7 @@ public class LinkApiController {
 
     private static boolean isVisible(ShortLinkVo shortLinkVo){
         if (shortLinkVo!=null && shortLinkVo.getExpired().getTime()> CommonUtil.getCurrentTimestamp()||shortLinkVo.getExpired().getTime()==-1){
-            if (ShortLinkEnum.ACTIVE.equals(shortLinkVo.getState())) {
+            if (ShortLinkEnum.ACTIVE.name().equals(shortLinkVo.getState())) {
                 return true;
             }
         }
