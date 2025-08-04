@@ -1,4 +1,4 @@
-package net.dclass.model;
+package org.example.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ShortLinkVisitStatsDO {
+public class VisitStatsDO {
 
     /**
      * 窗口开始时间  Clickhouse里面会用到
@@ -112,4 +112,14 @@ public class ShortLinkVisitStatsDO {
 
     private Long pv=0L;
 
+
+
+    private Long ipCount=0L;
+
+    private Long newUVCount=0L;
+
+    /**
+     * 时间的字符串映射，天、小时*/
+
+    private String dateTimeStr;
 }

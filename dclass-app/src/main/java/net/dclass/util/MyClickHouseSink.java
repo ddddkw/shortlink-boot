@@ -74,7 +74,7 @@ public class MyClickHouseSink {
                     }
                 },
                 //控制批量写入大小
-                new JdbcExecutionOptions.Builder().withBatchSize(3).build()
+                new JdbcExecutionOptions.Builder().withBatchSize(10).build()
 
                 ,
                 //连接配置

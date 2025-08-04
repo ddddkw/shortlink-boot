@@ -23,7 +23,7 @@ import org.apache.flink.util.Collector;
 import java.time.Duration;
 
 /**
- * 短链接服务需要统计访问数据（如点击量 PV、独立访客 UV），并按多维度（如访问来源、地区、设备类型等）分析
+ * 短链接服务需要统计访问数据（如点击量 PV、独立访客量 UV），并按多维度（如访问来源、地区、设备类型等）分析
  **/
 
 public class DwsShortLinkVisitStatsApp {
@@ -161,6 +161,14 @@ public class DwsShortLinkVisitStatsApp {
 
         //8、输出Clickhouse
         String sql = "insert into visit_stats values(?,?,?,? ,?,?,?,? ,?,?,?,? ,?,?,?)";
+
+
+        /**
+         * reduceDS是聚合后的数据流，每条数据都是一个ShortLinkVisitStatsDO对象（包含完整的统计字段）。
+         * addSink是 Flink 的终端操作，将数据流与MyClickHouseSink生成的SinkFunction绑定(MyClickHouseSink.getJdbcSink方法返回的是一个SinkFunction)
+         * 我的理解是SinkFunction就是一个插入数据库的方法，每当有数据输出时，就调用方法，将输出的数据写入到ClickHouse
+         * 当数据流中有数据输出时，自动调用SinkFunction将数据写入 ClickHouse。
+         */
 
         reduceDS.addSink(MyClickHouseSink.getJdbcSink(sql));
 
