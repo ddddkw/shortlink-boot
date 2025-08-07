@@ -59,6 +59,7 @@ public class RabbitMQConfig {
 
     /**
      * 延迟队列
+     * 经过ttl时间后会自动进入到死信队列
      */
     @Bean
     public Queue orderCloseDelayQueue(){

@@ -187,8 +187,9 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
                 .bizId(orderOutTradeNo)
                 .build();
 
-        // 商家和客户订单信息分别落库
+        // 分别创建商家和客户订单，商家和客户订单信息分别落库（MQ）
         rabbitTemplate.convertAndSend(rabbitMQConfig.getOrderEventExchange(),rabbitMQConfig.getOrderCloseDelayRoutingKey(),eventMessage);
+
         // 调用支付信息，返回支付二维码和订单号，根据订单号轮询查支付结果
         String codeUrl = payfactory.pay(payInfoVO);
         if (StringUtils.isNotBlank(codeUrl)) {
@@ -200,6 +201,14 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
         return JsonData.buildResult(BizCodeEnum.PAY_ORDER_FAIL);
     }
 
+    /**
+     * 生成订单实体类
+     * @param productOrderAddParam
+     * @param loginUser
+     * @param orderOutTradeNo
+     * @param productVO
+     * @return
+     */
     public ProductOrderDO setProductOrder(ProductOrderAddParam productOrderAddParam,LoginUser loginUser,String orderOutTradeNo,ProductVO productVO){
         ProductOrderDO productOrderDO = new ProductOrderDO();
         // 设置用户信息
@@ -237,6 +246,11 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
         return productOrderDO;
     }
 
+    /**
+     * 校验订单金额是否正确
+     * @param productVO
+     * @param productOrderAddParam
+     */
     private void checkPrice(ProductVO productVO,ProductOrderAddParam productOrderAddParam){
         // 计算总金额
         BigDecimal bizTotal = BigDecimal.valueOf(productOrderAddParam.getBuyNum()).multiply(productVO.getAmount());
@@ -292,7 +306,9 @@ public class ProductOrderServiceImpl extends ServiceImpl<ProductOrderMapper, Pro
 
     }
 
-    // 微信回调后，执行对应的逻辑
+    /**
+     * 微信支付结束后进行回调，执行对应的逻辑
+      */
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
     public void processOrderCallbackMsg(String payType, Map paramsMap){
         // 获取订单号

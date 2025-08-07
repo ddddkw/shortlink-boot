@@ -25,10 +25,7 @@ import java.util.concurrent.TimeUnit;
 import static org.example.constant.RedisKey.SUBMIT_ORDER_TOKEN_KEY;
 
 /**
- * <p>
- *  前端控制器
- * </p>
- *
+ * 下单接口
  * @author dkw
  * @since 2025-06-20
  */
@@ -58,6 +55,10 @@ public class ProductOrderController {
         return JsonData.buildSuccess(token);
     }
 
+    /**
+     * 查询订单列表
+     * @return
+     */
     @PostMapping("/page")
     @RepeatSubmit(limitType = RepeatSubmit.Type.PARAM)
     public JsonData page(@RequestBody OrderPageParam orderPageParam){
@@ -66,6 +67,10 @@ public class ProductOrderController {
         return JsonData.buildSuccess(map);
     }
 
+    /**
+     * 删除订单
+     * @return
+     */
     @GetMapping("/del")
     public JsonData del(
             @RequestParam(value = "productOrderId") Long productOrderId
@@ -87,7 +92,7 @@ public class ProductOrderController {
     }
 
     /**
-     * 下单接口
+     * 下单接口，创建订单
      * @param productOrderAddParam
      * @param response
      * @return

@@ -11,3 +11,4 @@ target
 /data/
 /dclass-link/src/main/resources/logback.xml
 /dclass-app/src/main/resources/kafka.properties
+/dclass-account/data/logs/
