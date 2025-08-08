@@ -101,7 +101,9 @@ public class DwsShortLinkVisitStatsApp {
                 .withTimestampAssigner((event, timestamp) -> event.getVisitTime()));
 
         /**
-         * 5、多维度、多个字段分组
+         * 5、多维度、多个字段分组，进行分组聚合
+         * 分组就是对这九个字段中所有可能的字段做一个笛卡尔积，再根据得到的结果进行逻辑分组
+         * 类似于三个字段A,B,C，每个字段下有三种不同的数值，则最后的结果就是3*3*3=27种结果，相应的就会有27种逻辑分组
          * 按 9 个维度分组（Tuple9包含 9 个字段），确保同一维度组合的访问数据被聚合到一起：
          * 业务维度：code（短链接标识）、referer（访问来源）、isNew（是否新用户）
          * 地理维度：province（省份）、city（城市）、ip（IP 地址）
@@ -120,6 +122,11 @@ public class DwsShortLinkVisitStatsApp {
          * 窗口：是流数据的 “时间切片”，将无限流转化为有限数据集，便于批量计算。
          * 开窗：通过代码定义窗口的大小、类型（如滚动窗口）、时间基准（如事件时间）等规则，指定 “如何切分数据”。
          * 将每十秒的数据进行统计插入到clickhouse
+         * -------------------------------------------------------
+         * 窗口类型：TumblingEventTimeWindows表示基于事件时间的滚动窗口
+         * 窗口长度固定为 10 秒，相邻窗口无重叠，每个事件仅属于一个窗口。
+         * 时间语义：EventTime使用数据自带的时间戳（如日志中的事件发生时间），而非系统处理时间，可处理乱序事件。但是此处未使用
+         * 触发时机：窗口结束时自动触发计算（如 10:00:00~10:00:10 的窗口在水位线越过 10:00:10 时触发）。
          */
 
         //6、开窗 10秒一次数据插入到 ck
@@ -127,11 +134,17 @@ public class DwsShortLinkVisitStatsApp {
                 keyedStream.window(TumblingEventTimeWindows.of(Time.seconds(10)));
 
 
-        //7、聚合统计(补充统计起止时间)
+        /**
+         * 7、聚合统计(补充统计起止时间)
+         * 聚合就是对每一个逻辑分组下的数据进行处理，如将某一逻辑分组下的pv，uv进行累加就可以得到符合这一条件的pv总量和uv总量
+         */
         SingleOutputStreamOperator<Object> reduceDS = windowedStream.reduce(new ReduceFunction<ShortLinkVisitStatsDO>() {
             /**
              * 对窗口内同一维度的记录进行 PV 和 UV 的累加
              * （例如：10 秒内同一短链接、同一地区、同一设备的所有访问，PV 总和和 UV 总和）
+             *  reduce -- 增量聚合
+             *  作用：窗口内每到来一条新数据，立即与当前聚合结果合并，减少状态存储开销。
+             *  优势：适合高频写入场景，避免全量遍历窗口数据
              */
             @Override
             public ShortLinkVisitStatsDO reduce(ShortLinkVisitStatsDO value1, ShortLinkVisitStatsDO value2) throws Exception {
@@ -144,7 +157,13 @@ public class DwsShortLinkVisitStatsApp {
             @Override
             public void process(Tuple9<String, String, Integer, String, String, String, String, String, String> tuple,
                                 Context context, Iterable<ShortLinkVisitStatsDO> elements, Collector<Object> out) throws Exception {
-
+                /**
+                 * 全量聚合
+                 * 作用：为增量聚合结果补充窗口元信息（起止时间），并逐条输出。
+                 * 关键对象：
+                 * context.window()：获取当前窗口的时间范围。
+                 * elements：包含窗口内所有数据（此处仅含 reduce输出的聚合结果）
+                 */
                 for (ShortLinkVisitStatsDO visitStatsDO : elements) {
                     //窗口开始和结束时间
                     String startTime = TimeUtil.formatWithTime(context.window().getStart());
